@@ -1,1 +1,4155 @@
-[]
+[
+{
+"id": "netflix-2018-2022",
+"createdAt": 1763738600000,
+"items": [
+{
+"date": "2018-01-29",
+"id": "infiltrados-en-miami-nf",
+"status": "visto"
+},
+{
+"date": "2018-03-19",
+"id": "piranas-3d-nf",
+"status": "visto"
+},
+{
+"date": "2018-03-21",
+"id": "perdidos-nf",
+"status": "visto"
+},
+{
+"date": "2018-03-30",
+"id": "the-babysitter-nf",
+"status": "visto"
+},
+{
+"date": "2018-03-31",
+"id": "election-la-noche-de-las-bestias-nf",
+"status": "visto"
+},
+{
+"date": "2018-04-07",
+"id": "mercy-nf",
+"status": "visto"
+},
+{
+"date": "2018-04-08",
+"id": "el-payaso-del-mal-nf",
+"status": "visto"
+},
+{
+"date": "2018-04-10",
+"id": "objetivo-londres-nf",
+"status": "visto"
+},
+{
+"date": "2018-04-10",
+"id": "bright-nf",
+"status": "visto"
+},
+{
+"date": "2018-04-11",
+"id": "la-quinta-ola-nf",
+"status": "visto"
+},
+{
+"date": "2018-05-03",
+"id": "127-horas-nf",
+"status": "visto"
+},
+{
+"date": "2018-05-07",
+"id": "mechanic-resurrection-nf",
+"status": "visto"
+},
+{
+"date": "2018-05-20",
+"id": "la-cupula-nf",
+"status": "visto"
+},
+{
+"date": "2018-05-28",
+"id": "transporter-3-nf",
+"status": "visto"
+},
+{
+"date": "2018-06-26",
+"id": "monstruoso-nf",
+"status": "visto"
+},
+{
+"date": "2018-06-27",
+"id": "most-likely-to-die-nf",
+"status": "visto"
+},
+{
+"date": "2018-07-10",
+"id": "infierno-azul-nf",
+"status": "visto"
+},
+{
+"date": "2018-07-25",
+"id": "contraband-nf",
+"status": "visto"
+},
+{
+"date": "2018-07-31",
+"id": "the-rain-nf",
+"status": "visto"
+},
+{
+"date": "2018-08-11",
+"id": "z-nation-nf",
+"status": "visto"
+},
+{
+"date": "2018-09-05",
+"id": "meet-the-blacks-nf",
+"status": "visto"
+},
+{
+"date": "2018-10-16",
+"id": "zoo-nf",
+"status": "visto"
+},
+{
+"date": "2018-12-05",
+"id": "the-sinner-nf",
+"status": "visto"
+},
+{
+"date": "2018-12-24",
+"id": "creep-nf",
+"status": "visto"
+},
+{
+"date": "2019-01-06",
+"id": "salvation-nf",
+"status": "visto"
+},
+{
+"date": "2019-01-17",
+"id": "12-monos-nf",
+"status": "visto"
+},
+{
+"date": "2019-01-18",
+"id": "eliminado-nf",
+"status": "visto"
+},
+{
+"date": "2019-01-31",
+"id": "circulo-nf",
+"status": "visto"
+},
+{
+"date": "2019-02-03",
+"id": "el-juego-de-gerald-nf",
+"status": "visto"
+},
+{
+"date": "2019-03-02",
+"id": "life-vida-nf",
+"status": "visto"
+},
+{
+"date": "2019-03-17",
+"id": "hostel-nf",
+"status": "visto"
+},
+{
+"date": "2019-04-06",
+"id": "hannibal-nf",
+"status": "visto"
+},
+{
+"date": "2019-04-07",
+"id": "triple-frontera-nf",
+"status": "visto"
+},
+{
+"date": "2019-04-21",
+"id": "buster-s-mal-heart-nf",
+"status": "visto"
+},
+{
+"date": "2019-04-28",
+"id": "sobrevivir-es-el-reto-nf",
+"status": "visto"
+},
+{
+"date": "2019-05-02",
+"id": "noche-de-venganza-nf",
+"status": "visto"
+},
+{
+"date": "2019-05-05",
+"id": "chambers-nf",
+"status": "visto"
+},
+{
+"date": "2019-05-13",
+"id": "vengadores-la-era-de-ultron-nf",
+"status": "visto"
+},
+{
+"date": "2019-05-22",
+"id": "the-society-nf",
+"status": "visto"
+},
+{
+"date": "2019-05-27",
+"id": "slasher-nf",
+"status": "visto"
+},
+{
+"date": "2019-06-12",
+"id": "baby-driver-nf",
+"status": "visto"
+},
+{
+"date": "2019-06-25",
+"id": "hot-girls-wanted-nf",
+"status": "visto"
+},
+{
+"date": "2019-07-01",
+"id": "target-nf",
+"status": "visto"
+},
+{
+"date": "2019-07-22",
+"id": "dark",
+"status": "visto"
+},
+{
+"date": "2019-08-29",
+"id": "otra-vida-nf",
+"status": "visto"
+},
+{
+"date": "2019-09-16",
+"id": "la-invitacion-nf",
+"status": "visto"
+},
+{
+"date": "2019-09-16",
+"id": "objetivo-la-casa-blanca-nf",
+"status": "visto"
+},
+{
+"date": "2019-09-18",
+"id": "travis-scott-look-mom-i-can-fly-nf",
+"status": "visto"
+},
+{
+"date": "2019-09-26",
+"id": "ninja-turtles-nf",
+"status": "visto"
+},
+{
+"date": "2019-10-14",
+"id": "el-camino-una-pelicula-de-breaking-bad-nf",
+"status": "visto"
+},
+{
+"date": "2019-10-20",
+"id": "annabelle-creation-nf",
+"status": "visto"
+},
+{
+"date": "2019-10-30",
+"id": "wounds-nf",
+"status": "visto"
+},
+{
+"date": "2019-11-04",
+"id": "camara-del-terror-nf",
+"status": "visto"
+},
+{
+"date": "2019-11-06",
+"id": "the-end-of-the-f-ing-world-nf",
+"status": "visto"
+},
+{
+"date": "2019-11-10",
+"id": "al-borde-de-la-realidad-nf",
+"status": "abandonado"
+},
+{
+"date": "2019-12-19",
+"id": "nuestro-planeta-nf",
+"status": "abandonado"
+},
+{
+"date": "2019-12-31",
+"id": "mindhunter-nf",
+"status": "visto"
+},
+{
+"date": "2020-01-12",
+"id": "a-los-gatos-ni-tocarlos-nf",
+"status": "visto"
+},
+{
+"date": "2020-01-19",
+"id": "la-mente-de-un-asesino-nf",
+"status": "visto"
+},
+{
+"date": "2020-01-22",
+"id": "black-sails-nf",
+"status": "visto"
+},
+{
+"date": "2020-01-30",
+"id": "cuando-llama-un-extrano-nf",
+"status": "visto"
+},
+{
+"date": "2020-02-08",
+"id": "manhunt-nf",
+"status": "visto"
+},
+{
+"date": "2020-02-13",
+"id": "cam-nf",
+"status": "visto"
+},
+{
+"date": "2020-02-13",
+"id": "no-hables-con-extranos-nf",
+"status": "visto"
+},
+{
+"date": "2020-02-16",
+"id": "halloween-el-origen-nf",
+"status": "visto"
+},
+{
+"date": "2020-02-19",
+"id": "the-i-land-nf",
+"status": "visto"
+},
+{
+"date": "2020-02-26",
+"id": "el-sexo-en-pocas-palabras-nf",
+"status": "abandonado"
+},
+{
+"date": "2020-03-17",
+"id": "flu-nf",
+"status": "visto"
+},
+{
+"date": "2020-03-17",
+"id": "toy-boy-nf",
+"status": "abandonado"
+},
+{
+"date": "2020-05-17",
+"id": "el-hoyo-nf",
+"status": "visto"
+},
+{
+"date": "2020-05-19",
+"id": "el-ultimo-baile-nf",
+"status": "visto"
+},
+{
+"date": "2020-06-03",
+"id": "la-cosa-the-thing-nf",
+"status": "visto"
+},
+{
+"date": "2020-06-09",
+"id": "por-trece-razones-nf",
+"status": "visto"
+},
+{
+"date": "2020-06-17",
+"id": "rick-y-morty-nf",
+"status": "visto"
+},
+{
+"date": "2020-09-25",
+"id": "vivo-nf",
+"status": "visto"
+},
+{
+"date": "2020-09-27",
+"id": "the-babysitter-killer-queen-nf",
+"status": "visto"
+},
+{
+"date": "2020-10-28",
+"id": "rec-nf",
+"status": "visto"
+},
+{
+"date": "2020-11-07",
+"id": "donde-se-esconden-los-mas-buscados-nf",
+"status": "abandonado"
+},
+{
+"date": "2020-11-08",
+"id": "el-lobo-de-wall-street-nf",
+"status": "visto"
+},
+{
+"date": "2020-11-16",
+"id": "focus-nf",
+"status": "visto"
+},
+{
+"date": "2020-12-02",
+"id": "sinister-nf",
+"status": "visto"
+},
+{
+"date": "2020-12-04",
+"id": "the-walking-dead-nf",
+"status": "visto"
+},
+{
+"date": "2020-12-20",
+"id": "spider-man-nf",
+"status": "visto"
+},
+{
+"date": "2020-12-20",
+"id": "el-cadaver-nf",
+"status": "visto"
+},
+{
+"date": "2020-12-22",
+"id": "spider-man-3-nf",
+"status": "visto"
+},
+{
+"date": "2021-01-10",
+"id": "escape-room-nf",
+"status": "visto"
+},
+{
+"date": "2021-01-18",
+"id": "panico-hush-nf",
+"status": "visto"
+},
+{
+"date": "2021-02-02",
+"id": "dangerous-lies-nf",
+"status": "visto"
+},
+{
+"date": "2021-02-13",
+"id": "todos-mis-amigos-estan-muertos-nf",
+"status": "visto"
+},
+{
+"date": "2021-02-26",
+"id": "el-caso-alcasser-nf",
+"status": "visto"
+},
+{
+"date": "2021-02-27",
+"id": "cementerio-de-animales-nf",
+"status": "visto"
+},
+{
+"date": "2021-02-27",
+"id": "django-desencadenado-nf",
+"status": "visto"
+},
+{
+"date": "2021-03-01",
+"id": "acosador-nocturno-nf",
+"status": "visto"
+},
+{
+"date": "2021-03-19",
+"id": "multiple-nf",
+"status": "visto"
+},
+{
+"date": "2021-03-26",
+"id": "hijos-de-la-anarquia-nf",
+"status": "visto"
+},
+{
+"date": "2021-04-05",
+"id": "historias-de-miedo-para-contar-en-la-oscuridad-nf",
+"status": "visto"
+},
+{
+"date": "2021-04-07",
+"id": "los-ultimos-frikis-del-mundo-feliz-apocalipsis-nf",
+"status": "visto"
+},
+{
+"date": "2021-04-15",
+"id": "por-que-me-matasteis-nf",
+"status": "visto"
+},
+{
+"date": "2021-04-24",
+"id": "spartacus-nf",
+"status": "visto"
+},
+{
+"date": "2021-04-26",
+"id": "prison-break-nf",
+"status": "visto"
+},
+{
+"date": "2021-04-27",
+"id": "72-animales-peligrosos-nf",
+"status": "visto"
+},
+{
+"date": "2021-04-28",
+"id": "polizon-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-05",
+"id": "creep-2-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-05",
+"id": "hostel-3-de-vuelta-al-horror-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-11",
+"id": "sexify-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-17",
+"id": "la-mujer-en-la-ventana-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-22",
+"id": "como-defender-a-un-asesino-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-24",
+"id": "shooter-el-tirador-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-25",
+"id": "la-trampa-del-mal-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-25",
+"id": "el-vagon-de-la-muerte-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-26",
+"id": "ejercito-de-los-muertos-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-26",
+"id": "yo-soy-todas-ellas-nf",
+"status": "visto"
+},
+{
+"date": "2021-05-27",
+"id": "geminis-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-01",
+"id": "scream-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-12",
+"id": "lupin-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-14",
+"id": "bob-esponja-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-15",
+"id": "el-bar-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-16",
+"id": "milf-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-16",
+"id": "el-caso-watts-el-padre-homicida-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-16",
+"id": "viernes-13-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-18",
+"id": "los-100-nf",
+"status": "visto"
+},
+{
+"date": "2021-06-20",
+"id": "ser-padre-nf",
+"status": "visto"
+},
+{
+"date": "2021-07-03",
+"id": "la-calle-del-terror-parte-1-1994-nf",
+"status": "visto"
+},
+{
+"date": "2021-07-08",
+"id": "the-blacklist-nf",
+"status": "visto"
+},
+{
+"date": "2021-07-08",
+"id": "resident-evil-nf",
+"status": "visto"
+},
+{
+"date": "2021-07-12",
+"id": "la-calle-del-terror-parte-2-1978-nf",
+"status": "visto"
+},
+{
+"date": "2021-07-16",
+"id": "la-calle-del-terror-parte-3-1666-nf",
+"status": "visto"
+},
+{
+"date": "2021-07-25",
+"id": "the-purge-la-noche-de-las-bestias-nf",
+"status": "visto"
+},
+{
+"date": "2021-08-08",
+"id": "padre-de-familia-nf",
+"status": "visto"
+},
+{
+"date": "2021-08-10",
+"id": "como-vender-drogas-online-a-toda-pastilla-nf",
+"status": "visto"
+},
+{
+"date": "2021-08-12",
+"id": "mudanza-mortal-nf",
+"status": "visto"
+},
+{
+"date": "2021-08-13",
+"id": "cielo-rojo-sangre-nf",
+"status": "visto"
+},
+{
+"date": "2021-09-02",
+"id": "los-sin-nombre-nf",
+"status": "visto"
+},
+{
+"date": "2021-09-02",
+"id": "perdida-nf",
+"status": "visto"
+},
+{
+"date": "2021-09-12",
+"id": "presas-de-caza-nf",
+"status": "visto"
+},
+{
+"date": "2021-09-20",
+"id": "sex-education-nf",
+"status": "visto"
+},
+{
+"date": "2021-09-24",
+"id": "el-juego-del-calamar-nf",
+"status": "visto"
+},
+{
+"date": "2021-09-29",
+"id": "clickbait-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-02",
+"id": "los-extranos-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-09",
+"id": "hay-alguien-en-tu-casa-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-12",
+"id": "el-precio-del-poder-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-17",
+"id": "you-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-19",
+"id": "el-dilema-de-las-redes-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-25",
+"id": "como-conoci-a-vuestra-madre-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-28",
+"id": "death-note-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-28",
+"id": "joker-nf",
+"status": "visto"
+},
+{
+"date": "2021-10-29",
+"id": "mowgli-la-leyenda-de-la-selva-nf",
+"status": "visto"
+},
+{
+"date": "2021-11-05",
+"id": "death-note-series-nf",
+"status": "visto"
+},
+{
+"date": "2021-11-08",
+"id": "donde-esta-marta-nf",
+"status": "visto"
+},
+{
+"date": "2021-11-11",
+"id": "outer-banks-nf",
+"status": "visto"
+},
+{
+"date": "2021-11-16",
+"id": "jurassic-park-parque-jurasico-nf",
+"status": "visto"
+},
+{
+"date": "2021-11-19",
+"id": "gladiator-el-gladiador-nf",
+"status": "visto"
+},
+{
+"date": "2021-11-19",
+"id": "alerta-roja-nf",
+"status": "visto"
+},
+{
+"date": "2021-12-04",
+"id": "la-casa-de-papel",
+"status": "visto"
+},
+{
+"date": "2021-12-06",
+"id": "rumbo-al-infierno-nf",
+"status": "visto"
+},
+{
+"date": "2021-12-11",
+"id": "ricos-y-mimados-nf",
+"status": "visto"
+},
+{
+"date": "2021-12-13",
+"id": "heat-nf",
+"status": "visto"
+},
+{
+"date": "2021-12-18",
+"id": "the-amazing-spider-man-2-el-poder-de-electro-nf",
+"status": "visto"
+},
+{
+"date": "2021-12-18",
+"id": "the-amazing-spider-man-nf",
+"status": "visto"
+},
+{
+"date": "2021-12-19",
+"id": "spider-man-homecoming-nf",
+"status": "visto"
+},
+{
+"date": "2021-12-26",
+"id": "baywatch-los-vigilantes-de-la-playa-nf",
+"status": "visto"
+},
+{
+"date": "2021-12-26",
+"id": "no-mires-arriba-nf",
+"status": "visto"
+},
+{
+"date": "2022-01-25",
+"id": "jugando-con-fuego-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-05",
+"id": "estamos-muertos-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-12",
+"id": "el-timador-de-tinder-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-14",
+"id": "black-mirror-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-18",
+"id": "the-witcher-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-18",
+"id": "la-matanza-de-texas-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-22",
+"id": "naufrago-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-27",
+"id": "quien-es-anna-nf",
+"status": "abandonado"
+},
+{
+"date": "2022-02-27",
+"id": "vikingos-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-28",
+"id": "un-espia-y-medio-nf",
+"status": "visto"
+},
+{
+"date": "2022-02-28",
+"id": "caida-en-picado-el-caso-contra-boeing-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-01",
+"id": "jumanji-siguiente-nivel-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-01",
+"id": "jumanji-bienvenidos-a-la-jungla-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-01",
+"id": "jumanji-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-01",
+"id": "a-ciegas-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-02",
+"id": "bad-boys-for-life-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-05",
+"id": "mib-men-in-black-hombres-de-negro-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-07",
+"id": "miib-hombres-de-negro-ii-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-08",
+"id": "los-infieles-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-08",
+"id": "scary-movie-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-09",
+"id": "el-recluso-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-10",
+"id": "slender-man-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-11",
+"id": "distrito-9-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-13",
+"id": "el-paquete-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-14",
+"id": "la-fiesta-de-las-salchichas-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-20",
+"id": "the-silence-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-21",
+"id": "i-am-a-killer-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-22",
+"id": "criminal-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-26",
+"id": "un-golpe-maestro-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-27",
+"id": "bojack-horseman-nf",
+"status": "visto"
+},
+{
+"date": "2022-03-27",
+"id": "800-metros-nf",
+"status": "visto"
+},
+{
+"date": "2022-04-01",
+"id": "el-asesino-del-impermeable-nf",
+"status": "visto"
+},
+{
+"date": "2022-04-02",
+"id": "alice-in-borderland-nf",
+"status": "visto"
+},
+{
+"date": "2022-04-02",
+"id": "preguntados-la-gran-pantalla-nf",
+"status": "visto"
+},
+{
+"date": "2022-04-09",
+"id": "elite-nf",
+"status": "visto"
+},
+{
+"date": "2022-04-17",
+"id": "dos-policias-rebeldes-nf",
+"status": "visto"
+},
+{
+"date": "2022-04-25",
+"id": "lucifer-nf",
+"status": "abandonado"
+},
+{
+"date": "2022-04-25",
+"id": "peter-pan-la-gran-aventura-nf",
+"status": "visto"
+},
+{
+"date": "2022-04-26",
+"id": "elige-o-muere-nf",
+"status": "visto"
+},
+{
+"date": "2022-05-06",
+"id": "insatiable-nf",
+"status": "visto"
+},
+{
+"date": "2022-05-07",
+"id": "el-marginal-nf",
+"status": "visto"
+},
+{
+"date": "2022-05-22",
+"id": "incompatibles-2-nf",
+"status": "visto"
+},
+{
+"date": "2022-05-22",
+"id": "conversaciones-con-asesinos-nf",
+"status": "visto"
+},
+{
+"date": "2022-06-08",
+"id": "ozark-nf",
+"status": "visto"
+},
+{
+"date": "2022-06-14",
+"id": "peaky-blinders-nf",
+"status": "visto"
+},
+{
+"date": "2022-07-02",
+"id": "stranger-things-nf",
+"status": "visto"
+},
+{
+"date": "2022-07-28",
+"id": "sigue-respirando-nf",
+"status": "abandonado"
+},
+{
+"date": "2022-08-21",
+"id": "sandman-nf",
+"status": "visto"
+},
+{
+"date": "2022-08-28",
+"id": "breaking-bad",
+"status": "visto"
+},
+{
+"date": "2022-09-12",
+"id": "better-call-saul-nf",
+"status": "visto"
+}
+],
+"label": "Netflix (ene 2018 – sep 2022)"
+},
+{
+"id": "plex-2023-2026",
+"createdAt": 1763764000000,
+"items": [
+{
+"dates": [
+"2026-11-01"
+],
+"id": "el-final-de-oak-street-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-10-31"
+],
+"id": "el-hombre-del-saco-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-10-25"
+],
+"id": "distrito-9-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2026-09-27"
+],
+"id": "no-respires-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-09-26"
+],
+"id": "no-respires-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-09-12"
+],
+"id": "tiburon-negro-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-09-12"
+],
+"id": "halloween-el-final-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-09-11"
+],
+"id": "gru-2-mi-villano-favorito-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-09-05",
+"2025-11-15"
+],
+"id": "avengers-infinity-war-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-30"
+],
+"id": "gru-mi-villano-favorito-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-14"
+],
+"id": "la-noche-de-halloween-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-14"
+],
+"id": "halloween-kills-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-13"
+],
+"id": "harry-potter-y-la-orden-del-fenix-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-12"
+],
+"id": "harry-potter-y-el-caliz-de-fuego-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-11"
+],
+"id": "obsession-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-10"
+],
+"id": "harry-potter-y-el-prisionero-de-azkaban-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-08"
+],
+"id": "harry-potter-y-la-piedra-filosofal-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-04"
+],
+"id": "los-cuatro-fantasticos-primeros-pasos-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-04"
+],
+"id": "capitan-america-brave-new-world-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-04"
+],
+"id": "the-marvels-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-03"
+],
+"id": "ant-man-y-la-avispa-quantumania-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-03"
+],
+"id": "thor-love-and-thunder-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-02"
+],
+"id": "black-panther-wakanda-forever-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-01"
+],
+"id": "doctor-strange-en-el-multiverso-de-la-locura-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-07-12"
+],
+"id": "shang-chi-y-la-leyenda-de-los-diez-anillos-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-07-12"
+],
+"id": "kraven-the-hunter-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-07-11"
+],
+"id": "logan-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-07-05"
+],
+"id": "halloween-ii-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-07-05"
+],
+"id": "x-men-fenix-oscura-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-06-07"
+],
+"id": "depredador-dominante-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-04-25"
+],
+"id": "return-to-silent-hill-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-01-25"
+],
+"id": "un-lugar-tranquilo-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-01-24"
+],
+"id": "un-lugar-tranquilo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-01-18"
+],
+"id": "x-men-dias-del-futuro-pasado-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-01-11"
+],
+"id": "lobezno-inmortal-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-01-10"
+],
+"id": "deadpool-y-lobezno-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-01-04"
+],
+"id": "x-men-primera-generacion-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-28"
+],
+"id": "x-men-origenes-lobezno-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-27"
+],
+"id": "x-men-la-decision-final-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-26"
+],
+"id": "x-men-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-25"
+],
+"id": "x-men-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-20"
+],
+"id": "spider-man-no-way-home-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-19"
+],
+"id": "la-acompanante-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-15"
+],
+"id": "amanecer-de-los-muertos-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-14"
+],
+"id": "black-phone-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-12-13"
+],
+"id": "capitana-marvel-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-11-09"
+],
+"id": "ant-man-y-la-avispa-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-11-08"
+],
+"id": "spider-man-homecoming-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-11-02"
+],
+"id": "doctor-strange-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-11-02"
+],
+"id": "black-panther-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-10-31"
+],
+"id": "halloween-el-origen-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-10-26"
+],
+"id": "viuda-negra-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-10-25"
+],
+"id": "capitan-america-civil-war-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-10-19"
+],
+"id": "ant-man-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-10-18"
+],
+"id": "avengers-la-era-de-ultron-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-10-18"
+],
+"id": "garfield-la-pelicula-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-10-12"
+],
+"id": "capitan-america-el-soldado-de-invierno-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-28"
+],
+"id": "thor-el-mundo-oscuro-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-27"
+],
+"id": "halloween-resurrection-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-21"
+],
+"id": "iron-man-3-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-20"
+],
+"id": "avengers-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-20"
+],
+"id": "thor-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-20"
+],
+"id": "ice-road-venganza-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-11"
+],
+"id": "iron-man-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-07"
+],
+"id": "el-increible-hulk-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-09-06"
+],
+"id": "iron-man-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-31"
+],
+"id": "el-reino-del-planeta-de-los-simios-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-30"
+],
+"id": "capitan-america-el-primer-vengador-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-27"
+],
+"id": "el-amanecer-del-planeta-de-los-simios-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-26"
+],
+"id": "deadpool-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-25"
+],
+"id": "el-origen-del-planeta-de-los-simios-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-25"
+],
+"id": "deadpool-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-24"
+],
+"id": "piratas-del-caribe-la-venganza-de-salazar-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-20"
+],
+"id": "objetivo-washington-d-c-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-19"
+],
+"id": "objetivo-londres-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-18"
+],
+"id": "piratas-del-caribe-en-mareas-misteriosas-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-14"
+],
+"id": "piratas-del-caribe-en-el-fin-del-mundo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-10"
+],
+"id": "piratas-del-caribe-el-cofre-del-hombre-muerto-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-02"
+],
+"id": "piratas-del-caribe-la-maldicion-de-la-perla-negra-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-07-21"
+],
+"id": "scary-movie-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-07-20"
+],
+"id": "scream-vigila-quien-llama-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-06-24"
+],
+"id": "pirana-ii-los-vampiros-del-mar-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-06-22"
+],
+"id": "geminis-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-06-21"
+],
+"id": "bullet-train-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-06-15"
+],
+"id": "until-dawn-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-04-19"
+],
+"id": "elysium-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-04-13"
+],
+"id": "objetivo-la-casa-blanca-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-04-09"
+],
+"id": "sully-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-04-05"
+],
+"id": "el-cadaver-de-anna-fritz-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-03-02"
+],
+"id": "creep-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-02-09"
+],
+"id": "independence-day-contraataque-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-02-01"
+],
+"id": "independence-day-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-18"
+],
+"id": "el-dictador-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-11"
+],
+"id": "civil-war-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-09"
+],
+"id": "geostorm-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-09"
+],
+"id": "dejame-salir-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-08"
+],
+"id": "ghost-rider-el-motorista-fantasma-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-08"
+],
+"id": "elevator-game-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-06"
+],
+"id": "algo-bajo-el-agua-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-12-29"
+],
+"id": "matrix-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-12-26"
+],
+"id": "el-grinch-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-12-14"
+],
+"id": "65-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-12-09"
+],
+"id": "transformers-la-era-de-la-extincion-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-12-08"
+],
+"id": "drive-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-12-06"
+],
+"id": "examen-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-12-01"
+],
+"id": "dos-policias-rebeldes-ii-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-11-24"
+],
+"id": "transformers-el-lado-oscuro-de-la-luna-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-11-24"
+],
+"id": "la-llegada-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-11-24"
+],
+"id": "aliens-vs-predator-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-11-01"
+],
+"id": "cadaver-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-27"
+],
+"id": "halloween-veinte-anos-despues-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-27"
+],
+"id": "terrifier-3-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-26"
+],
+"id": "hostel-3-de-vuelta-al-horror-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-25"
+],
+"id": "hostel-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-20"
+],
+"id": "strangers-capitulo-1-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-19"
+],
+"id": "alien-romulus-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-13"
+],
+"id": "alien-vs-predator-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-13"
+],
+"id": "warcraft-el-origen-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-10-05"
+],
+"id": "el-hoyo-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-29"
+],
+"id": "predator-la-presa-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-24"
+],
+"id": "predator-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-24"
+],
+"id": "predators-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-23"
+],
+"id": "resacon-en-las-vegas-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-23"
+],
+"id": "marte-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-21"
+],
+"id": "smile-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-15"
+],
+"id": "halloween-la-maldicion-de-michael-myers-halloween-6-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-11"
+],
+"id": "twisters-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-08"
+],
+"id": "mantarrayas-criaturas-de-otro-planeta-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-09-08"
+],
+"id": "halloween-5-la-venganza-de-michael-myers-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-08-20"
+],
+"id": "halloween-4-el-regreso-de-michael-myers-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-08-14",
+"2024-05-04"
+],
+"id": "2012-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-08-13"
+],
+"id": "atrapada-en-las-profundidades-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-08-11"
+],
+"id": "halloween-iii-el-dia-de-la-bruja-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-07-21"
+],
+"id": "forrest-gump-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-07-21"
+],
+"id": "percy-jackson-y-el-mar-de-los-monstruos-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-07-14"
+],
+"id": "percy-jackson-y-el-ladron-del-rayo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-30"
+],
+"id": "ratatouille-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-29"
+],
+"id": "en-las-profundidades-del-sena-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-28"
+],
+"id": "halloween-ii-sanguinario-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-23"
+],
+"id": "soy-leyenda-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-23"
+],
+"id": "transformers-la-venganza-de-los-caidos-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-22"
+],
+"id": "cementerio-de-animales-el-origen-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-16"
+],
+"id": "godzilla-y-kong-el-nuevo-imperio-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-16"
+],
+"id": "buscando-a-dory-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-15"
+],
+"id": "cementerio-de-animales-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-09"
+],
+"id": "godzilla-minus-one-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-01"
+],
+"id": "buscando-a-nemo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-26"
+],
+"id": "seven-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-25"
+],
+"id": "life-vida-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-21"
+],
+"id": "kung-fu-panda-3-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-21"
+],
+"id": "san-andres-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-20"
+],
+"id": "kung-fu-panda-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-19"
+],
+"id": "transformers-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-19"
+],
+"id": "la-vida-de-pi-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-18"
+],
+"id": "ice-age-4-la-formacion-de-los-continentes-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-16"
+],
+"id": "pirana-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-12"
+],
+"id": "godzilla-vs-kong-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-12"
+],
+"id": "lift-un-robo-de-primera-clase-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-05-11"
+],
+"id": "kung-fu-panda-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-28"
+],
+"id": "batman-el-caballero-oscuro-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-27"
+],
+"id": "dragon-ball-z-fusion-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-21"
+],
+"id": "ice-age-3-el-origen-de-los-dinosaurios-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-14"
+],
+"id": "batman-begins-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-14"
+],
+"id": "ice-age-2-el-deshielo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-14"
+],
+"id": "el-hoyo-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-12"
+],
+"id": "la-invitacion-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-07"
+],
+"id": "la-monja-ii-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-04-06"
+],
+"id": "gran-torino-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-31"
+],
+"id": "truco-o-trato-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-29"
+],
+"id": "godzilla-rey-de-los-monstruos-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-29"
+],
+"id": "un-espia-y-medio-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-19"
+],
+"id": "la-casa-del-terror-haunt-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-18"
+],
+"id": "jack-en-la-caja-maldita-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-17"
+],
+"id": "john-wick-4-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-16"
+],
+"id": "hostel-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-10"
+],
+"id": "john-wick-capitulo-3-parabellum-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-10"
+],
+"id": "el-placer-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-03"
+],
+"id": "john-wick-pacto-de-sangre-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-02-25"
+],
+"id": "john-wick-otro-dia-para-matar-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-02-17"
+],
+"id": "ice-age-la-edad-de-hielo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-02-04"
+],
+"id": "godzilla-shin-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-02-04"
+],
+"id": "dragon-ball-z-guerreros-de-fuerza-ilimitada-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-02-03",
+"2023-07-25"
+],
+"id": "dragon-ball-z-los-mejores-rivales-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-28"
+],
+"id": "godzilla-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-28"
+],
+"id": "guerra-mundial-z-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-27"
+],
+"id": "el-nino-con-el-pijama-de-rayas-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-21"
+],
+"id": "alien-covenant-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-14"
+],
+"id": "la-memoria-de-un-asesino-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-13"
+],
+"id": "scarface-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-07"
+],
+"id": "prometheus-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-01"
+],
+"id": "guardianes-de-la-galaxia-volumen-3-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-31"
+],
+"id": "black-phone-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-30"
+],
+"id": "el-dia-de-manana-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-29"
+],
+"id": "garganta-profunda-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-25"
+],
+"id": "saw-x-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-23"
+],
+"id": "guardianes-de-la-galaxia-vol-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-23"
+],
+"id": "the-purge-anarchy-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-22"
+],
+"id": "the-purge-la-noche-de-las-bestias-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-17"
+],
+"id": "golpe-de-estado-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-09"
+],
+"id": "non-stop-sin-escalas-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-07"
+],
+"id": "guardianes-de-la-galaxia-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-07"
+],
+"id": "los-extranos-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-03"
+],
+"id": "dragon-ball-super-broly-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-26"
+],
+"id": "dos-policias-rebeldes-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-25"
+],
+"id": "alien-resurreccion-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-19"
+],
+"id": "alien-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-12"
+],
+"id": "halloween-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-11"
+],
+"id": "la-monja-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-11"
+],
+"id": "venom-habra-matanza-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-09"
+],
+"id": "venom-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-05"
+],
+"id": "spider-man-3-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-04"
+],
+"id": "spider-man-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-03"
+],
+"id": "viernes-13-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-11-01"
+],
+"id": "spider-man-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-31"
+],
+"id": "annabelle-creation-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-29"
+],
+"id": "aliens-el-regreso-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-25"
+],
+"id": "dragon-ball-z-la-resurreccion-de-freezer-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-21",
+"2023-09-25"
+],
+"id": "annabelle-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-14"
+],
+"id": "alien-el-octavo-pasajero-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-07"
+],
+"id": "infiltrados-en-la-universidad-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-01"
+],
+"id": "depredador-2-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-01"
+],
+"id": "yo-robot-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-01"
+],
+"id": "depredador-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-01"
+],
+"id": "megalodon-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-01"
+],
+"id": "avatar-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-01"
+],
+"id": "avatar-el-sentido-del-agua-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-01"
+],
+"id": "el-pasajero-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-09-23"
+],
+"id": "97-minutos-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-09-17"
+],
+"id": "megalodon-2-la-fosa-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-09-17"
+],
+"id": "300-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-09-11"
+],
+"id": "infiltrados-en-clase-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-09-09"
+],
+"id": "super-mario-bros-la-pelicula-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-09-04"
+],
+"id": "dragon-ball-z-la-batalla-de-los-dioses-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-08-27"
+],
+"id": "tiburon-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-29"
+],
+"id": "dragon-ball-z-el-combate-definitivo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-28"
+],
+"id": "dragon-ball-z-el-regreso-de-broly-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-28"
+],
+"id": "dragon-ball-z-en-son-gohan-i-en-trunks-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-27"
+],
+"id": "dragon-ball-z-los-guerreros-de-plata-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-26"
+],
+"id": "dragon-ball-z-estalla-el-duelo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-24"
+],
+"id": "dragon-ball-z-el-pare-d-en-son-goku-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-24"
+],
+"id": "dragon-ball-z-el-super-guerrer-son-goku-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-23"
+],
+"id": "dragon-ball-z-la-super-batalla-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-07-23"
+],
+"id": "dragon-ball-z-el-mas-fuerte-del-mundo-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-11-19"
+],
+"id": "los-simpson-px",
+"status": "viendo"
+},
+{
+"dates": [
+"2026-11-16"
+],
+"id": "vikingos-nf",
+"status": "viendo"
+},
+{
+"dates": [
+"2026-11-05"
+],
+"id": "mentes-criminales-px",
+"status": "viendo"
+},
+{
+"dates": [
+"2026-11-05"
+],
+"id": "inazuma-eleven-px",
+"status": "viendo"
+},
+{
+"dates": [
+"2026-10-25"
+],
+"id": "black-mirror-nf",
+"status": "viendo"
+},
+{
+"dates": [
+"2026-08-19"
+],
+"id": "south-park-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-13"
+],
+"id": "crims-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-07"
+],
+"id": "marvel-s-the-punisher-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-05"
+],
+"id": "alien-earth-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-02"
+],
+"id": "la-revuelta-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-02"
+],
+"id": "hawkeye-px",
+"status": "abandonado"
+},
+{
+"dates": [
+"2026-07-19"
+],
+"id": "the-falcon-and-the-winter-soldier-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-06-14",
+"2025-03-24",
+"2024-07-28",
+"2024-03-09"
+],
+"id": "como-conoci-a-vuestra-madre-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2026-04-19"
+],
+"id": "wandavision-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-02-01",
+"2025-02-12"
+],
+"id": "dragon-ball-super-px",
+"status": "visto"
+},
+{
+"dates": [
+"2026-01-03",
+"2023-12-28"
+],
+"id": "death-note-series-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-11-24"
+],
+"id": "alice-in-borderland-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-31"
+],
+"id": "dragon-ball-z-kai-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-08-25"
+],
+"id": "mr-robot-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-07-05"
+],
+"id": "el-juego-del-calamar-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-05-30"
+],
+"id": "the-last-of-us-serie",
+"status": "visto"
+},
+{
+"dates": [
+"2025-05-16"
+],
+"id": "the-walking-dead-dead-city-px",
+"status": "abandonado"
+},
+{
+"dates": [
+"2025-05-05"
+],
+"id": "you-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-02-28"
+],
+"id": "dragon-ball-daima-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-02-23"
+],
+"id": "the-walking-dead-daryl-dixon-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-02-16"
+],
+"id": "escenas-de-matrimonio-px",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-12"
+],
+"id": "the-walking-dead-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2025-01-04"
+],
+"id": "la-que-se-avecina-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-08-13"
+],
+"id": "manifest-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-07-21"
+],
+"id": "mh370-el-avion-que-desaparecio-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-07-19"
+],
+"id": "la-isla-de-las-tentaciones-px",
+"status": "abandonado"
+},
+{
+"dates": [
+"2024-07-07"
+],
+"id": "the-jinx-the-life-and-deaths-of-robert-durst-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-24"
+],
+"id": "the-purge-serie-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-21"
+],
+"id": "peaky-blinders-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-06-10"
+],
+"id": "one-piece-px",
+"status": "abandonado"
+},
+{
+"dates": [
+"2024-05-13"
+],
+"id": "caminantes-px",
+"status": "visto"
+},
+{
+"dates": [
+"2024-03-16"
+],
+"id": "slasher-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-02-24"
+],
+"id": "perdidos-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-12"
+],
+"id": "prison-break-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-03"
+],
+"id": "berlin-px",
+"status": "visto"
+},
+{
+"dates": [
+"2023-12-24"
+],
+"id": "saga-px",
+"status": "abandonado"
+},
+{
+"dates": [
+"2023-11-22"
+],
+"id": "spartacus-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-08"
+],
+"id": "lupin-nf",
+"status": "visto"
+},
+{
+"dates": [
+"2023-09-29"
+],
+"id": "sex-education-nf",
+"status": "visto"
+}
+],
+"label": "Plex (jul 2023 – nov 2026)"
+},
+{
+"id": "plex-capitulos",
+"createdAt": 1763770000000,
+"items": [
+{
+"id": "los-simpson-px",
+"prog": {
+"d": "2026-11-19",
+"e": 8,
+"s": 26
+}
+},
+{
+"id": "vikingos-nf",
+"prog": {
+"d": "2026-11-16",
+"e": 4,
+"s": 2
+}
+},
+{
+"id": "mentes-criminales-px",
+"prog": {
+"d": "2026-11-05",
+"e": 3,
+"s": 12
+}
+},
+{
+"id": "inazuma-eleven-px",
+"prog": {
+"d": "2026-11-05",
+"e": 17,
+"s": 3
+}
+},
+{
+"id": "black-mirror-nf",
+"prog": {
+"d": "2026-10-25",
+"e": 6,
+"s": 7
+}
+},
+{
+"id": "south-park-px",
+"prog": {
+"d": "2026-08-19",
+"e": 12,
+"s": 3
+}
+},
+{
+"id": "crims-px",
+"prog": {
+"d": "2026-08-13",
+"e": 5,
+"s": 6
+}
+},
+{
+"id": "marvel-s-the-punisher-px",
+"prog": {
+"d": "2026-08-07",
+"e": 13,
+"s": 2
+}
+},
+{
+"id": "alien-earth-px",
+"prog": {
+"d": "2026-08-05",
+"e": 8,
+"s": 1
+}
+},
+{
+"id": "la-revuelta-px",
+"prog": {
+"d": "2026-08-02",
+"e": 159,
+"s": 2
+}
+},
+{
+"id": "hawkeye-px",
+"prog": {
+"d": "2026-08-02",
+"e": 2,
+"s": 1
+}
+},
+{
+"id": "the-falcon-and-the-winter-soldier-px",
+"prog": {
+"d": "2026-07-19",
+"e": 5,
+"s": 1
+}
+},
+{
+"id": "como-conoci-a-vuestra-madre-nf",
+"prog": {
+"d": "2026-06-14",
+"e": 24,
+"s": 8
+}
+},
+{
+"id": "wandavision-px",
+"prog": {
+"d": "2026-04-19",
+"e": 9,
+"s": 1
+}
+},
+{
+"id": "dragon-ball-super-px",
+"prog": {
+"d": "2026-02-01",
+"e": 131,
+"s": 5
+}
+},
+{
+"id": "death-note-series-nf",
+"prog": {
+"d": "2026-01-03",
+"e": 37,
+"s": 1
+}
+},
+{
+"id": "alice-in-borderland-nf",
+"prog": {
+"d": "2025-11-24",
+"e": 6,
+"s": 3
+}
+},
+{
+"id": "dragon-ball-z-kai-px",
+"prog": {
+"d": "2025-08-31",
+"e": 167,
+"s": 6
+}
+},
+{
+"id": "mr-robot-px",
+"prog": {
+"d": "2025-08-25",
+"e": 4,
+"s": 1
+}
+},
+{
+"id": "el-juego-del-calamar-nf",
+"prog": {
+"d": "2025-07-05",
+"e": 6,
+"s": 3
+}
+},
+{
+"id": "the-last-of-us-serie",
+"prog": {
+"d": "2025-05-30",
+"e": 7,
+"s": 2
+}
+},
+{
+"id": "the-walking-dead-dead-city-px",
+"prog": {
+"d": "2025-05-16",
+"e": 2,
+"s": 1
+}
+},
+{
+"id": "you-nf",
+"prog": {
+"d": "2025-05-05",
+"e": 10,
+"s": 5
+}
+},
+{
+"id": "dragon-ball-daima-px",
+"prog": {
+"d": "2025-02-28",
+"e": 20,
+"s": 1
+}
+},
+{
+"id": "the-walking-dead-daryl-dixon-px",
+"prog": {
+"d": "2025-02-23",
+"e": 6,
+"s": 2
+}
+},
+{
+"id": "escenas-de-matrimonio-px",
+"prog": {
+"d": "2025-02-16",
+"e": 47,
+"s": 2
+}
+},
+{
+"id": "the-walking-dead-nf",
+"prog": {
+"d": "2025-01-12",
+"e": 24,
+"s": 11
+}
+},
+{
+"id": "la-que-se-avecina-px",
+"prog": {
+"d": "2025-01-04",
+"e": 8,
+"s": 15
+}
+},
+{
+"id": "manifest-px",
+"prog": {
+"d": "2024-08-13",
+"e": 8,
+"s": 3
+}
+},
+{
+"id": "mh370-el-avion-que-desaparecio-px",
+"prog": {
+"d": "2024-07-21",
+"e": 3,
+"s": 1
+}
+},
+{
+"id": "la-isla-de-las-tentaciones-px",
+"prog": {
+"d": "2024-07-19",
+"e": 10,
+"s": 4
+}
+},
+{
+"id": "the-jinx-the-life-and-deaths-of-robert-durst-px",
+"prog": {
+"d": "2024-07-07",
+"e": 6,
+"s": 2
+}
+},
+{
+"id": "the-purge-serie-px",
+"prog": {
+"d": "2024-06-24",
+"e": 10,
+"s": 2
+}
+},
+{
+"id": "peaky-blinders-nf",
+"prog": {
+"d": "2024-06-21",
+"e": 6,
+"s": 6
+}
+},
+{
+"id": "one-piece-px",
+"prog": {
+"d": "2024-06-10",
+"e": 1,
+"s": 1
+}
+},
+{
+"id": "caminantes-px",
+"prog": {
+"d": "2024-05-13",
+"e": 3,
+"s": 1
+}
+},
+{
+"id": "slasher-nf",
+"prog": {
+"d": "2024-03-16",
+"e": 8,
+"s": 3
+}
+},
+{
+"id": "perdidos-nf",
+"prog": {
+"d": "2024-02-24",
+"e": 18,
+"s": 6
+}
+},
+{
+"id": "prison-break-nf",
+"prog": {
+"d": "2024-01-12",
+"e": 9,
+"s": 5
+}
+},
+{
+"id": "berlin-px",
+"prog": {
+"d": "2024-01-03",
+"e": 8,
+"s": 1
+}
+},
+{
+"id": "saga-px",
+"prog": {
+"d": "2023-12-24",
+"e": 6,
+"s": 1
+}
+},
+{
+"id": "spartacus-nf",
+"prog": {
+"d": "2023-11-22",
+"e": 10,
+"s": 4
+}
+},
+{
+"id": "lupin-nf",
+"prog": {
+"d": "2023-10-08",
+"e": 7,
+"s": 3
+}
+},
+{
+"id": "sex-education-nf",
+"prog": {
+"d": "2023-09-29",
+"e": 8,
+"s": 4
+}
+}
+],
+"label": "Por qué capítulo vas en cada serie (Plex)"
+},
+{
+"id": "psn-2026-11-22",
+"createdAt": 1764000090000,
+"items": [
+{
+"dates": [
+"2026-11-21"
+],
+"id": "grand-theft-auto-vi-ps",
+"status": "jugando"
+},
+{
+"dates": [
+"2026-11-22"
+],
+"id": "alan-wake-ps",
+"status": "jugando"
+},
+{
+"dates": [
+"2026-09-19"
+],
+"id": "sifu-ps",
+"status": "none"
+},
+{
+"dates": [
+"2023-12-03"
+],
+"id": "dead-by-daylight-ps",
+"status": "visto"
+},
+{
+"dates": [
+"2026-08-04"
+],
+"id": "cyberpunk-2077-ps",
+"status": "none"
+},
+{
+"dates": [
+"2026-07-28"
+],
+"id": "call-of-duty-black-ops-ii-ps",
+"status": "none"
+},
+{
+"dates": [
+"2026-03-15"
+],
+"id": "resident-evil-requiem-ps",
+"status": "visto"
+},
+{
+"dates": [
+"2025-10-20"
+],
+"id": "new-monopoly-ps",
+"status": "none"
+},
+{
+"id": "marvel-rivals-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2025-08-24"
+],
+"id": "ea-sports-fc-25-ps",
+"status": "none"
+},
+{
+"dates": [
+"2025-08-23"
+],
+"id": "resident-evil-4-ps",
+"status": "visto"
+},
+{
+"dates": [
+"2025-04-12",
+"2021-05-01"
+],
+"id": "subnautica-ps",
+"status": "visto"
+},
+{
+"dates": [
+"2025-04-13"
+],
+"id": "medievil-ps",
+"status": "none"
+},
+{
+"dates": [
+"2025-01-06"
+],
+"id": "silent-hill-2-ps",
+"status": "none"
+},
+{
+"dates": [
+"2024-10-18"
+],
+"id": "dragon-ball-sparking-zero-ps",
+"status": "none"
+},
+{
+"dates": [
+"2024-09-08"
+],
+"id": "the-dark-pictures-anthology-man-of-medan-ps",
+"status": "none"
+},
+{
+"dates": [
+"2024-08-18"
+],
+"id": "red-dead-redemption-2-ps",
+"status": "none"
+},
+{
+"dates": [
+"2024-06-15"
+],
+"id": "dragon-ball-z-kakarot-ps",
+"status": "none"
+},
+{
+"dates": [
+"2023-12-10"
+],
+"id": "ea-sports-fc-24-ps",
+"status": "none"
+},
+{
+"id": "f1-23-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2024-04-01"
+],
+"id": "hitman-3-ps",
+"status": "none"
+},
+{
+"id": "the-finals-ps",
+"status": "pendiente"
+},
+{
+"id": "resident-evil-7-biohazard-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2024-01-27"
+],
+"id": "god-of-war-ragnarok-ps",
+"status": "visto"
+},
+{
+"dates": [
+"2024-01-07"
+],
+"id": "plague-inc-evolved-ps",
+"status": "none"
+},
+{
+"dates": [
+"2023-12-03"
+],
+"id": "resident-evil-2-ps",
+"status": "visto"
+},
+{
+"dates": [
+"2023-10-30"
+],
+"id": "marvel-s-spider-man-2-ps",
+"status": "visto"
+},
+{
+"id": "nba-2k23-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2023-05-07"
+],
+"id": "wolfenstein-the-new-order-ps",
+"status": "none"
+},
+{
+"id": "doom-ps",
+"status": "pendiente"
+},
+{
+"id": "outer-wilds-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2023-04-12"
+],
+"id": "death-stranding-ps",
+"status": "none"
+},
+{
+"dates": [
+"2023-02-18"
+],
+"id": "stray-ps",
+"status": "none"
+},
+{
+"dates": [
+"2023-01-05"
+],
+"id": "fifa-23-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-12-31"
+],
+"id": "grand-theft-auto-vice-city-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-11-07"
+],
+"id": "watch-dogs-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-11-01"
+],
+"id": "outlast-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-10-12"
+],
+"id": "far-cry-3-classic-edition-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-09-24"
+],
+"id": "uno-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-09-04"
+],
+"id": "the-last-of-us-remastered-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-08-20"
+],
+"id": "monopoly-plus-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-08-16"
+],
+"id": "uncharted-3-drake-s-deception-remastered-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-08-13"
+],
+"id": "fifa-22-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-08-09"
+],
+"id": "minecraft-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-08-08"
+],
+"id": "marvel-s-guardians-of-the-galaxy-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-07-09"
+],
+"id": "fall-guys-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-07-04"
+],
+"id": "uncharted-2-among-thieves-remastered-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-04-18"
+],
+"id": "crash-bandicoot-2-cortex-strikes-back-ps",
+"status": "none"
+},
+{
+"id": "ark-survival-evolved-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2022-03-22"
+],
+"id": "horizon-forbidden-west-ps",
+"status": "none"
+},
+{
+"dates": [
+"2022-01-06"
+],
+"id": "uncharted-drake-s-fortune-remastered-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-12-31"
+],
+"id": "marvel-s-spider-man-miles-morales-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-12-21"
+],
+"id": "nba-2k22-ps",
+"status": "none"
+},
+{
+"id": "prison-architect-ps",
+"status": "pendiente"
+},
+{
+"id": "hollow-knight-ps",
+"status": "pendiente"
+},
+{
+"id": "probe-a-game-dev-experience-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2021-10-24"
+],
+"id": "stranded-deep-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-10-18"
+],
+"id": "resident-evil-village-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-09-12"
+],
+"id": "hitman-2-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-09-11"
+],
+"id": "fifa-21-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-09-08"
+],
+"id": "horizon-zero-dawn-ps",
+"status": "none"
+},
+{
+"id": "big-city-stories-ps",
+"status": "pendiente"
+},
+{
+"id": "tennis-world-tour-2-ps",
+"status": "pendiente"
+},
+{
+"id": "a-plague-tale-innocence-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2021-07-31"
+],
+"id": "alien-isolation-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-04-24"
+],
+"id": "nba-2k21-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-07-19"
+],
+"id": "call-of-duty-black-ops-4-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-06-18"
+],
+"id": "resident-evil-3-ps",
+"status": "visto"
+},
+{
+"id": "resident-evil-resistance-ps",
+"status": "pendiente"
+},
+{
+"id": "bloodborne-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2021-04-12"
+],
+"id": "infamous-second-son-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-04-11"
+],
+"id": "astro-s-playroom-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-02-28"
+],
+"id": "assassin-s-creed-valhalla-ps",
+"status": "none"
+},
+{
+"id": "mortal-kombat-x-ps",
+"status": "pendiente"
+},
+{
+"id": "tom-clancy-s-rainbow-six-siege-ps",
+"status": "pendiente"
+},
+{
+"id": "maneater-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2021-01-05"
+],
+"id": "battlefield-4-ps",
+"status": "none"
+},
+{
+"dates": [
+"2021-01-05"
+],
+"id": "batman-arkham-knight-ps",
+"status": "none"
+},
+{
+"id": "need-for-speed-rivals-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2020-12-29"
+],
+"id": "the-sims-4-ps",
+"status": "none"
+},
+{
+"dates": [
+"2020-12-26"
+],
+"id": "fallout-4-ps",
+"status": "none"
+},
+{
+"dates": [
+"2020-12-19"
+],
+"id": "crash-bandicoot-ps",
+"status": "none"
+},
+{
+"id": "star-wars-jedi-fallen-order-ps",
+"status": "pendiente"
+},
+{
+"id": "fortnite-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2020-12-08"
+],
+"id": "god-of-war-ps",
+"status": "none"
+},
+{
+"dates": [
+"2020-12-02"
+],
+"id": "ea-sports-ufc-3-ps",
+"status": "none"
+},
+{
+"id": "crash-bandicoot-warped-ps",
+"status": "pendiente"
+}
+],
+"label": "PlayStation (PSNProfiles): última vez jugado y estado"
+},
+{
+"id": "psn-2026-11-25",
+"createdAt": 1764100090000,
+"items": [
+{
+"id": "assassin-s-creed-origins-ps",
+"status": "pendiente"
+},
+{
+"id": "call-of-duty-modern-warfare-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2020-06-24"
+],
+"id": "nba-2k20-ps",
+"status": "none"
+},
+{
+"id": "call-of-duty-black-ops-iii-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2020-04-14"
+],
+"id": "marvel-s-spider-man-ps",
+"status": "none"
+},
+{
+"dates": [
+"2020-03-07"
+],
+"id": "days-gone-ps",
+"status": "none"
+},
+{
+"dates": [
+"2020-01-08"
+],
+"id": "grand-theft-auto-v-ps",
+"status": "none"
+},
+{
+"dates": [
+"2019-11-27"
+],
+"id": "fifa-20-ps",
+"status": "none"
+},
+{
+"dates": [
+"2019-11-19"
+],
+"id": "outlast-2-ps",
+"status": "none"
+},
+{
+"dates": [
+"2019-07-26"
+],
+"id": "nba-2k18-ps",
+"status": "none"
+},
+{
+"dates": [
+"2019-07-16"
+],
+"id": "tricky-towers-ps",
+"status": "none"
+},
+{
+"dates": [
+"2019-06-28"
+],
+"id": "nba-2k18-the-prelude-ps",
+"status": "none"
+},
+{
+"id": "fifa-16-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2019-05-17"
+],
+"id": "fifa-19-ps",
+"status": "none"
+},
+{
+"dates": [
+"2019-03-21"
+],
+"id": "resistance-3-ps",
+"status": "none"
+},
+{
+"id": "for-honor-ps",
+"status": "pendiente"
+},
+{
+"id": "call-of-duty-modern-warfare-remastered-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2019-02-16"
+],
+"id": "hitman-ps",
+"status": "none"
+},
+{
+"dates": [
+"2018-12-09"
+],
+"id": "soma-ps",
+"status": "none"
+},
+{
+"dates": [
+"2018-10-04"
+],
+"id": "friday-the-13th-ps",
+"status": "none"
+},
+{
+"dates": [
+"2018-09-27"
+],
+"id": "god-of-war-iii-remastered-ps",
+"status": "none"
+},
+{
+"id": "call-of-duty-wwii-ps",
+"status": "pendiente"
+},
+{
+"dates": [
+"2020-08-30"
+],
+"id": "fall-guys-ps",
+"status": "none"
+},
+{
+"dates": [
+"2020-08-21"
+],
+"id": "dead-by-daylight-ps",
+"status": "none"
+}
+],
+"label": "PlayStation (PSNProfiles): 24 juegos antiguos de PS4/PS3"
+}
+]
