@@ -1,0 +1,6 @@
+{
+  "appId": "es.alexvillar.puntua",
+  "appName": "Puntúa",
+  "webDir": "www",
+  "android": { "allowMixedContent": false }
+}

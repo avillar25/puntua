@@ -1,0 +1,82 @@
+name: Compilar APK
+
+on:
+  push:
+    branches: [main, "prueba/**"]   # las ramas prueba/* solo compilan, no publican versión
+    paths-ignore: ["README.md", "LICENSE", "images/**", "firestore.rules", ".github/workflows/pages.yml"]   # cambios solo de texto o de la web: no recompilar
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      # El runner de GitHub ya trae el SDK de Android instalado (ANDROID_HOME)
+      - name: Comprobar SDK de Android
+        run: echo "ANDROID_HOME=$ANDROID_HOME" && ls "$ANDROID_HOME"
+
+      - name: Leer versión y cambios
+        run: |
+          V=$(tr -d ' \n\r' < VERSION)
+          echo "VERSION=$V" >> $GITHUB_ENV
+          # Notas de esta versión: su apartado de CHANGELOG.md
+          awk -v v="## v$V" 'index($0,v)==1{f=1;next} /^## /{f=0} f' CHANGELOG.md > notas.md
+          cat notas.md
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Generar la web
+        run: python3 scripts/build-web.py
+
+      - name: Copiar la web a Android
+        run: npx cap sync android
+
+      - name: Compilar
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          set -o pipefail
+          if ! ./gradlew assembleDebug --no-daemon 2>&1 | tee ../build.log; then
+            # Errores de compilación visibles como anotaciones del run
+            grep -E "error:|e: |FAILURE|What went wrong" -A2 ../build.log | head -40 | while IFS= read -r l; do echo "::error::$l"; done
+            exit 1
+          fi
+
+      - name: Renombrar APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk puntua.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: puntua-apk
+          path: puntua.apk
+
+      - name: Sustituir la versión si ya existía (mismo número = mismo cambio)
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release delete "v$VERSION" --cleanup-tag -y -R "$GITHUB_REPOSITORY" || true
+
+      - name: Publicar versión para descargar desde el móvil
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VERSION }}
+          name: Puntúa v${{ env.VERSION }}
+          make_latest: true
+          body_path: notas.md
+          files: puntua.apk
