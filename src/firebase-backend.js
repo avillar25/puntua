@@ -119,6 +119,7 @@ const platform = {
   use: async name => ({ db: dbApi, user: userApi, assets: assetsApi, downloads: downloadsApi })[name] || null,
   signOut: () => signOut(auth).then(() => location.reload()),
   get email() { return email; },
+  restore: () => offerRestore(true),
 };
 window.PuntuaFB = platform;
 
@@ -240,10 +241,11 @@ function showVerify(u) {
 }
 
 /* ---------- Primera vez: cargar la copia de Puntúa (JSON o data.json de la copia completa) ---------- */
-async function offerRestore() {
+async function offerRestore(force) {
   const ref = doc(fs, 'users', uid, 'data', 'lists');
   let snap; try { snap = await getDoc(ref); } catch { return; }
-  if (snap.exists()) return;
+  if (snap.exists() && !force) return;
+  if (force && snap.exists() && !confirm('Esto sustituirá tus listas, notas y progreso actuales por los de la copia. ¿Seguir?')) return;
   const bar = document.createElement('div');
   bar.style.cssText = 'position:fixed;left:12px;right:12px;bottom:80px;z-index:9000;background:#1f1c19;color:#f3efe8;border:1px solid #f5b301;border-radius:14px;padding:14px;font:15px system-ui;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.5)';
   bar.innerHTML = `<b>¿Primera vez aquí?</b><span>Carga tu copia de Puntúa (el archivo <i>.json</i>) para recuperar tus listas, notas y progreso.</span>
