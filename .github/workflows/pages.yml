@@ -27,7 +27,7 @@ jobs:
       - name: Generar la web
         run: python3 scripts/build-web.py
       - name: Preparar
-        run: mkdir -p _site && cp -r www/. _site/ && cp -r images _site/images
+        run: mkdir -p _site && cp -r www/. _site/ && mkdir -p images && cp -r images _site/images
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
