@@ -3,7 +3,7 @@
 ## v1.0.2
 - Arreglado: el catálogo salía vacío si llegaba antes que tus listas.
 - Arreglado: portadas rotas y aviso falso de «sin conexión» en la web.
-- Botón «Cargar copia de Puntúa» en Mi lista.
+- Botón «Cargar copia de Puntúa» en Mi lista (en la web).
 
 ## v1.0.1
 - Pantallas separadas para entrar y para crear cuenta.
