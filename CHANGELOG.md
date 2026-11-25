@@ -1,5 +1,10 @@
 # Cambios
 
+## v1.0.2
+- Arreglado: el catálogo salía vacío si llegaba antes que tus listas.
+- Arreglado: portadas rotas y aviso falso de «sin conexión» en la web.
+- Botón «Cargar copia de Puntúa» en Mi lista.
+
 ## v1.0.1
 - Pantallas separadas para entrar y para crear cuenta.
 - Al crear la cuenta: repetir la contraseña, mínimo 8 caracteres con letras y números, y botón para mostrarla.
