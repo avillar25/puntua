@@ -375,7 +375,7 @@ const S = {
   titles:{},               // id -> título
   reviews:{},              // uid -> {titleId:{r,t,ts}}
   uid:null, names:{},
-  lists:{status:{},dates:{},imported:[]}, // privado: estado y fecha de visto por título
+  lists:{status:{},dates:{},imported:[],prog:{},eps:{},views:{}}, // privado: estado y fecha de visto por título
   imports:[],              // importaciones de historial pendientes (solo propietario)
   canWrite:true,
   view:'home', type:'all', genre:'', sort:'rating', q:'',
@@ -621,7 +621,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('#actMore'); if(
 
 /* ---------- Capítulos de series: por dónde vas y el siguiente para valorar ---------- */
 const epCode=(s,e)=>`${s}x${String(e).padStart(2,'0')}`;
-function progOf(id){return S.lists.prog[id]||null}
+function progOf(id){return (S.lists.prog||{})[id]||null}
 function seasonLen(t,s){const m=t.seasonEps||{};return +m[s]||0}
 function nextEp(t){
   const p=progOf(t.id); if(!p) return {s:1,e:1};
