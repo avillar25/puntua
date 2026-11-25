@@ -21,7 +21,8 @@ let uid = null, email = '';
 /* ---------- Catálogo base (del repositorio) + cambios del usuario (Firestore) ---------- */
 let catalogP = null;
 function catalog() {
-  if (!catalogP) catalogP = fetch('catalog.json', { cache: 'no-cache' }).then(r => r.json()).catch(() => ({ titles: {}, imports: [] }));
+  if (!catalogP) catalogP = fetch('catalog.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .catch(e => { console.error('[Puntúa] no se pudo cargar catalog.json', e); catalogP = null; return { titles: {}, imports: [] }; });
   return catalogP;
 }
 function fixImg(t) {
@@ -64,12 +65,12 @@ const dbApi = {
         if (path === 'titles') {
           let over = null, base = null;
           const emit = () => {
-            if (!base || !over) return;
+            if (!base) return;
             const m = { ...base };
-            for (const [id, v] of Object.entries(over)) { if (v && v.deleted) delete m[id]; else m[id] = v; }
+            for (const [id, v] of Object.entries(over || {})) { if (v && v.deleted) delete m[id]; else m[id] = v; }
             cb(fakeSnap(Object.entries(m).map(([id, v]) => [id, fixImg(v)]), false));
           };
-          catalog().then(c => { base = c.titles || {}; emit(); });
+          catalog().then(c => { base = c.titles || {}; if (!Object.keys(base).length) console.error('[Puntúa] catálogo vacío o no cargado'); emit(); });
           return onSnapshot(collection(fs, 'users', uid, 'titles'), { includeMetadataChanges: true }, snap => {
             over = {}; snap.docs.forEach(d => { over[d.id] = d.data(); }); emit();
           }, e => { over = {}; emit(); err && err(e); });
