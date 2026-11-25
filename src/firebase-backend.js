@@ -2,12 +2,13 @@
 // Ofrece a la app la misma interfaz que tenía dentro de Claude: use('db'|'user'|'assets'|'downloads').
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword,
-  sendPasswordResetEmail, signOut, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
+  sendPasswordResetEmail, sendEmailVerification, signOut, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
 import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, doc, collection,
   onSnapshot, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
 
 const app = initializeApp(window.FIREBASE_CONFIG);
 const auth = getAuth(app);
+auth.languageCode = 'es';
 const fs = initializeFirestore(app, { localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }) });
 
 // En la APK (Capacitor) las imágenes no van dentro: se cargan de la web publicada
@@ -121,42 +122,121 @@ const platform = {
 };
 window.PuntuaFB = platform;
 
-/* ---------- Pantalla de acceso ---------- */
+/* ---------- Pantallas de acceso: entrar, crear cuenta y verificar el correo ---------- */
 const CSS = `
-#fbLogin{position:fixed;inset:0;z-index:9999;background:#0d0c0b;color:#f3efe8;display:flex;align-items:center;justify-content:center;padding:20px;font-family:system-ui,sans-serif}
+#fbLogin{position:fixed;inset:0;z-index:9999;background:#0d0c0b;color:#f3efe8;display:flex;align-items:center;justify-content:center;padding:20px;font-family:system-ui,sans-serif;overflow:auto}
 #fbLogin .box{width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px}
-#fbLogin h1{font-size:34px;margin:0 0 4px;letter-spacing:-.02em}
-#fbLogin p{margin:0;color:#b9b2a7;font-size:14px;line-height:1.4}
-#fbLogin input{font:inherit;font-size:16px;padding:12px 14px;border-radius:10px;border:1px solid #3a3631;background:#1a1816;color:inherit}
-#fbLogin button{font:inherit;font-size:16px;font-weight:600;padding:12px 14px;border-radius:10px;border:0;cursor:pointer}
+#fbLogin *{text-transform:none;letter-spacing:normal;font-family:system-ui,sans-serif}
+#fbLogin h1{font-size:34px;margin:0;letter-spacing:-.02em}
+#fbLogin h2{font-size:24px;margin:0;font-weight:700}
+#fbLogin p{margin:0;color:#b9b2a7;font-size:14px;line-height:1.45}
+#fbLogin label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:#b9b2a7}
+#fbLogin input{font:inherit;font-size:16px;padding:12px 14px;border-radius:10px;border:1px solid #3a3631;background:#1a1816;color:#f3efe8;width:100%;box-sizing:border-box}
+#fbLogin input:focus{outline:2px solid #f5b301;border-color:transparent}
+#fbLogin .pw{position:relative}
+#fbLogin .pw input{padding-right:64px}
+#fbLogin .eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:#b9b2a7;font:13px system-ui;padding:8px;cursor:pointer}
+#fbLogin .hint{font-size:12px;color:#8d867c}
+#fbLogin .btn{font:inherit;font-size:16px;font-weight:600;padding:12px 14px;border-radius:10px;border:0;cursor:pointer}
 #fbLogin .pri{background:#f5b301;color:#1a1400}
+#fbLogin .pri:disabled{opacity:.6}
 #fbLogin .sec{background:transparent;color:#f3efe8;border:1px solid #3a3631}
-#fbLogin .lnk{background:none;color:#b9b2a7;font-weight:400;font-size:14px;padding:4px}
+#fbLogin .lnk{background:none;border:0;color:#f5b301;font:14px system-ui;padding:4px;cursor:pointer}
+#fbLogin .fbrow{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 #fbLogin .msg{min-height:20px;font-size:14px;color:#ff8a7a}
 #fbLogin .msg.ok{color:#9be29b}`;
-function showLogin() {
-  if (document.getElementById('fbLogin')) return;
-  const st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
-  const d = document.createElement('div'); d.id = 'fbLogin';
-  d.innerHTML = `<form class="box"><h1>Puntúa</h1><p>Entra con tu cuenta para ver tus listas en cualquier dispositivo.</p>
-    <input type="email" id="fbEmail" placeholder="Correo" autocomplete="email" required>
-    <input type="password" id="fbPass" placeholder="Contraseña (mín. 6)" autocomplete="current-password" required minlength="6">
-    <div class="msg" id="fbMsg"></div>
-    <button class="pri" type="submit">Entrar</button>
-    <button class="sec" type="button" id="fbNew">Crear cuenta</button>
-    <button class="lnk" type="button" id="fbReset">He olvidado la contraseña</button></form>`;
-  document.body.appendChild(d);
-  const $ = id => d.querySelector('#' + id), msg = (t, ok) => { $('fbMsg').textContent = t; $('fbMsg').className = 'msg' + (ok ? ' ok' : ''); };
-  const nice = e => ({ 'auth/invalid-credential': 'Correo o contraseña incorrectos', 'auth/email-already-in-use': 'Ya existe una cuenta con ese correo',
-    'auth/weak-password': 'La contraseña debe tener al menos 6 caracteres', 'auth/invalid-email': 'Correo no válido',
-    'auth/network-request-failed': 'Sin conexión', 'auth/too-many-requests': 'Demasiados intentos, espera un poco',
-    'auth/admin-restricted-operation': 'No se pueden crear cuentas nuevas' })[e.code] || (e.message || String(e));
-  d.querySelector('form').onsubmit = async ev => { ev.preventDefault(); msg('');
-    try { await signInWithEmailAndPassword(auth, $('fbEmail').value.trim(), $('fbPass').value); } catch (e) { msg(nice(e)); } };
-  $('fbNew').onclick = async () => { msg('');
-    try { await createUserWithEmailAndPassword(auth, $('fbEmail').value.trim(), $('fbPass').value); } catch (e) { msg(nice(e)); } };
-  $('fbReset').onclick = async () => { const em = $('fbEmail').value.trim(); if (!em) return msg('Escribe tu correo arriba');
-    try { await sendPasswordResetEmail(auth, em); msg('Te he enviado un correo para cambiarla', true); } catch (e) { msg(nice(e)); } };
+const ERR = {
+  'auth/invalid-credential': 'Correo o contraseña incorrectos', 'auth/wrong-password': 'Correo o contraseña incorrectos',
+  'auth/user-not-found': 'Correo o contraseña incorrectos', 'auth/email-already-in-use': 'Ya existe una cuenta con ese correo',
+  'auth/weak-password': 'La contraseña es demasiado débil', 'auth/invalid-email': 'El correo no es válido',
+  'auth/missing-password': 'Escribe la contraseña', 'auth/network-request-failed': 'Sin conexión a internet',
+  'auth/too-many-requests': 'Demasiados intentos. Espera unos minutos.', 'auth/admin-restricted-operation': 'No se pueden crear cuentas nuevas',
+};
+const nice = e => ERR[e && e.code] || (e && e.message) || String(e);
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const pwField = (id, ph, ac) => `<div class="pw"><input type="password" id="${id}" placeholder="${ph}" autocomplete="${ac}"><button type="button" class="eye" data-eye="${id}">Mostrar</button></div>`;
+
+function overlay() {
+  let d = document.getElementById('fbLogin');
+  if (!d) {
+    if (!document.getElementById('fbCss')) { const st = document.createElement('style'); st.id = 'fbCss'; st.textContent = CSS; document.head.appendChild(st); }
+    d = document.createElement('div'); d.id = 'fbLogin'; document.body.appendChild(d);
+    d.addEventListener('click', ev => {
+      const b = ev.target.closest('[data-eye]'); if (!b) return;
+      const i = d.querySelector('#' + b.dataset.eye); const show = i.type === 'password';
+      i.type = show ? 'text' : 'password'; b.textContent = show ? 'Ocultar' : 'Mostrar';
+    });
+  }
+  return d;
+}
+function screen(html, bind) {
+  const d = overlay(); d.innerHTML = `<form class="box" novalidate>${html}<div class="msg" id="fbMsg"></div></form>`;
+  const $ = id => d.querySelector('#' + id);
+  const msg = (t, ok) => { const m = $('fbMsg'); m.textContent = t || ''; m.className = 'msg' + (ok ? ' ok' : ''); };
+  const busy = async (btn, fn) => { btn.disabled = true; try { await fn(); } finally { btn.disabled = false; } };
+  bind($, msg, busy, d.querySelector('form'));
+  const first = d.querySelector('input'); if (first) setTimeout(() => first.focus(), 50);
+}
+
+function showLogin(prefill = '') {
+  screen(`<h1>Puntúa</h1><p>Entra para ver tus pelis, series y juegos en cualquier dispositivo.</p>
+    <label>Correo<input type="email" id="fbEmail" autocomplete="email" inputmode="email" value=""></label>
+    <label>Contraseña${pwField('fbPass', '', 'current-password')}</label>
+    <button class="btn pri" type="submit" id="fbGo">Entrar</button>
+    <div class="fbrow"><button class="lnk" type="button" id="fbReset">He olvidado la contraseña</button>
+    <button class="lnk" type="button" id="fbToNew">Crear cuenta</button></div>`,
+  ($, msg, busy, form) => {
+    $('fbEmail').value = prefill;
+    form.onsubmit = ev => { ev.preventDefault(); msg('');
+      const em = $('fbEmail').value.trim(), pw = $('fbPass').value;
+      if (!EMAIL_RE.test(em)) return msg('Escribe un correo válido');
+      if (!pw) return msg('Escribe la contraseña');
+      busy($('fbGo'), async () => { try { await signInWithEmailAndPassword(auth, em, pw); } catch (e) { msg(nice(e)); } });
+    };
+    $('fbToNew').onclick = () => showSignup($('fbEmail').value.trim());
+    $('fbReset').onclick = () => { const em = $('fbEmail').value.trim();
+      if (!EMAIL_RE.test(em)) return msg('Escribe arriba tu correo y vuelve a pulsar');
+      busy($('fbReset'), async () => { try { await sendPasswordResetEmail(auth, em); msg('Si hay una cuenta con ese correo, te llegará un enlace para cambiar la contraseña.', true); } catch (e) { msg(nice(e)); } });
+    };
+  });
+}
+
+function showSignup(prefill = '') {
+  screen(`<h2>Crear cuenta</h2><p>Tus listas y notas quedarán guardadas en tu cuenta y podrás verlas en el móvil y en el PC.</p>
+    <label>Correo<input type="email" id="fbEmail" autocomplete="email" inputmode="email"></label>
+    <label>Contraseña${pwField('fbPass', '', 'new-password')}<span class="hint">Mínimo 8 caracteres, con letras y números.</span></label>
+    <label>Repite la contraseña${pwField('fbPass2', '', 'new-password')}</label>
+    <button class="btn pri" type="submit" id="fbGo">Crear cuenta</button>
+    <button class="lnk" type="button" id="fbToLogin">Ya tengo cuenta, quiero entrar</button>`,
+  ($, msg, busy, form) => {
+    $('fbEmail').value = prefill;
+    form.onsubmit = ev => { ev.preventDefault(); msg('');
+      const em = $('fbEmail').value.trim(), pw = $('fbPass').value, pw2 = $('fbPass2').value;
+      if (!EMAIL_RE.test(em)) return msg('Escribe un correo válido');
+      if (pw.length < 8 || !/[a-zA-Z]/.test(pw) || !/\d/.test(pw)) return msg('La contraseña necesita al menos 8 caracteres, con letras y números');
+      if (pw !== pw2) return msg('Las contraseñas no coinciden');
+      busy($('fbGo'), async () => {
+        try { const c = await createUserWithEmailAndPassword(auth, em, pw); await sendEmailVerification(c.user); }
+        catch (e) { msg(nice(e)); }
+      });
+    };
+    $('fbToLogin').onclick = () => showLogin($('fbEmail').value.trim());
+  });
+}
+
+function showVerify(u) {
+  screen(`<h2>Verifica tu correo</h2>
+    <p>Te he enviado un correo a <b style="color:#f3efe8">${(u.email || '').replace(/[<>&"]/g, '')}</b> con un enlace para confirmar la cuenta. Ábrelo y vuelve aquí. Si no lo ves, mira en la carpeta de correo no deseado.</p>
+    <button class="btn pri" type="submit" id="fbGo">Ya lo he verificado</button>
+    <button class="btn sec" type="button" id="fbAgain">Reenviar el correo</button>
+    <button class="lnk" type="button" id="fbOut">Usar otra cuenta</button>`,
+  ($, msg, busy, form) => {
+    form.onsubmit = ev => { ev.preventDefault(); msg('');
+      busy($('fbGo'), async () => { try { await u.reload(); if (auth.currentUser.emailVerified) enter(auth.currentUser); else msg('Todavía no consta como verificado. Abre el enlace del correo y vuelve a probar.'); } catch (e) { msg(nice(e)); } });
+    };
+    $('fbAgain').onclick = () => busy($('fbAgain'), async () => { try { await sendEmailVerification(u); msg('Correo reenviado', true); } catch (e) { msg(nice(e)); } });
+    $('fbOut').onclick = () => signOut(auth);
+  });
 }
 
 /* ---------- Primera vez: cargar la copia de Puntúa (JSON o data.json de la copia completa) ---------- */
@@ -187,11 +267,15 @@ async function offerRestore() {
 /* ---------- Arranque ---------- */
 setPersistence(auth, browserLocalPersistence).catch(() => {});
 let started = false;
-onAuthStateChanged(auth, u => {
-  if (!u) { showLogin(); return; }
+function enter(u) {
   if (started) return;
   started = true; uid = u.uid; email = u.email || '';
   const l = document.getElementById('fbLogin'); if (l) l.remove();
   window.__fbResolve(platform);
   setTimeout(offerRestore, 1500);
+}
+onAuthStateChanged(auth, u => {
+  if (!u) { if (started) location.reload(); else showLogin(); return; }
+  if (!u.emailVerified) { showVerify(u); return; }
+  enter(u);
 });
