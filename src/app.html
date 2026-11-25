@@ -410,7 +410,7 @@ function posterArt(t){
   }
   return `<svg class="art" viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${a}</svg>`;
 }
-function imgUrl(t){ if(t.imgUrl && /^(\/|https:)/.test(t.imgUrl)) return t.imgUrl; return t.img ? '/_blob/'+encodeURIComponent(t.img) : '' }
+function imgUrl(t){ if(t.imgUrl && /^(\/|https:|data:image\/|images\/)/.test(t.imgUrl)) return t.imgUrl; return t.img ? '/_blob/'+encodeURIComponent(t.img) : '' }
 function poster(t, opts={}){
   const ty=TYPES[t.type]||TYPES.movie, st=S.lists.status[t.id], n=viewsOf(t.id).length, u=imgUrl(t), mine=myReview(t.id);
   return `<div class="poster vhs${u?' hasimg':''}">

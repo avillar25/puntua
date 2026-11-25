@@ -62,16 +62,16 @@ const dbApi = {
           return () => {};
         }
         if (path === 'titles') {
-          let over = null, base = null, fromCache = true;
+          let over = null, base = null;
           const emit = () => {
             if (!base || !over) return;
             const m = { ...base };
             for (const [id, v] of Object.entries(over)) { if (v && v.deleted) delete m[id]; else m[id] = v; }
-            cb(fakeSnap(Object.entries(m).map(([id, v]) => [id, fixImg(v)]), fromCache));
+            cb(fakeSnap(Object.entries(m).map(([id, v]) => [id, fixImg(v)]), false));
           };
           catalog().then(c => { base = c.titles || {}; emit(); });
           return onSnapshot(collection(fs, 'users', uid, 'titles'), { includeMetadataChanges: true }, snap => {
-            over = {}; snap.docs.forEach(d => { over[d.id] = d.data(); }); fromCache = snap.metadata.fromCache; emit();
+            over = {}; snap.docs.forEach(d => { over[d.id] = d.data(); }); emit();
           }, e => { over = {}; emit(); err && err(e); });
         }
         return onSnapshot(collection(fs, ...mapPath(path)), { includeMetadataChanges: true },
