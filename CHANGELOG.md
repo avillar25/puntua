@@ -1,5 +1,8 @@
 # Cambios
 
+## v1.5.1
+- Lista de capítulos: al tocar la estrella ya no parpadea ni sube la ficha; las estrellas se abren donde estás.
+
 ## v1.5.0
 - Lista de capítulos en la ficha de cada serie: por temporadas, con el nombre y la fecha de cada capítulo, cuáles has visto (✓) y tu nota. Toca la nota (o ☆) de cualquier capítulo para puntuarlo o cambiarla, sin cambiar por dónde vas.
 - Fuera el recuadro «Puntuar otro capítulo», que sustituye la lista.

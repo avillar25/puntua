@@ -1399,14 +1399,14 @@ function renderModal(){
   if(S.bulk){ root.innerHTML=bulkHTML(); modalKey='bulk'; document.body.style.overflow='hidden'; return }
   if(S.form){ if(modalKey!=='form'){root.innerHTML=formHTML();modalKey='form'} return }
   if(S.dOpen){ const d=(S.disc||[]).find(x=>x.id===S.dOpen); if(d){ if(modalKey!=='d:'+d.id){root.innerHTML=discHTML(d);modalKey='d:'+d.id;document.body.style.overflow='hidden'} return } S.dOpen=null }
-  if(!S.openId || !S.titles[S.openId]){ root.innerHTML=''; modalKey=''; document.body.style.overflow=''; return }
+  if(!S.openId || !S.titles[S.openId]){ root.innerHTML=''; modalKey=''; root.dataset.open=''; document.body.style.overflow=''; return }
   // Conserva el borrador de la reseña al re-renderizar
   const ta=root.querySelector('#revText'); const draft=ta?ta.value:null; const focused=document.activeElement===ta;
   // Conserva dónde estabas (scroll de la ficha y de la lista de capítulos) al re-renderizar
-  const sameModal=modalKey==='detail:'+S.openId, sc=[...root.querySelectorAll('.scrim,.modal,.eplrows')].map(x=>x.scrollTop);
+  const sameModal=root.dataset.open===S.openId, sc=[...root.querySelectorAll('.scrim,.modal,.eplrows')].map(x=>x.scrollTop);
   root.innerHTML=detailHTML(S.titles[S.openId]);
   if(sameModal) [...root.querySelectorAll('.scrim,.modal,.eplrows')].forEach((x,i)=>{ if(sc[i]!=null) x.scrollTop=sc[i] });
-  modalKey='detail:'+S.openId;
+  modalKey='detail:'+S.openId; root.dataset.open=S.openId;
   document.body.style.overflow='hidden';
   const nta=root.querySelector('#revText');
   if(nta && draft!=null && S.draftFor===S.openId){nta.value=draft; if(focused)nta.focus()}
@@ -1745,7 +1745,12 @@ document.addEventListener('click',e=>{
     const r=halfPick(e,el,+r0), c=epCode(se,ep); editEpRating(id,c,r); toast(`${c} · ${fr(r)}/10`); return}
   if(d.eplist){S.epList=S.epList===d.eplist?null:d.eplist; S.epSeason=null; S.epPick=null; modalKey=''; renderModal(); return}
   if(d.epseas){S.epSeason=+d.epseas; S.epPick=null; modalKey=''; renderModal(); return}
-  if(d.eppick){S.epPick=S.epPick===d.eppick?null:d.eppick; modalKey=''; renderModal(); return}
+  if(d.eppick){
+    const was=S.epPick===d.eppick; S.epPick=was?null:d.eppick;
+    document.querySelectorAll('#modalRoot .epl .epfix').forEach(x=>x.remove());
+    if(!was){ const [id,c]=d.eppick.split('|'); const v=epsOf(id)[c]; const row=el.closest('.eprow');
+      row.insertAdjacentHTML('afterend',`<div class="epfix"><div class="estars sm">${Array.from({length:10},(_,k)=>`<button data-epfix="${esc(id)}|${esc(c)}|${k+1}" aria-label="${k+1}">★<i>${k+1}</i></button>`).join('')}</div>${v&&v.r?`<button class="lnk" data-rmep2="${esc(id)}|${esc(c)}">Quitar nota</button>`:''}</div>`); }
+    return}
   if(d.rmep2){const [id,c]=d.rmep2.split('|'); S.epPick=null; removeEpRating(id,c); toast('Nota quitada'); return}
   if(d.epedit){S.epEdit=S.epEdit===d.epedit?null:d.epedit; modalKey=''; renderModal(); return}
   if(d.epfix){const [id,c,r0]=d.epfix.split('|'); const r=halfPick(e,el,+r0); S.epEdit=null; S.epPick=null; editEpRating(id,c,r); toast(`${c} · nueva nota ${fr(r)}/10`); return}
