@@ -138,7 +138,7 @@ def build_games():
       OPTIONAL { ?it wdt:P136 ?g. ?g rdfs:label ?gl. FILTER(LANG(?gl)="es") }
       OPTIONAL { ?it wdt:P400 ?p. ?p rdfs:label ?pl. FILTER(LANG(?pl)="es") }
       OPTIONAL { ?it wdt:P178 ?dv. ?dv rdfs:label ?dev. FILTER(LANG(?dev)="en") }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en". ?it rdfs:label ?l. }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en,mul". ?it rdfs:label ?l. }
     } GROUP BY ?it ?l ?score ?d ?links"""
     b = get('https://query.wikidata.org/sparql?format=json&query=' + urllib.parse.quote(q), timeout=120, tries=3,
             headers={'Accept': 'application/sparql-results+json', 'User-Agent': 'PuntuaBot/1.0 (https://github.com/avillar25/puntua)'})
@@ -166,16 +166,16 @@ def build_games():
                    'platforms': ', '.join(dict.fromkeys(plat))[:120], 'creator': (x.get('devl') or {}).get('value', ''),
                    'links': int(x['links']['value']), 'mc': (x.get('mcid') or {}).get('value', '')}
     games = sorted(by.values(), key=lambda g: -(g['links'] * 0.6 + (g['ms'] - 70) * 3))[:N_GAMES]
-    # Nombres: el servicio de etiquetas de la consulta a veces no los da; se piden aparte (español y, si no, inglés)
+    # Nombres: se piden aparte (español; si no, inglés; si no, el nombre común en todos los idiomas, «mul»)
     ids = [g['id'] for g in games]
     names = {}
     for i in range(0, len(ids), 50):
-        b2 = get('https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels&languages=es|en&ids=' + '|'.join(ids[i:i + 50]),
+        b2 = get('https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels&languages=es|en|mul&ids=' + '|'.join(ids[i:i + 50]),
                  timeout=60, tries=3, headers={'User-Agent': 'PuntuaBot/1.0 (https://github.com/avillar25/puntua)'})
         if b2:
             for qid, ent in json.loads(b2).get('entities', {}).items():
                 lb = ent.get('labels', {})
-                n = (lb.get('es') or lb.get('en') or {}).get('value')
+                n = (lb.get('es') or lb.get('en') or lb.get('mul') or {}).get('value')
                 if n:
                     names[qid] = n
         time.sleep(0.5)
@@ -290,7 +290,7 @@ def add_popular(items, posters, misses):
           ?it {'wdt:P580|wdt:P577' if kind == 'series' else 'wdt:P577'} ?d. FILTER(?d >= "{lo}"^^xsd:dateTime && ?d <= "{hi}"^^xsd:dateTime)
           ?a schema:about ?it; schema:isPartOf <https://en.wikipedia.org/>.
           OPTIONAL {{ ?it wdt:P345 ?imdb. }}
-          OPTIONAL {{ ?it rdfs:label ?es. FILTER(LANG(?es)="es") }} OPTIONAL {{ ?it rdfs:label ?en. FILTER(LANG(?en)="en") }}
+          OPTIONAL {{ ?it rdfs:label ?es. FILTER(LANG(?es)="es") }} OPTIONAL {{ ?it rdfs:label ?en. FILTER(LANG(?en)="en" || LANG(?en)="mul") }}
         }} GROUP BY ?it ?d ?imdb ?a ?links ORDER BY DESC(?links) LIMIT 150"""
         for b in sparql(q):
             qid = b['it']['value'].split('/')[-1]

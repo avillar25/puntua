@@ -71,7 +71,7 @@
       VALUES ?it { ${sr.map(x => 'wd:' + x.id).join(' ')} }
       ?it wdt:P31/wdt:P279? ${cls}.
       OPTIONAL { ?it wdt:P577 ?d. }
-      OPTIONAL { ?it ${kind === 'game' ? 'wdt:P178' : 'wdt:P57'} ?w. ?w rdfs:label ?wl. FILTER(LANG(?wl)="es" || LANG(?wl)="en") }
+      OPTIONAL { ?it ${kind === 'game' ? 'wdt:P178' : 'wdt:P57'} ?w. ?w rdfs:label ?wl. FILTER(LANG(?wl)="es" || LANG(?wl)="en" || LANG(?wl)="mul") }
     } GROUP BY ?it`;
     const j = await getJSON(SPARQL + encodeURIComponent(query), { headers: { Accept: 'application/sparql-results+json' } });
     const info = new Map(j.results.bindings.map(b => [b.it.value.split('/').pop(), { y: b.y && +b.y.value, who: b.who && b.who.value }]));
@@ -88,9 +88,9 @@
       OPTIONAL { ?it wdt:P2047 ?dur. }
       OPTIONAL { ?it wdt:P345 ?imdb. }
       OPTIONAL { ?it wdt:P136 ?g. ?g rdfs:label ?gl. FILTER(LANG(?gl)="es") }
-      OPTIONAL { ?it ${v ? 'wdt:P178' : 'wdt:P57'} ?w. ?w rdfs:label ?wl. FILTER(LANG(?wl)="es" || LANG(?wl)="en") }
+      OPTIONAL { ?it ${v ? 'wdt:P178' : 'wdt:P57'} ?w. ?w rdfs:label ?wl. FILTER(LANG(?wl)="es" || LANG(?wl)="en" || LANG(?wl)="mul") }
       ${v ? 'OPTIONAL { ?it wdt:P400 ?p. ?p rdfs:label ?pl. FILTER(LANG(?pl)="es") }' : ''}
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en". ?it rdfs:label ?l. }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en,mul". ?it rdfs:label ?l. }
     } GROUP BY ?l ?d ?dur ?imdb ORDER BY ?d LIMIT 1`;
     const j = await getJSON(SPARQL + encodeURIComponent(query), { headers: { Accept: 'application/sparql-results+json' } });
     const b = j.results.bindings[0] || {};

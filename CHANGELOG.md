@@ -1,6 +1,8 @@
 # Cambios
 
 ## v1.3.0
+- Carátulas automáticas para las fichas del catálogo que no tenían (carteles de IMDb y TVmaze, portadas de Metacritic). Las que tú pusiste no se tocan.
+- Descubrir: recuperados los juegos que faltaban (Elden Ring, Skyrim, Counter-Strike…), ya con su nombre.
 - Descubrir: nuevo apartado «🔥 Popular ahora» con las pelis, series y juegos de los que más se habla esta semana (visitas en Wikipedia), incluidos estrenos recientes y próximos con su fecha. Si ya lo tienes, abre tu ficha. Se actualiza cada día.
 - Descubrir: los juegos ya salen con su nombre (antes algunos salían con un código).
 
