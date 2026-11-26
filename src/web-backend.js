@@ -252,8 +252,8 @@
         ${SYNC.cfg.gist ? `<p class="mut">Copia en GitHub: ${escH(String(SYNC.cfg.gist).slice(0, 7))}. Tiene que salir lo mismo en el móvil y en el PC.</p>` : ''}
         <div class="btns"><button class="pri" data-pw="now">Sincronizar ahora</button><button data-pw="off">Desconectar</button><button data-pw="close">Cerrar</button></div>`
       : `<p>Tus datos se guardan en este dispositivo. Para tener lo mismo en el móvil y en el PC, conecta un token de GitHub: se guardan en un Gist secreto de tu cuenta que solo ves tú.</p>
-        <p><b>Puedes usar el mismo token que en Clash Alerter.</b> Si no, créalo así:</p>
-        <ol><li>Entra en <a href="https://github.com/settings/tokens/new?scopes=gist&description=Pun%C3%BAa" target="_blank" rel="noopener">github.com/settings/tokens/new</a> (token <i>classic</i>).</li>
+        <p>Crea un token solo para Puntúa:</p>
+        <ol><li>Entra en <a href="https://github.com/settings/tokens/new?scopes=gist&description=Punt%C3%BAa" target="_blank" rel="noopener">github.com/settings/tokens/new</a> (token <i>classic</i>).</li>
         <li>Marca solo el permiso <b>gist</b> y en caducidad elige <b>No expiration</b>.</li>
         <li>Pulsa <b>Generate token</b>, cópialo y pégalo aquí.</li></ol>
         <input type="password" id="pwTok" placeholder="ghp_…" autocomplete="off">
