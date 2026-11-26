@@ -4,6 +4,8 @@
 "epTotal": 47,
 "extRating": 7.7,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTkwOTcxNzMzOV5BMl5BanBnXkFtZTgwODYxNjg0ODE@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 13,
 "2": 13,
@@ -17,6 +19,8 @@
 },
 "127-horas-nf": {
 "createdAt": 1763750010000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTc2NjMzOTE3Ml5BMl5BanBnXkFtZTcwMDE0OTc5Mw@@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "127 horas",
 "type": "movie"
@@ -58,6 +62,8 @@
 },
 "72-animales-peligrosos-nf": {
 "createdAt": 1763750100000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMDg3YmRjYTEtODkyZS00ZWUzLTgwYzItNmU3MjQ1M2VlZmEyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "72 animales peligrosos",
 "type": "series"
@@ -73,6 +79,8 @@
 "800-metros-nf": {
 "createdAt": 1763750192000,
 "epTotal": 3,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNjY3YjUwODUtMTQ3My00OGE4LTkyNzMtYTg4MmE2N2JhYWQ5XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 3
 },
@@ -92,6 +100,8 @@
 },
 "a-ciegas-nf": {
 "createdAt": 1763750176000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjAzMTI1MjMyN15BMl5BanBnXkFtZTgwNzU5MTE2NjM@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "A ciegas",
 "type": "movie"
@@ -101,6 +111,8 @@
 "epTotal": 3,
 "extRating": 7.7,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNmJhMjdhMmYtNTI0NS00OGIzLWIzZGItZTQ4NzI4ZWU0ZjYyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 3
 },
@@ -111,6 +123,8 @@
 },
 "a-plague-tale-innocence-ps": {
 "createdAt": 1764000063000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a8b3b293f707e43255e4ed2f96a7efa172301ec8/catalog/provider/6/12/6-1-709890-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "A Plague Tale: Innocence",
@@ -122,6 +136,8 @@
 "epTotal": 4,
 "extRating": 7.6,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYzljMDY4YmYtYjcyMS00YjU3LWFjNzUtMjQ4MzgxNDZhY2IwXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 4
 },
@@ -140,12 +156,16 @@
 },
 "al-borde-de-la-realidad-nf": {
 "createdAt": 1763750054000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYjkyZmRmYmMtYTg5Zi00MjA0LTliYmQtMDU0NzBiZDcxNzA0XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Al borde de la realidad",
 "type": "series"
 },
 "alan-wake-ps": {
 "createdAt": 1764000001000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/e8384683e99bf2951b3e039fd4545f4e7d964feb/catalog/provider/6/12/6-1-67913-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Alan Wake",
@@ -156,6 +176,8 @@
 "createdAt": 1795363599685,
 "creator": "",
 "genres": [],
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/c29c0812bc9d6c2434ce788178e8e40a9cd3372c/catalog/provider/6/12/6-1-815660-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "",
 "summary": "",
 "title": "Alan Wake Remastered",
@@ -164,6 +186,8 @@
 },
 "alerta-roja-nf": {
 "createdAt": 1763750152000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOGNjNGQ3MmItYTM5NS00NjBiLWI0ZTItZDE5ZjQyNjg3ODBjXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Alerta roja",
 "type": "movie"
@@ -229,6 +253,8 @@
 },
 "alien-isolation-ps": {
 "createdAt": 1764000064000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/5c509ce39366d67ac7cb6edf60d6606705ba6487/catalog/provider/6/12/6-1-455672-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Alien: Isolation",
@@ -237,6 +263,8 @@
 },
 "alien-px": {
 "createdAt": 1763760188000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOGZiNmVlZGEtM2VmMi00ZTFkLTliMzEtZDNhYzUzNTcxMGY3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Alien³",
 "type": "movie",
@@ -262,6 +290,8 @@
 },
 "alien-vs-predator-px": {
 "createdAt": 1763760108000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTU4MjIwMTcyMl5BMl5BanBnXkFtZTYwMTYwNDA3._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Alien vs. Predator",
 "type": "movie",
@@ -278,6 +308,8 @@
 },
 "aliens-vs-predator-2-px": {
 "createdAt": 1763760101000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTI5NDY2NDUwM15BMl5BanBnXkFtZTYwNzQxMTA3._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Aliens vs. Predator 2",
 "type": "movie",
@@ -395,6 +427,8 @@
 },
 "ark-survival-evolved-ps": {
 "createdAt": 1764000048000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/3b78d757cc3b50672e77e6f72a53bf04e837bee9/catalog/provider/6/12/6-1-764101-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Ark: Survival Evolved",
@@ -411,6 +445,8 @@
 },
 "assassin-s-creed-origins-ps": {
 "createdAt": 1764100000000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/511c58996e5cd4edcb9cf624c64f06260f532c1b/catalog/provider/6/12/6-1-651710-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Assassin's Creed Origins",
@@ -419,6 +455,8 @@
 },
 "assassin-s-creed-valhalla-ps": {
 "createdAt": 1764000072000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/36300acb57172abec92d91ca454939c516418069/catalog/provider/6/12/6-1-773021-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Assassin's Creed Valhalla",
@@ -427,6 +465,8 @@
 },
 "astro-s-playroom-ps": {
 "createdAt": 1764000071000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/244449eca52e6eaba109fa4cd4d3d1276481e571/catalog/provider/6/12/6-1-776046-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Astro's Playroom",
@@ -513,12 +553,16 @@
 },
 "baby-driver-nf": {
 "createdAt": 1763750040000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjM3MjQ1MzkxNl5BMl5BanBnXkFtZTgwODk1ODgyMjI@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Baby Driver",
 "type": "movie"
 },
 "bad-boys-for-life-nf": {
 "createdAt": 1763750177000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYzM3ZTFmMTUtODAxNy00N2IxLWI2MGMtYTdmMDFhNmZkMDI3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Bad Boys for Life",
 "type": "movie"
@@ -530,6 +574,8 @@
 "RPG",
 "Estrategia por turnos"
 ],
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/af3c45419ecdd1c56491c8e8e10bf790b5d5efa6/catalog/provider/6/12/6-1-715253-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PC, PS5, Xbox Series",
 "summary": "Un grupo de aventureros con un parásito en la cabeza busca una cura mientras sus decisiones cambian por completo la historia.",
 "title": "Baldur's Gate 3",
@@ -546,6 +592,8 @@
 },
 "batman-arkham-knight-ps": {
 "createdAt": 1764000077000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/9f6102d6f984f9dc59e86cb40c2111ebea5d00cd/catalog/provider/6/12/6-1-518813-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Batman: Arkham Knight",
@@ -596,6 +644,8 @@
 },
 "battlefield-4-ps": {
 "createdAt": 1764000076000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/3e91337d57bd53b8d5724b9efc5947686cd31aea/catalog/provider/6/3/6-1-243109-13.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Battlefield 4",
@@ -655,6 +705,8 @@
 },
 "big-city-stories-ps": {
 "createdAt": 1764000061000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/333d9f33633ac6ce372ae6eba116f3d2943d530e/catalog/provider/6/12/6-1-609654-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Big City Stories",
@@ -746,6 +798,8 @@
 },
 "bloodborne-ps": {
 "createdAt": 1764000069000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/0657cc90be20485ed399fe3f5cf99984b5595f3c/catalog/provider/6/12/6-1-518836-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Bloodborne",
@@ -757,6 +811,8 @@
 "epTotal": 611,
 "extRating": 8,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTY2NGUzMWItYjE3Zi00YWFiLTlmYzYtMjYwZjM3YWMxMDRiXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 41,
 "10": 71,
@@ -837,6 +893,8 @@
 },
 "bright-nf": {
 "createdAt": 1763750008000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTcyNzk5NDg1Nl5BMl5BanBnXkFtZTgwNTM5MDQxNDM@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Bright",
 "type": "movie"
@@ -878,6 +936,8 @@
 },
 "buster-s-mal-heart-nf": {
 "createdAt": 1763750033000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOTJjMDQ0ZTEtYjkzMC00MWRhLTllZDktMWNjYTY4N2NlZWNlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Buster's Mal Heart",
 "type": "movie"
@@ -893,12 +953,16 @@
 },
 "caida-en-picado-el-caso-contra-boeing-nf": {
 "createdAt": 1763750172000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjNjZjYwYTMtZGJhMi00NTU3LWFhMTctZGYwN2Q3Nzk5NDZiXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Caída en picado: El caso contra Boeing",
 "type": "movie"
 },
 "call-of-duty-black-ops-4-ps": {
 "createdAt": 1764000066000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/8c8652021de815033fa61adf9b9da2aced182e70/catalog/provider/6/12/6-1-687876-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Call of Duty: Black Ops 4",
@@ -907,6 +971,8 @@
 },
 "call-of-duty-black-ops-ii-ps": {
 "createdAt": 1764000005000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/c4f3dad2aaee56c92a49b931dbe43e6e15c58482/catalog/provider/6/12/6-1-233944-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "Call of Duty: Black Ops II",
@@ -915,6 +981,8 @@
 },
 "call-of-duty-black-ops-iii-ps": {
 "createdAt": 1764100005000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/982b15dbf5e6ed5b8f12fc44e6d26b9ff0630a01/catalog/provider/6/12/6-1-587920-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Call of Duty: Black Ops III",
@@ -923,6 +991,8 @@
 },
 "call-of-duty-modern-warfare-ps": {
 "createdAt": 1764100003000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/7d57c09fbd4dac4b376abbfdf3c87a59a0ff4595/catalog/provider/6/12/6-1-729237-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Call of Duty: Modern Warfare",
@@ -931,6 +1001,8 @@
 },
 "call-of-duty-modern-warfare-remastered-ps": {
 "createdAt": 1764100018000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/444d584aa3776007757e1c661b891d92fa69934c/catalog/provider/6/12/6-1-599951-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Call of Duty: Modern Warfare Remastered",
@@ -939,6 +1011,8 @@
 },
 "call-of-duty-wwii-ps": {
 "createdAt": 1764100023000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/132a5ce47cae3d7f7a30a98fa6e9d902afc343b1/catalog/provider/6/12/6-1-652629-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Call of Duty: WWII",
@@ -947,12 +1021,16 @@
 },
 "cam-nf": {
 "createdAt": 1763750062000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMmEyNzUwNmItOTI1Mi00ZmVlLTkxZWEtOGY0Y2Y2YzU0YzRkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Cam",
 "type": "movie"
 },
 "camara-del-terror-nf": {
 "createdAt": 1763750052000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOTY3MTlhOGUtZmUyYS00NzJhLWJjOGEtZGM2ODRhMzQ1OGZlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Cámara del terror",
 "type": "series"
@@ -1068,6 +1146,8 @@
 },
 "cementerio-de-animales-el-origen-px": {
 "createdAt": 1763760133000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOTFlZmU5YTMtNzg2NC00NWU3LTk3OTktMzdlZjUwNTM4NjljXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Cementerio de animales: el origen",
 "type": "movie",
@@ -1087,6 +1167,8 @@
 "epTotal": 10,
 "extRating": 6,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTg1MmU4OGItYTVlNS00MmQ2LTg4YzItOTA4NTIxY2VjNDgxXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 10
 },
@@ -1105,12 +1187,16 @@
 },
 "cielo-rojo-sangre-nf": {
 "createdAt": 1763750131000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMDE2YWFjNTUtZjkxOC00NDRhLTlkNDYtYmI2ZGRlYjE4MDJkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Cielo rojo sangre",
 "type": "movie"
 },
 "circulo-nf": {
 "createdAt": 1763750027000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTg0Mjg0MjUwOF5BMl5BanBnXkFtZTgwNjk0NzQ4NzE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Círculo",
 "type": "movie"
@@ -1139,6 +1225,8 @@
 "Estrategia",
 "Móvil"
 ],
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/40b0e93296067d34d733018fe99470eaa216e943/catalog/provider/6/12/6-1-244702-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "iOS, Android",
 "summary": "Construye y mejora tu aldea, entrena tropas y ataca a otros jugadores, solo o en guerras de clanes.",
 "title": "Clash of Clans",
@@ -1150,6 +1238,8 @@
 "epTotal": 8,
 "extRating": 7.2,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZmVhMjY0YmYtMTk0YS00NzU2LTg3MTEtOWZlZjAxNDBlOTM2XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 8
 },
@@ -1214,6 +1304,8 @@
 "epTotal": 24,
 "extRating": 6.9,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 6,
 "2": 6,
@@ -1227,6 +1319,8 @@
 },
 "contraband-nf": {
 "createdAt": 1763750017000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjE3NzY5NTg0OF5BMl5BanBnXkFtZTcwODk4MzgxNw@@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Contraband",
 "type": "movie"
@@ -1236,6 +1330,8 @@
 "epTotal": 4,
 "extRating": 7.8,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYmUxYjgzMmUtMzc4ZS00OWExLTlkMjEtMTRiZDczOWZkMjhkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 4
 },
@@ -1246,6 +1342,8 @@
 },
 "crash-bandicoot-2-cortex-strikes-back-ps": {
 "createdAt": 1764000047000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a46f30231c9092b721cdd6fe8ed25226ee4ee1c3/catalog/provider/6/12/6-1-2574-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Crash Bandicoot 2: Cortex Strikes Back",
@@ -1254,6 +1352,8 @@
 },
 "crash-bandicoot-ps": {
 "createdAt": 1764000081000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/06efb79a9f7af57f02374e74c6315f55e5278f08/catalog/provider/6/12/6-1-2563-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Crash Bandicoot",
@@ -1262,6 +1362,8 @@
 },
 "crash-bandicoot-warped-ps": {
 "createdAt": 1764000086000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/4a8d31ffba1110cfd9f7a5e56d90b908b36e9895/catalog/provider/6/12/6-1-2585-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Crash Bandicoot: Warped",
@@ -1270,6 +1372,8 @@
 },
 "creep-2-nf": {
 "createdAt": 1763750102000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjA2MTkxMDYzN15BMl5BanBnXkFtZTgwNTc3Mzc4MzI@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Creep 2",
 "type": "movie"
@@ -1285,6 +1389,8 @@
 },
 "criminal-nf": {
 "createdAt": 1763750189000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOGM2Zjk3ZTgtN2M4My00ZDJiLWI0MDQtYzM0ZDUxZjY1YTYwXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Criminal",
 "type": "series"
@@ -1306,12 +1412,16 @@
 },
 "cuando-llama-un-extrano-nf": {
 "createdAt": 1763750060000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZDIxMWUzOGMtMDBlZC00YzBjLTlkYjUtMTk0MjdmNDk3NTg4XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Cuando llama un extraño",
 "type": "movie"
 },
 "cyberpunk-2077-ps": {
 "createdAt": 1764000004000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/e7f4794c6eaa2a8b6e32a2802b1364578daacefb/catalog/provider/6/12/6-1-735426-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Cyberpunk 2077",
@@ -1328,6 +1438,8 @@
 },
 "dangerous-lies-nf": {
 "createdAt": 1763750087000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYWNhYmRlMTEtMTNlNi00NzYxLWEyM2ItNjI0MzFhMzU4ODQzXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Dangerous Lies",
 "type": "movie"
@@ -1343,6 +1455,8 @@
 "Misterio",
 "Drama"
 ],
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTUzNjQ2MTY5NV5BMl5BanBnXkFtZTgwOTAzNTQxNDM@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 10,
 "2": 8,
@@ -1356,6 +1470,8 @@
 },
 "days-gone-ps": {
 "createdAt": 1764100007000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/d98eaa01e206bd67359536b37821d03c80648a5b/catalog/provider/6/12/6-1-698936-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Days Gone",
@@ -1364,6 +1480,8 @@
 },
 "dead-by-daylight-ps": {
 "createdAt": 1764000003000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a8978fd9d556e0aa1bab702cf999816bfda3cfc3/catalog/provider/6/12/6-1-634870-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "platinum": true,
 "source": "PSN",
@@ -1400,6 +1518,8 @@
 },
 "death-note-nf": {
 "createdAt": 1763750144000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTUwOTgzMTEyOF5BMl5BanBnXkFtZTgwNTk3MTM5MjI@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Death Note",
 "type": "movie"
@@ -1421,6 +1541,8 @@
 },
 "death-stranding-ps": {
 "createdAt": 1764000031000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/0006f466fc447ce64513db96dc58a15b1bedc4b2/catalog/provider/6/12/6-1-713107-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Death Stranding",
@@ -1438,6 +1560,8 @@
 },
 "depredador-2-px": {
 "createdAt": 1763760199000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNjFjMjRkYWUtNmI4YS00ZmMwLWFiMmYtNWViY2RjZjMyODQ4XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Depredador 2",
 "type": "movie",
@@ -1454,6 +1578,8 @@
 },
 "depredador-px": {
 "createdAt": 1763760201000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOWEzMDI0MTUtMjQ0Yy00MGRhLWI4YjAtZTgzZTM3NTYxZGJkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Depredador",
 "type": "movie",
@@ -1553,6 +1679,8 @@
 "donde-esta-marta-nf": {
 "createdAt": 1763750148000,
 "epTotal": 3,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjA2NjA0MGUtODMxMy00N2Y0LTkzYTktYmIzZmVkOGI4MzllXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 3
 },
@@ -1563,12 +1691,16 @@
 },
 "donde-se-esconden-los-mas-buscados-nf": {
 "createdAt": 1763750077000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BM2NlNDE3MjEtYWRiMi00Y2Q2LTk3ZDQtY2Q1ZTk3MmRhMWE5XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "¿Dónde se esconden los más buscados?",
 "type": "series"
 },
 "doom-ps": {
 "createdAt": 1764000029000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/fc2c3b7b6d9685b2874e2fb3d7f8318fd321eb4e/catalog/provider/6/12/6-1-647155-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Doom",
@@ -1634,6 +1766,8 @@
 },
 "dragon-ball-sparking-zero-ps": {
 "createdAt": 1764000014000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/04e88ba00ca3f8112b4b65464aad89132f81f41a/catalog/provider/7/2/7-1728237411.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Dragon Ball: Sparking! Zero",
@@ -1642,6 +1776,8 @@
 },
 "dragon-ball-super-broly-px": {
 "createdAt": 1763760186000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTA5MTc1M2EtZWQ2Ni00ZmU2LTg3MzQtOTliMjE4OGM0ZWFiXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Super: Broly",
 "type": "movie",
@@ -1667,6 +1803,8 @@
 },
 "dragon-ball-z-el-combate-definitivo-px": {
 "createdAt": 1763760213000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BM2MyZjViODMtMmNiZi00Y2U5LWEyNDktOTAyYzRhNjFhNTc3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: El combate definitivo",
 "type": "movie",
@@ -1674,6 +1812,8 @@
 },
 "dragon-ball-z-el-mas-fuerte-del-mundo-px": {
 "createdAt": 1763760221000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNmIxYmM1MzUtZWFhYS00YzYyLWEyZDgtZGE2NDliNzJmNWMzXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: El más fuerte del mundo",
 "type": "movie",
@@ -1681,12 +1821,16 @@
 },
 "dragon-ball-z-el-pare-d-en-son-goku-px": {
 "createdAt": 1763760218000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYzNmZmRiMGItNTU4OS00NjcyLTk5OGQtNzk1YTIyMmVhZTA0XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: El Pare D'en Son Goku",
 "type": "movie"
 },
 "dragon-ball-z-el-regreso-de-broly-px": {
 "createdAt": 1763760214000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZTZlYTBhZGMtNTIzMi00YWYyLWI0MGEtNTdiNGNmZDIxOWU2XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: El regreso de Broly",
 "type": "movie",
@@ -1694,6 +1838,8 @@
 },
 "dragon-ball-z-el-super-guerrer-son-goku-px": {
 "createdAt": 1763760219000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYzNmZmRiMGItNTU4OS00NjcyLTk5OGQtNzk1YTIyMmVhZTA0XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: El Super Guerrer Son Goku",
 "type": "movie"
@@ -1706,6 +1852,8 @@
 },
 "dragon-ball-z-estalla-el-duelo-px": {
 "createdAt": 1763760217000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMmJkZWMzYzktOGI2Ni00YmJhLTkyY2EtYjgzOTVhZmY2ZDNlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: Estalla el duelo",
 "type": "movie",
@@ -1713,6 +1861,8 @@
 },
 "dragon-ball-z-fusion-px": {
 "createdAt": 1763760150000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOWI3OThmMzAtNTM4NC00MTkwLWI5N2QtNTlkMDgzNjg0ZjlmXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: ¡Fusión!",
 "type": "movie",
@@ -1720,6 +1870,8 @@
 },
 "dragon-ball-z-guerreros-de-fuerza-ilimitada-px": {
 "createdAt": 1763760167000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNmIxODkwOTItMzgyMy00ZGMyLTlkYjAtNTEzYzVhNWEwYzdjXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: Guerreros de fuerza ilimitada",
 "type": "movie",
@@ -1746,6 +1898,8 @@
 },
 "dragon-ball-z-kakarot-ps": {
 "createdAt": 1764000017000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/34c1dfed9fdff9482dcb0109003b0509c6917fde/catalog/provider/6/12/6-1-737370-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "Dragon Ball Z: Kakarot",
@@ -1754,6 +1908,8 @@
 },
 "dragon-ball-z-la-batalla-de-los-dioses-px": {
 "createdAt": 1763760211000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZjQxYmQ1NWMtYTJhMi00NTdiLWE4NjAtNmJjMzVjNTE0ZjgwXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: La Batalla de los Dioses",
 "type": "movie",
@@ -1761,6 +1917,8 @@
 },
 "dragon-ball-z-la-resurreccion-de-freezer-px": {
 "createdAt": 1763760195000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZDYyZDQxMzAtYTRjMy00YzQ1LTk0NzYtNzhlYThiMTQzMjNhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: La resurrección de Freezer",
 "type": "movie",
@@ -1768,12 +1926,16 @@
 },
 "dragon-ball-z-la-super-batalla-px": {
 "createdAt": 1763760220000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNmIxODkwOTItMzgyMy00ZGMyLTlkYjAtNTEzYzVhNWEwYzdjXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: La Super Batalla",
 "type": "movie"
 },
 "dragon-ball-z-los-guerreros-de-plata-px": {
 "createdAt": 1763760216000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNmQ4NTkzNjItY2UxNS00YzJiLWEzMWQtNGJhYTJlNjg4NDIzXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: Los guerreros de plata",
 "type": "movie",
@@ -1781,6 +1943,8 @@
 },
 "dragon-ball-z-los-mejores-rivales-px": {
 "createdAt": 1763760168000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOGEzMGJhZjAtZTk2OC00ZGM4LWFkMTUtMDg4Y2QwOGFiODVlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Dragon Ball Z: Los mejores rivales",
 "type": "movie",
@@ -1820,6 +1984,8 @@
 },
 "ea-sports-fc-24-ps": {
 "createdAt": 1764000018000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/ffa3deaeec28097d0eb17b578d83a212109109a6/catalog/provider/6/12/6-1-949277-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "EA Sports FC 24",
@@ -1828,6 +1994,8 @@
 },
 "ea-sports-fc-25-ps": {
 "createdAt": 1764000009000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/dc79b05281f63778eeab0d7b58ad9cc9341d36fe/catalog/provider/6/12/6-1-1039831-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "EA Sports FC 25",
@@ -1836,6 +2004,8 @@
 },
 "ea-sports-ufc-3-ps": {
 "createdAt": 1764000085000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/602eb0dfb0c6af2f2863e99c1f457f0e32ec1aa9/catalog/provider/6/12/6-1-660561-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "EA Sports UFC 3",
@@ -1844,6 +2014,8 @@
 },
 "ejercito-de-los-muertos-nf": {
 "createdAt": 1763750110000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNjc0MDFjZmQtMWMxZi00YzY4LWI5N2EtOGQwM2IzZjRkYmY1XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Ejército de los muertos",
 "type": "movie"
@@ -1860,6 +2032,8 @@
 "el-asesino-del-impermeable-nf": {
 "createdAt": 1763750193000,
 "epTotal": 3,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYTMxMmExNjUtM2QxYy00MTYwLWJmNDUtOTA4OTZmOWI3ZjkyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 3
 },
@@ -1870,6 +2044,8 @@
 },
 "el-bar-nf": {
 "createdAt": 1763750116000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYTQ5YTc3MmUtNzFlMy00N2ZlLWI2NTgtMDFhZGUyZDVhMDhlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "El bar",
 "type": "movie"
@@ -1885,6 +2061,8 @@
 },
 "el-cadaver-nf": {
 "createdAt": 1763750083000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BY2M4Zjk4MTEtNWI4OC00MjY1LWI2OTctOTgxMzFhYTFhYjUzXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "El cadáver",
 "type": "movie"
@@ -1900,6 +2078,8 @@
 "el-caso-alcasser-nf": {
 "createdAt": 1763750089000,
 "epTotal": 5,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMGZhOGE5YWYtYzUxNy00OGM5LWI3YTgtOWEwNjQ2YTgxNDYyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 5
 },
@@ -1910,6 +2090,8 @@
 },
 "el-caso-watts-el-padre-homicida-nf": {
 "createdAt": 1763750118000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNDM3OTlhM2EtNjQ3Ni00MmM1LTgzZDgtMGYxNGM4NjdmNDgxXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "El caso Watts: El padre homicida",
 "type": "movie"
@@ -1950,6 +2132,8 @@
 },
 "el-dilema-de-las-redes-nf": {
 "createdAt": 1763750142000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNGQyY2E1M2EtZTkzNy00YjYyLWFjMGQtNTI1OGE4Yjc4MTZiXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "El dilema de las redes",
 "type": "movie"
@@ -2042,6 +2226,8 @@
 },
 "el-juego-de-gerald-nf": {
 "createdAt": 1763750028000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNDA2ZjU5ZWMtMmQ4OS00ZTQzLWIwOWMtYTBmOTljYTIwNjM3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "El juego de Gerald",
 "type": "movie"
@@ -2070,6 +2256,8 @@
 "Fantasía",
 "Drama"
 ],
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOTc1NTAxMWItMWFlNy00MmU2LTkwMTMtNzMwOTg5OTQ5YTFiXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "runtime": 118,
 "summary": "En la posguerra española, una niña descubre un laberinto donde un fauno le encarga tres pruebas.",
 "title": "El laberinto del fauno",
@@ -2162,6 +2350,8 @@
 },
 "el-paquete-nf": {
 "createdAt": 1763750185000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYmFlMWIwZjQtN2NlZi00OTlkLTkwNTgtOGZmMTZjY2Y0ZjJjXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "El paquete",
 "type": "movie"
@@ -2177,6 +2367,8 @@
 },
 "el-payaso-del-mal-nf": {
 "createdAt": 1763750006000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOGFkNzVkYWQtM2NjZS00YjUyLTk4OGMtYTFmNDA5ZWMxMjY5XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "El payaso del mal",
 "type": "movie"
@@ -2199,6 +2391,8 @@
 "el-recluso-nf": {
 "createdAt": 1763750182000,
 "epTotal": 13,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMWJmY2JhYmUtNTAyZC00MTZiLWJmNTktNmI0MmJmYTQ4ZGMwXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 13
 },
@@ -2285,6 +2479,8 @@
 "epTotal": 5,
 "extRating": 7,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNjQxNTE0NGItNGEyMi00NmY2LTgwOGQtNjA3NDMwYzgyMDdjXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 5
 },
@@ -2303,6 +2499,8 @@
 },
 "el-timador-de-tinder-nf": {
 "createdAt": 1763750164000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNTQ5YzM2YzQtNGY0ZS00ZjUyLThmN2YtYzlmNTEzMmQ0YzgyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "El timador de Tinder",
 "type": "movie"
@@ -2335,6 +2533,8 @@
 "Animación",
 "Fantasía"
 ],
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNTEyNmEwOWUtYzkyOC00ZTQ4LTllZmUtMjk0Y2YwOGUzYjRiXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "runtime": 125,
 "summary": "Una niña queda atrapada en un mundo de espíritus y debe trabajar en una casa de baños para liberar a sus padres.",
 "title": "El viaje de Chihiro",
@@ -2349,6 +2549,8 @@
 "Mundo abierto",
 "Soulslike"
 ],
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/86c7a59722e76cf9cb2c83bfac863f18f815bc2a/catalog/provider/6/12/6-1-824956-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PC, PS5, PS4, Xbox Series, Xbox One",
 "summary": "Un Sinluz recorre las Tierras Intermedias para reunir los fragmentos del Círculo de Elden y convertirse en Señor.",
 "title": "Elden Ring",
@@ -2357,12 +2559,16 @@
 },
 "election-la-noche-de-las-bestias-nf": {
 "createdAt": 1763750004000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjI3MDI0MTA1N15BMl5BanBnXkFtZTgwOTk4NjU5ODE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Election: La noche de las bestias",
 "type": "movie"
 },
 "elevator-game-px": {
 "createdAt": 1763760090000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNDhhYTcyZGItZWI2MC00NjBhLTg2Y2YtNjUzM2U5MjQ0NzRlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Elevator Game",
 "type": "movie",
@@ -2370,12 +2576,16 @@
 },
 "elige-o-muere-nf": {
 "createdAt": 1763750200000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZjNkMGE2MjEtMDI5NS00Yjc0LTk2YjAtOGNmOTIyZTgxZWQxXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Elige o muere",
 "type": "movie"
 },
 "eliminado-nf": {
 "createdAt": 1763750026000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMWEzOGU0OTktODU2My00YmYxLTliYjItOTkzMWRhMjMyZGNiXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Eliminado",
 "type": "movie"
@@ -2505,6 +2715,8 @@
 },
 "f1-23-ps": {
 "createdAt": 1764000019000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/81a523b841fed3d1a8bda0992dab73d7ff8db04b/catalog/provider/6/12/6-1-934496-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "F1 23",
@@ -2513,6 +2725,8 @@
 },
 "fall-guys-ps": {
 "createdAt": 1764000045000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/b87154f0e81aa40e076f47b06587bbe7f4a5a0ce/catalog/provider/6/12/6-1-715674-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "Fall Guys",
@@ -2521,6 +2735,8 @@
 },
 "fallout-4-ps": {
 "createdAt": 1764000080000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/fe292cd21ad5eb93aedd87d70e393b3a7e1500c9/catalog/provider/6/12/6-1-589827-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Fallout 4",
@@ -2529,6 +2745,8 @@
 },
 "far-cry-3-classic-edition-ps": {
 "createdAt": 1764000037000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/1a85e4d948896decbb9d36881092698c4f0602e6/catalog/provider/6/12/6-1-743337-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Far Cry 3: Classic Edition",
@@ -2641,6 +2859,8 @@
 },
 "fifa-16-ps": {
 "createdAt": 1764100014000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/c8f84e1f549c82083f5f17c0bfc44f442540a3f0/catalog/provider/6/12/6-1-592322-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "FIFA 16",
@@ -2649,6 +2869,8 @@
 },
 "fifa-19-ps": {
 "createdAt": 1764100015000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/9733eadd74dedeedfe3888c3bc3c686ac10c432b/catalog/provider/6/12/6-1-686161-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "FIFA 19",
@@ -2657,6 +2879,8 @@
 },
 "fifa-20-ps": {
 "createdAt": 1764100009000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/65ec381c2df3882d4fd6deec07c0534307adf820/catalog/provider/6/12/6-1-726102-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "FIFA 20",
@@ -2665,6 +2889,8 @@
 },
 "fifa-21-ps": {
 "createdAt": 1764000059000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/43033f118077bf3de631b7746f5aaed9c50b7ab1/catalog/provider/6/12/6-1-768892-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "FIFA 21",
@@ -2673,6 +2899,8 @@
 },
 "fifa-22-ps": {
 "createdAt": 1764000042000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/c54f3882061ba6d70330f1fe2df592aba0821234/catalog/provider/6/12/6-1-807386-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "FIFA 22",
@@ -2681,6 +2909,8 @@
 },
 "fifa-23-ps": {
 "createdAt": 1764000033000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/54b6681459798dbbbcaf661e8b71212fba74e083/catalog/provider/6/12/6-1-881130-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "FIFA 23",
@@ -2689,18 +2919,24 @@
 },
 "flu-nf": {
 "createdAt": 1763750067000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTQ4NzI2OTg5NV5BMl5BanBnXkFtZTgwNjQ3MDgyMjE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Flu",
 "type": "movie"
 },
 "focus-nf": {
 "createdAt": 1763750079000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTUwODg2OTA4OF5BMl5BanBnXkFtZTgwOTE5MTE4MzE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Focus",
 "type": "movie"
 },
 "for-honor-ps": {
 "createdAt": 1764100017000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/077e860d7c4d1a45856098828476cf6cc2e095e2/catalog/provider/6/12/6-1-623731-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "For Honor",
@@ -2718,6 +2954,8 @@
 },
 "fortnite-ps": {
 "createdAt": 1764000083000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/27ef77b86a997e8d007d8264bebb7e389c53ebe3/catalog/provider/6/12/6-1-633730-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Fortnite",
@@ -2742,6 +2980,8 @@
 },
 "friday-the-13th-ps": {
 "createdAt": 1764100021000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/988a6dfc147a654e5d47709d88290c1f816994af/catalog/provider/6/12/6-1-473392-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Friday the 13th",
@@ -2799,6 +3039,8 @@
 },
 "garganta-profunda-px": {
 "createdAt": 1763760179000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZTBhYWFiYzUtZWFmZS00MGMxLTk0ZmEtNmU5NzY3ZjRiNGNhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Garganta Profunda",
 "type": "movie"
@@ -2864,6 +3106,8 @@
 },
 "god-of-war-iii-remastered-ps": {
 "createdAt": 1764100022000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/1de3889d5c836c719746b799c6bb7145c4fb2dd6/catalog/provider/6/12/6-1-581390-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "God of War III Remastered",
@@ -2872,6 +3116,8 @@
 },
 "god-of-war-ps": {
 "createdAt": 1764000084000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/95322bdc67f3ccdbcd88971fd4f3dd47d567c2d5/catalog/provider/7/2/7-1696556520.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "God of War",
@@ -2880,6 +3126,8 @@
 },
 "god-of-war-ragnarok-ps": {
 "createdAt": 1764000023000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/38912b75341176beebb7ff5278e9dbb17f79c70f/catalog/provider/6/12/6-1-879324-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "platinum": true,
 "source": "PSN",
@@ -2916,6 +3164,8 @@
 },
 "godzilla-shin-px": {
 "createdAt": 1763760166000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZmRiMTdjN2MtNWU3NC00ZjEzLWI1OTgtYjEwZjU5OWUzYjc4XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Godzilla Shin",
 "type": "movie",
@@ -2975,6 +3225,8 @@
 },
 "grand-theft-auto-v-ps": {
 "createdAt": 1764100008000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/d9abf4c75e724b9fae3469d7edd3265d6fda7dec/catalog/provider/6/12/6-1-353605-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Grand Theft Auto V",
@@ -2983,6 +3235,8 @@
 },
 "grand-theft-auto-vi-ps": {
 "createdAt": 1764000000000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/957e362f76ac28556f5f0ac458aa98f9a0050bd2/catalog/provider/7/2/7-1781822993.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Grand Theft Auto VI",
@@ -2991,6 +3245,8 @@
 },
 "grand-theft-auto-vice-city-ps": {
 "createdAt": 1764000034000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/07cf45de9c6dde37fcd93ba635a50745f5921ce2/catalog/provider/6/12/6-1-18299-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Grand Theft Auto: Vice City",
@@ -3090,6 +3346,8 @@
 "Roguelike",
 "Acción"
 ],
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/d21ad266bb9e45e4495de439cfe1e66503642e2c/catalog/provider/6/12/6-1-735556-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PC, Switch, PS5, Xbox",
 "summary": "Zagreo, hijo de Hades, intenta escapar una y otra vez del Inframundo con la ayuda de los dioses del Olimpo.",
 "title": "Hades",
@@ -3170,6 +3428,8 @@
 },
 "halloween-la-maldicion-de-michael-myers-halloween-6-px": {
 "createdAt": 1763760117000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BY2YyN2U1YjctMzMyNS00YmQyLWI5ZjUtYjUwMWU0MmYxZmU1XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Halloween: La maldición de Michael Myers (Halloween 6)",
 "type": "movie",
@@ -3312,12 +3572,16 @@
 },
 "hay-alguien-en-tu-casa-nf": {
 "createdAt": 1763750139000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZTk4NzQ4MjMtYzFjMC00YjhjLTkyYjEtMzYyNmYxMWRkYTU4XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Hay alguien en tu casa",
 "type": "movie"
 },
 "heat-nf": {
 "createdAt": 1763750156000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTkxYjU1OTMtYWViZC00ZjAzLWI3MDktZGQ2N2VmMjVjNDRlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Heat",
 "type": "movie"
@@ -3409,6 +3673,8 @@
 },
 "historias-de-miedo-para-contar-en-la-oscuridad-nf": {
 "createdAt": 1763750095000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMDBiOTEwM2MtNTQ5NC00NGVhLWI1MTgtY2E3YmIzMTdlMjI3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Historias de miedo para contar en la oscuridad",
 "type": "movie"
@@ -3423,6 +3689,8 @@
 },
 "hitman-2-ps": {
 "createdAt": 1764000058000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/c2dbfca9d5e473203050b5e5c8f317cfc35c3634/catalog/provider/6/12/6-1-690584-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Hitman 2",
@@ -3431,6 +3699,8 @@
 },
 "hitman-3-ps": {
 "createdAt": 1764000020000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/3c3e0493f15d15150aa314f9831ac0e80e8461e4/catalog/provider/6/12/6-1-764213-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Hitman 3",
@@ -3439,6 +3709,8 @@
 },
 "hitman-ps": {
 "createdAt": 1764100019000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/11dfe0ee8f47b9de5d1c9db2a89f3c901baeda64/catalog/provider/6/12/6-1-607070-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Hitman",
@@ -3452,6 +3724,8 @@
 "Metroidvania",
 "Acción"
 ],
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/0eef03f8310277a56a01577164f5394ae4e905f3/catalog/provider/6/12/6-1-623148-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PC, Switch, PS4, Xbox One",
 "summary": "Un pequeño caballero explora las ruinas del reino insecto de Hallownest y desentraña su caída.",
 "title": "Hollow Knight",
@@ -3460,6 +3734,8 @@
 },
 "hollow-knight-ps": {
 "createdAt": 1764000054000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/0eef03f8310277a56a01577164f5394ae4e905f3/catalog/provider/6/12/6-1-623148-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Hollow Knight",
@@ -3468,6 +3744,8 @@
 },
 "horizon-forbidden-west-ps": {
 "createdAt": 1764000049000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/91aafa6b04ff0a46e3ddc2aa3df69c5e2c44217a/catalog/provider/6/12/6-1-815176-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Horizon Forbidden West",
@@ -3476,6 +3754,8 @@
 },
 "horizon-zero-dawn-ps": {
 "createdAt": 1764000060000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/ef2939f1e3a455c6dc703f4d04a0b64a5e740298/catalog/provider/7/2/7-1730248208.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Horizon Zero Dawn",
@@ -3519,6 +3799,8 @@
 },
 "hot-girls-wanted-nf": {
 "createdAt": 1763750041000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZDYxZmZhMmUtNTY3YS00YmQyLWI3ODctMWI2ZTEwMWRmYTJlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Hot Girls Wanted",
 "type": "movie"
@@ -3528,6 +3810,8 @@
 "epTotal": 44,
 "extRating": 4.7,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BN2ViMTdkOTUtYTk4Zi00MWFiLWFhNzktNWIzODI4MWNmNTZhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 10,
 "2": 10,
@@ -3621,6 +3905,8 @@
 },
 "incompatibles-2-nf": {
 "createdAt": 1763750203000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNzEwZjg4ZDItMzQyNS00ZTM4LWE1MTQtNDRiYzc4ZTZlYmYyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Incompatibles 2",
 "type": "movie"
@@ -3693,6 +3979,8 @@
 },
 "infamous-second-son-ps": {
 "createdAt": 1764000070000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a21a71681efe0dbaddbf438bea9ca37b183fa777/catalog/provider/6/12/6-1-351861-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "inFamous: Second Son",
@@ -3701,6 +3989,8 @@
 },
 "infierno-azul-nf": {
 "createdAt": 1763750016000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjA1MTA4MzU4Ml5BMl5BanBnXkFtZTgwNjUxNjczODE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Infierno azul",
 "type": "movie"
@@ -3725,6 +4015,8 @@
 },
 "infiltrados-en-miami-nf": {
 "createdAt": 1763750000000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMWRiNDhjYTItMWMwNy00Mzk3LWFjNjktNzk3OWMwNWFjY2RhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Infiltrados en Miami",
 "type": "movie"
@@ -3734,6 +4026,8 @@
 "epTotal": 22,
 "extRating": 5.9,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZTAyZGMyMDYtYTIzYi00ZDViLWFmNzAtMDk5N2Y0YzU4YzMzXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 12,
 "2": 10
@@ -3931,6 +4225,8 @@
 },
 "jumanji-nf": {
 "createdAt": 1763750175000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYTFkMjFmODgtYzRiZi00NmQwLTliZWMtMzRhMWQ5ZmY3ZDExXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Jumanji",
 "type": "movie"
@@ -3977,6 +4273,8 @@
 },
 "jurassic-park-parque-jurasico-nf": {
 "createdAt": 1763750150000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Jurassic Park (Parque Jurásico)",
 "type": "movie"
@@ -4100,12 +4398,16 @@
 },
 "la-calle-del-terror-parte-1-1994-nf": {
 "createdAt": 1763750122000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZWViZDRiMGYtZTlmMS00ZDM2LWIzNWUtYmNjYzBiYjJkNTk3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "La calle del terror - Parte 1: 1994",
 "type": "movie"
 },
 "la-calle-del-terror-parte-2-1978-nf": {
 "createdAt": 1763750125000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZWUxNGRjZTgtNTYxNC00YTA4LTkwODktOWEwZDMwNzc4NDkzXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "La calle del terror - Parte 2: 1978",
 "type": "movie"
@@ -4154,6 +4456,8 @@
 },
 "la-cosa-the-thing-nf": {
 "createdAt": 1763750071000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTMxMjI0MzUyNl5BMl5BanBnXkFtZTcwNjc1NzE5NQ@@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "La cosa (The Thing)",
 "type": "movie"
@@ -4284,6 +4588,8 @@
 },
 "la-mente-de-un-asesino-nf": {
 "createdAt": 1763750058000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZDAyZTg1MGUtY2Q1YS00NmRlLThhNzAtNjhiOTZjNWE1OWNhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "La mente de un asesino",
 "type": "series"
@@ -4324,6 +4630,8 @@
 },
 "la-mujer-en-la-ventana-nf": {
 "createdAt": 1763750105000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BODI1YzhlZTMtZDNkYy00NDdhLWJiMDctYjU4YjZiYTM2YzRkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "La mujer en la ventana",
 "type": "movie"
@@ -4398,6 +4706,8 @@
 },
 "la-trampa-del-mal-nf": {
 "createdAt": 1763750108000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZDRmYWMzYjYtODkyMS00YWU4LWJkYzMtMWM1Y2M5YjFlZGZhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "La trampa del mal",
 "type": "movie"
@@ -4469,6 +4779,8 @@
 },
 "life-vida-nf": {
 "createdAt": 1763750029000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNWNkYWYzNGUtOWVjNS00MGY0LWIyY2YtODllNGIxOGRlOTgyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Life (Vida)",
 "type": "movie",
@@ -4598,6 +4910,8 @@
 },
 "los-infieles-nf": {
 "createdAt": 1763750180000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZGJiYTA0NDMtZjdlYS00ZjBkLWI2ZjctOTIxODRiMDE2MmRmXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Los infieles",
 "type": "movie"
@@ -4695,6 +5009,8 @@
 },
 "los-sin-nombre-nf": {
 "createdAt": 1763750132000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMGU3MDQxNjYtODZiYS00Mjc0LThlZDMtYjYwNzI4MTgyYjQyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Los sin nombre",
 "type": "movie"
@@ -4726,6 +5042,8 @@
 "epTotal": 93,
 "extRating": 8.3,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYzMwNzI3MWItZTIzYi00YjkxLThhOWQtYmUwYjg4NWM0ZWI1XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 13,
 "2": 18,
@@ -4759,6 +5077,8 @@
 },
 "maneater-ps": {
 "createdAt": 1764000075000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/fb0559e602da1c99ce65453268769bc1d39b2f41/catalog/provider/6/12/6-1-735429-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Maneater",
@@ -4770,6 +5090,8 @@
 "epTotal": 18,
 "extRating": 7.5,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNjM4YWY0NmYtZWYwYS00M2U5LTkwMmQtNmIxMjI2NWEzMjlkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 8,
 "2": 10
@@ -4799,6 +5121,8 @@
 },
 "mantarrayas-criaturas-de-otro-planeta-px": {
 "createdAt": 1763760119000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYjJkZDczMzMtM2JjMS00YjM3LWE5NjUtZTlkMTY3MDU4ZDZhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Mantarrayas Criaturas De Otro Planeta",
 "type": "movie"
@@ -4822,6 +5146,8 @@
 },
 "marvel-rivals-ps": {
 "createdAt": 1764000008000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/ef39362c72b3470640e97ef2c70f34c529531cb3/catalog/provider/6/12/6-1-1013862-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Marvel Rivals",
@@ -4838,6 +5164,8 @@
 },
 "marvel-s-guardians-of-the-galaxy-ps": {
 "createdAt": 1764000044000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/9728bdf4140f542767c3708eec2b838d6b38279d/catalog/provider/6/12/6-1-803331-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Marvel's Guardians of the Galaxy",
@@ -4846,6 +5174,8 @@
 },
 "marvel-s-spider-man-2-ps": {
 "createdAt": 1764000026000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/755eb2129657e69870ee7213d93549532f144e79/catalog/provider/6/12/6-1-816262-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "platinum": true,
 "source": "PSN",
@@ -4855,6 +5185,8 @@
 },
 "marvel-s-spider-man-miles-morales-ps": {
 "createdAt": 1764000051000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/0fea3339a89dc2e069149ba599afc0ac416ca3e3/catalog/provider/6/12/6-1-769195-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Marvel's Spider-Man: Miles Morales",
@@ -4863,6 +5195,8 @@
 },
 "marvel-s-spider-man-ps": {
 "createdAt": 1764100006000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/55822324f14cdcee022dd6468397067fd3e1f646/catalog/provider/6/12/6-1-668512-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Marvel's Spider-Man",
@@ -4912,6 +5246,8 @@
 },
 "medievil-ps": {
 "createdAt": 1764000012000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a26afab3ffbc56e2a361f0eefa155e479715265f/catalog/provider/6/12/6-1-729229-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "MediEvil",
@@ -4920,6 +5256,8 @@
 },
 "meet-the-blacks-nf": {
 "createdAt": 1763750020000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMzAxNDY3ODk3MF5BMl5BanBnXkFtZTgwMjYwNDA5NzE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Meet the Blacks",
 "type": "movie"
@@ -5001,6 +5339,8 @@
 },
 "mercy-nf": {
 "createdAt": 1763750005000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNGVjMGQ5NmEtMDRjOC00ZDdmLWEzYzEtNzE2YzAzZWM2ZTQ4XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Mercy",
 "type": "movie"
@@ -5022,18 +5362,24 @@
 },
 "mib-men-in-black-hombres-de-negro-nf": {
 "createdAt": 1763750178000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZmQ0YTdhYzEtMjIxZC00MGFiLTlmNjktZmFlOWE2M2QxOTRhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "MIB: Men in Black: Hombres de negro",
 "type": "movie"
 },
 "miib-hombres-de-negro-ii-nf": {
 "createdAt": 1763750179000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNDA0NTMxMV5BMl5BanBnXkFtZTYwMDE2NzY2._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "MIIB: Hombres de negro II",
 "type": "movie"
 },
 "milf-nf": {
 "createdAt": 1763750117000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNmQ0MWI4ODItMzBhMy00NTk1LTg1YzItNzU4NzlkNGQ2NTUwXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "MILF",
 "type": "movie"
@@ -5064,6 +5410,8 @@
 },
 "minecraft-ps": {
 "createdAt": 1764000043000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/aebc1254489cd25a83a6e67553b571586495ce62/catalog/provider/6/12/6-1-702279-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Minecraft",
@@ -5096,6 +5444,8 @@
 },
 "monopoly-plus-ps": {
 "createdAt": 1764000040000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a6010a2342b94b8e0ff961f4c72d4d0fb9db7869/catalog/provider/6/12/6-1-652949-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Monopoly Plus",
@@ -5120,6 +5470,8 @@
 },
 "monstruoso-nf": {
 "createdAt": 1763750014000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOWM3NmYyMjAtMjU3YS00MDJjLThmNDItNWUzZmFmMzk5NTEyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Monstruoso",
 "type": "movie"
@@ -5142,6 +5494,8 @@
 },
 "mortal-kombat-x-ps": {
 "createdAt": 1764000073000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/327e9d78160990674dc38936a7243261ca2f36ec/catalog/provider/6/12/6-1-518830-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Mortal Kombat X",
@@ -5150,6 +5504,8 @@
 },
 "most-likely-to-die-nf": {
 "createdAt": 1763750015000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjQyMTc4NDc2Nl5BMl5BanBnXkFtZTgwMzQ0MDU1NjE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Most Likely to Die",
 "type": "movie"
@@ -5182,6 +5538,8 @@
 },
 "mudanza-mortal-nf": {
 "createdAt": 1763750130000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNDU4ZjgyNmEtNjU4Ni00OTkwLWJkZmYtYjAyZjJjZjI0OWYyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Mudanza mortal",
 "type": "movie"
@@ -5204,6 +5562,8 @@
 },
 "multiple-nf": {
 "createdAt": 1763750093000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNTZjNmVjMzAtZjg2Mi00MWNmLTk5NTItOTExZDYwNTE2YmExXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Múltiple",
 "type": "movie"
@@ -5250,6 +5610,8 @@
 },
 "nba-2k18-ps": {
 "createdAt": 1764100011000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a3257468ec6c5e9eff5008e7f61d9ee6fa8557b6/catalog/provider/6/12/6-1-645509-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "NBA 2K18",
@@ -5258,6 +5620,8 @@
 },
 "nba-2k18-the-prelude-ps": {
 "createdAt": 1764100013000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/8018924e388345597e918cf8698a085dd8e86a74/catalog/provider/6/12/6-1-646289-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "NBA 2K18: The Prelude",
@@ -5266,6 +5630,8 @@
 },
 "nba-2k20-ps": {
 "createdAt": 1764100004000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/5702c381d6bca1810267fc5d0e0e3539c449bdf4/catalog/provider/6/12/6-1-719370-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "NBA 2K20",
@@ -5274,6 +5640,8 @@
 },
 "nba-2k21-ps": {
 "createdAt": 1764000065000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/06e5c0d4023981eedf7303929fd8d5512af65a38/catalog/provider/6/12/6-1-764268-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "NBA 2K21",
@@ -5282,6 +5650,8 @@
 },
 "nba-2k22-ps": {
 "createdAt": 1764000052000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/afb08603fd03687c0cc857ddf7ddb3babbf25299/catalog/provider/6/12/6-1-807697-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "source": "PSN",
 "title": "NBA 2K22",
@@ -5290,6 +5660,8 @@
 },
 "nba-2k23-ps": {
 "createdAt": 1764000027000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/27c28a448208536163ee59e685206664a19e1f22/catalog/provider/6/12/6-1-879065-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "NBA 2K23",
@@ -5298,6 +5670,8 @@
 },
 "need-for-speed-rivals-ps": {
 "createdAt": 1764000078000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/0e0d7b9df124ef6af74944791f146cabdd531757/catalog/provider/6/12/6-1-331710-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Need for Speed: Rivals",
@@ -5330,12 +5704,16 @@
 },
 "ninja-turtles-nf": {
 "createdAt": 1763750048000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNjUzODQ5MDY5NV5BMl5BanBnXkFtZTgwOTc1NzcyMjE@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Ninja Turtles",
 "type": "movie"
 },
 "no-hables-con-extranos-nf": {
 "createdAt": 1763750063000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTI2OGFjMjktZjU4NS00MzNmLTkwMDAtYzAzYThiYWJmNWFkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "No hables con extraños",
 "type": "series"
@@ -5376,6 +5754,8 @@
 },
 "noche-de-venganza-nf": {
 "createdAt": 1763750035000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZjQ0YTU4OTQtMTU3Zi00OTdlLTkzN2EtZjlmOTZhNjIwN2VkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Noche de venganza",
 "type": "movie"
@@ -5418,6 +5798,8 @@
 "epTotal": 8,
 "extRating": 8.1,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZDE1NzlkNWMtNzFiMC00ZTgxLTgyMmItOTU5OGI2NWQ4MDMxXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 8
 },
@@ -5522,6 +5904,8 @@
 "epTotal": 20,
 "extRating": 6.3,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYmQ0YmU1NGEtYjgxNi00MTRhLWE2ZTMtODY0NzdlZjdlNmFjXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 10,
 "2": 10
@@ -5552,6 +5936,8 @@
 },
 "outer-wilds-ps": {
 "createdAt": 1764000030000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/16cd32a362ba38c02a90c20dc516921f17f95260/catalog/provider/6/12/6-1-735502-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Outer Wilds",
@@ -5560,6 +5946,8 @@
 },
 "outlast-2-ps": {
 "createdAt": 1764100010000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/c02b63c9d420aa022bd97b7adf402814bb82a3b3/catalog/provider/6/12/6-1-895911-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Outlast 2",
@@ -5568,6 +5956,8 @@
 },
 "outlast-ps": {
 "createdAt": 1764000036000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/8a51b6004c7d4050cc62d62183e10bb13dbd85c0/catalog/provider/6/12/6-1-895910-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Outlast",
@@ -5632,6 +6022,8 @@
 },
 "panico-hush-nf": {
 "createdAt": 1763750086000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZjQ0YTU4OTQtMTU3Zi00OTdlLTkzN2EtZjlmOTZhNjIwN2VkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Pánico (Hush)",
 "type": "movie"
@@ -5706,6 +6098,8 @@
 },
 "perdida-nf": {
 "createdAt": 1763750133000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BODYyZmM0NGEtMmQ5ZC00MjBkLTkyMDktY2Y5MzBjODliMWNmXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Perdida",
 "type": "movie"
@@ -5838,6 +6232,8 @@
 },
 "piranas-3d-nf": {
 "createdAt": 1763750001000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTU3NDg2NTY4Nl5BMl5BanBnXkFtZTcwMTM0OTE3Mw@@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Pirañas 3D",
 "type": "movie"
@@ -5889,6 +6285,8 @@
 },
 "plague-inc-evolved-ps": {
 "createdAt": 1764000024000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/93f8289e1f015a76bd23097062fa5762418a02cd/catalog/provider/6/12/6-1-611125-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Plague Inc: Evolved",
@@ -5897,6 +6295,8 @@
 },
 "polizon-nf": {
 "createdAt": 1763750101000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNGQ3YjViNDgtMjQwZC00ZmVmLTljM2EtNjU0Y2EwN2EwMjIxXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Polizón",
 "type": "movie"
@@ -5911,6 +6311,8 @@
 },
 "por-que-me-matasteis-nf": {
 "createdAt": 1763750097000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMzQ3OTM0NmQtYmVkNi00Y2UwLWI2OGUtNDUyMmFiMTFmNmZhXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "¿Por qué me matasteis?",
 "type": "movie"
@@ -5970,12 +6372,16 @@
 },
 "preguntados-la-gran-pantalla-nf": {
 "createdAt": 1763750195000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMmY2MTJlYjQtMzdjZC00ZDEzLTk2NDAtMWJmOGI5Nzg1NDc2XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Preguntados: La gran pantalla",
 "type": "movie"
 },
 "presas-de-caza-nf": {
 "createdAt": 1763750134000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMWMyYjQ1ODktOGQxYS00ZGFjLTlhMTgtMjhiZTI0NmM2NzkwXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Presas de caza",
 "type": "movie"
@@ -5990,6 +6396,8 @@
 },
 "prison-architect-ps": {
 "createdAt": 1764000053000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/94c40cfd7f694cec1abe4c18a817f8de79bbbcc0/catalog/provider/6/12/6-1-833296-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Prison Architect",
@@ -6017,6 +6425,8 @@
 },
 "probe-a-game-dev-experience-ps": {
 "createdAt": 1764000055000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/bda9d7981a42183a0800c1c002c42faaa752a256/catalog/provider/6/12/6-1-820221-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Probe: A Game Dev Experience",
@@ -6045,6 +6455,8 @@
 "epTotal": 9,
 "extRating": 6.7,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOWY5OTVjNGItNjQ4Yy00NTU1LTgxMDgtNTVkMzdmYTFhMGQzXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 9
 },
@@ -6088,24 +6500,32 @@
 },
 "rec-apocalipsis-tt": {
 "createdAt": 1763900236000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOTU3OTU2ODc5MF5BMl5BanBnXkFtZTgwNjY3MDY2MzE@._V1_QL75_UX380_.jpg",
 "source": "Tautulli",
 "title": "[REC]⁴ Apocalipsis",
 "type": "movie"
 },
 "rec-genesis-tt": {
 "createdAt": 1763900235000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNDM3OTUzMTA1OF5BMl5BanBnXkFtZTcwNTkwMTE3Nw@@._V1_QL75_UX380_.jpg",
 "source": "Tautulli",
 "title": "[REC]³ Génesis",
 "type": "movie"
 },
 "rec-nf": {
 "createdAt": 1763750076000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMDEzNDc5ODMtZTAyNi00MTNkLThkNGUtZGE2MDY0MjBiYjMzXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "[REC]",
 "type": "movie"
 },
 "red-dead-redemption-2-ps": {
 "createdAt": 1764000016000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/4bbea49c5003d7d81dc8c363bb247f90454cee86/catalog/provider/6/12/6-1-689098-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Red Dead Redemption 2",
@@ -6155,6 +6575,8 @@
 },
 "resident-evil-2-ps": {
 "createdAt": 1764000025000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/293e960102ff94c82b6fc5d5962022e96e538894/catalog/provider/6/12/6-1-698295-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "platinum": true,
 "source": "PSN",
@@ -6164,6 +6586,8 @@
 },
 "resident-evil-3-ps": {
 "createdAt": 1764000067000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/af3a6e8bdb1ffb81c8c65494bfa3c6d8422dd69d/catalog/provider/6/12/6-1-734691-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "platinum": true,
 "source": "PSN",
@@ -6173,6 +6597,8 @@
 },
 "resident-evil-4-ps": {
 "createdAt": 1764000010000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/c5a119755becfc54853f166ce577391bd3864550/catalog/provider/6/12/6-1-873492-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "platinum": true,
 "source": "PSN",
@@ -6182,6 +6608,8 @@
 },
 "resident-evil-7-biohazard-ps": {
 "createdAt": 1764000022000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/7777ccbb36af41ed2f9780130eb9581751040655/catalog/provider/6/12/6-1-622263-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Resident Evil 7: Biohazard",
@@ -6205,6 +6633,8 @@
 },
 "resident-evil-requiem-ps": {
 "createdAt": 1764000006000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/b5dc74b4f298dce43ddd7fe24d203ddc888953e0/catalog/provider/7/2/7-1763427062.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "platinum": true,
 "source": "PSN",
@@ -6214,6 +6644,8 @@
 },
 "resident-evil-resistance-ps": {
 "createdAt": 1764000068000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/f0f4ca891aebf4a1e4bc629419cc25b18a0d7dfd/catalog/provider/6/12/6-1-726223-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Resident Evil Resistance",
@@ -6222,12 +6654,16 @@
 },
 "resident-evil-tt": {
 "createdAt": 1763900242000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYmI3YjJkN2ItY2ZmYS00Y2JhLTk2YTQtYzE5YWU5ODI1MzJmXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Tautulli",
 "title": "Resident Evil",
 "type": "movie"
 },
 "resident-evil-village-ps": {
 "createdAt": 1764000057000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/4e837c4f8774d3284fcb642bd0fa4edcc8326d7b/catalog/provider/6/12/6-1-783898-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Resident Evil Village",
@@ -6236,6 +6672,8 @@
 },
 "resistance-3-ps": {
 "createdAt": 1764100016000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a6000f8e53de7d80152b186f4362efcdcc4994b8/catalog/provider/6/3/6-1-157417-13.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS3",
 "source": "PSN",
 "title": "Resistance 3",
@@ -6244,6 +6682,8 @@
 },
 "return-to-silent-hill-px": {
 "createdAt": 1763760030000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOWVjYjU0ZTAtNGVlNi00NGM1LTgzZjctNTZjMjAyYTc4N2VlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Return to Silent Hill",
 "type": "movie",
@@ -6273,6 +6713,8 @@
 },
 "ricos-y-mimados-nf": {
 "createdAt": 1763750155000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYjZiMzNhNzYtY2QyNy00MjUzLTg1ODktZTVlYWFlNTRjYjBjXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Ricos y mimados",
 "type": "movie"
@@ -6287,12 +6729,16 @@
 },
 "rumbo-al-infierno-nf": {
 "createdAt": 1763750154000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjIwMDBlZjItNzMyMi00NjQwLWEzOTgtNGFmZTA0NThiMDhkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Rumbo al infierno",
 "type": "series"
 },
 "saga-px": {
 "createdAt": 1763760249000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMmZiODM3NzgtZjcyNC00YWZjLTk3NjEtMDkxNTFiZWFiZWFkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "Saga",
 "type": "series"
@@ -6327,6 +6773,8 @@
 "epTotal": 21,
 "extRating": 7.4,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNjk0M2ZhZTQtZjQ0NC00ODA2LWFkN2ItMTA0ZTc0MjJjODg0XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 10,
 "2": 11
@@ -6510,6 +6958,8 @@
 },
 "scream-tt": {
 "createdAt": 1763900263000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMmE4ZmE5NTMtZTZmNi00YWZjLTk0MjYtOGViZDdhZWMyZmRmXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Tautulli",
 "title": "Scream",
 "type": "movie"
@@ -6541,6 +6991,8 @@
 },
 "ser-padre-nf": {
 "createdAt": 1763750121000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYjY4ZDQzNmQtYjZjOC00YTlhLWJmZDMtNzVlNTI5ZGVlMmVkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Ser padre",
 "type": "movie"
@@ -6565,6 +7017,8 @@
 "Thriller",
 "Misterio"
 ],
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZDI5YzJhODQtMzQyNy00YWNmLWIxMjUtNDBjNjA5YWRjMzExXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 9,
 "2": 10
@@ -6598,6 +7052,8 @@
 "epTotal": 16,
 "extRating": 6.9,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZjljZjY2MDItM2JlYy00YWRiLTkyMGUtZGVlMWE5Yjc4ZGIyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 8,
 "2": 8
@@ -6626,6 +7082,8 @@
 },
 "shooter-el-tirador-nf": {
 "createdAt": 1763750107000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYmE0NWZiMjktY2U4MC00MDVmLTljMGMtMWZiMThiNjczNzViXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Shooter: El tirador",
 "type": "movie"
@@ -6672,6 +7130,8 @@
 },
 "sifu-ps": {
 "createdAt": 1764000002000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/50adb94be66242f3dac4bcc6828b5d41c55f5d2d/catalog/provider/6/12/6-1-788801-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Sifu",
@@ -6683,6 +7143,8 @@
 "epTotal": 6,
 "extRating": 5.7,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYTI1MWFiYzMtOTcwMi00MjAyLWI4YjItNGU1NzNlNzhhODIxXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 6
 },
@@ -6701,6 +7163,8 @@
 },
 "silent-hill-2-ps": {
 "createdAt": 1764000013000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/d5b4effbbc363e2bd68faea74f765abe070fb8dc/catalog/provider/7/2/7-1728027105.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Silent Hill 2",
@@ -6750,6 +7214,8 @@
 },
 "slender-man-nf": {
 "createdAt": 1763750183000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjE0MzcwMDAyNl5BMl5BanBnXkFtZTgwMzc4ODg0NDM@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Slender Man",
 "type": "movie"
@@ -6781,6 +7247,8 @@
 },
 "sobrevivir-es-el-reto-nf": {
 "createdAt": 1763750034000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZTRkODg5NTUtMGNmYS00YTYzLWE2Y2YtZDgzMWNhNzlhNjI2XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Sobrevivir es el reto",
 "type": "series"
@@ -6795,6 +7263,8 @@
 },
 "soma-ps": {
 "createdAt": 1764100020000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/3614a25e647fe25b88f11c1180e39ce7f16971ee/catalog/provider/6/12/6-1-735448-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "SOMA",
@@ -7018,6 +7488,8 @@
 },
 "star-wars-jedi-fallen-order-ps": {
 "createdAt": 1764000082000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/6d09925fcb65b54062496a43c719c6bc048b4bdd/catalog/provider/6/12/6-1-731429-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Star Wars Jedi: Fallen Order",
@@ -7034,6 +7506,8 @@
 },
 "stranded-deep-ps": {
 "createdAt": 1764000056000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/877dadd816d2b9dae5589e22c481176a8ee4b467/catalog/provider/6/12/6-1-687124-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Stranded Deep",
@@ -7070,6 +7544,8 @@
 },
 "stray-ps": {
 "createdAt": 1764000032000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/f4f414c958f4c0214ed3bbad0b8ab6fa5c18a504/catalog/provider/6/12/6-1-755762-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Stray",
@@ -7078,6 +7554,8 @@
 },
 "subnautica-ps": {
 "createdAt": 1764000011000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/3ace647f697c46c5823b3698c193e325be9d8f56/catalog/provider/6/12/6-1-735555-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5, PS4",
 "platinum": true,
 "source": "PSN",
@@ -7095,6 +7573,8 @@
 "Drama",
 "Comedia"
 ],
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYTY4YTVkY2QtMjRmOS00YzliLWIxOWQtMTdkOTVkN2UzODNmXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 10,
 "2": 10,
@@ -7159,6 +7639,8 @@
 },
 "target-nf": {
 "createdAt": 1763750042000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNDQ3MmE0MDItYzZjMi00MjIxLWI3NDYtODc3Nzk4NjM2NjU2XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Target",
 "type": "movie"
@@ -7181,6 +7663,8 @@
 },
 "ted-tt": {
 "createdAt": 1763900294000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTQ1OTU0ODcxMV5BMl5BanBnXkFtZTcwOTMxNTUwOA@@._V1_QL75_UX380_.jpg",
 "source": "Tautulli",
 "title": "Ted",
 "type": "movie"
@@ -7195,6 +7679,8 @@
 },
 "tennis-world-tour-2-ps": {
 "createdAt": 1764000062000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/c854730fac0d5e92e3a03e8eda7a3e611c94fb9a/catalog/provider/6/12/6-1-765835-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Tennis World Tour 2",
@@ -7300,12 +7786,16 @@
 },
 "the-babysitter-killer-queen-nf": {
 "createdAt": 1763750075000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BODk1ZmQ4ODItZjcwZi00MTUxLWE1YWMtMDY2NWJhNzJjMGEyXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "The Babysitter: Killer Queen",
 "type": "movie"
 },
 "the-babysitter-nf": {
 "createdAt": 1763750003000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTY0MDUwNzg5OV5BMl5BanBnXkFtZTgwNTY4NjU3MzI@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "The Babysitter",
 "type": "movie"
@@ -7328,6 +7818,8 @@
 "Drama",
 "Comedia"
 ],
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMjk2NWI5OTctODcwYy00NGRmLWFmN2YtOTZiNzFiYjVlODBkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 8,
 "2": 10,
@@ -7391,6 +7883,8 @@
 },
 "the-dark-pictures-anthology-man-of-medan-ps": {
 "createdAt": 1764000015000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/1f3b9fff766640c1762b005c4a2440dacbab3f83/catalog/provider/6/12/6-1-723725-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "The Dark Pictures Anthology: Man of Medan",
@@ -7438,6 +7932,8 @@
 },
 "the-finals-ps": {
 "createdAt": 1764000021000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/a5404339f303a29e88b454ceca480e103cf5c3f6/catalog/provider/6/12/6-1-888520-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "The Finals",
@@ -7465,6 +7961,8 @@
 "epTotal": 7,
 "extRating": 5.2,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMDUxMDcxODYtODFhMi00YWI1LThmZjYtOTcwMDliMzk2ZGQ3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 7
 },
@@ -7494,6 +7992,8 @@
 "epTotal": 12,
 "extRating": 6.8,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYTVhZGNkNDMtNWEwMi00ODgxLTg2NTItN2UxOWFjYzNlZjUwXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 6,
 "2": 6
@@ -7505,6 +8005,8 @@
 },
 "the-last-of-us-remastered-ps": {
 "createdAt": 1764000039000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/dab29cee53e5547bf3c8dd6c56328038a87a5ef9/catalog/provider/6/12/6-1-419468-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "The Last of Us Remastered",
@@ -7593,6 +8095,8 @@
 },
 "the-purge-la-noche-de-las-bestias-nf": {
 "createdAt": 1763750127000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTQzNTcwODEyM15BMl5BanBnXkFtZTcwMjM1MDI0OQ@@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "The Purge. La noche de las bestias",
 "type": "movie",
@@ -7619,6 +8123,8 @@
 "epTotal": 20,
 "extRating": 6.5,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTU2MjMwNDI2OV5BMl5BanBnXkFtZTgwMDU2NzczNTM@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 8,
 "2": 6,
@@ -7639,12 +8145,16 @@
 },
 "the-silence-nf": {
 "createdAt": 1763750187000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYzY2ZjM0NTgtNDc3OS00YmQwLTlkN2YtMmRmMDAxMmM0NTliXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "The Silence",
 "type": "movie"
 },
 "the-sims-4-ps": {
 "createdAt": 1764000079000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/90cf43b6c488c2e346a906ad6805f855b3576689/catalog/provider/6/12/6-1-918112-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "The Sims 4",
@@ -7656,6 +8166,8 @@
 "epTotal": 32,
 "extRating": 7.3,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTRkNGZlMjUtZGVhZi00YjgzLTgwZmMtMGVlZTc4OGUzODk1XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 8,
 "2": 8,
@@ -7821,6 +8333,8 @@
 "RPG",
 "Mundo abierto"
 ],
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/f61b66de846a313fa5667ce61abb07bf38f2d944/catalog/provider/6/12/6-1-518832-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PC, PS5, PS4, Xbox, Switch",
 "summary": "Geralt de Rivia busca a su hija adoptiva, perseguida por la Cacería Salvaje, en un mundo devastado por la guerra.",
 "title": "The Witcher 3: Wild Hunt",
@@ -7832,6 +8346,8 @@
 "epTotal": 40,
 "extRating": 7.8,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BOTQzMzNmMzUtODgwNS00YTdhLTg5N2MtOWU1YTc4YWY3NjRlXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 8,
 "2": 8,
@@ -7907,12 +8423,16 @@
 },
 "todos-mis-amigos-estan-muertos-nf": {
 "createdAt": 1763750088000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZTlhMTU1MWYtYzM2NS00YjkxLWE4ZWQtOTBmYTE4MThkYmVkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Todos mis amigos están muertos",
 "type": "movie"
 },
 "tom-clancy-s-rainbow-six-siege-ps": {
 "createdAt": 1764000074000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/73b2a219e363ceac24d16653cf712eea42eeec63/catalog/provider/6/12/6-1-743332-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS5",
 "source": "PSN",
 "title": "Tom Clancy's Rainbow Six Siege",
@@ -7996,6 +8516,8 @@
 "epTotal": 21,
 "extRating": 7.8,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZmUxMTg5MTctZDU5Ni00OGZkLWJiMDMtNWU4OTQyZWRlMzkwXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 13,
 "2": 8
@@ -8107,18 +8629,24 @@
 },
 "transporter-3-nf": {
 "createdAt": 1763750013000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMTkxNzg1OTU4M15BMl5BanBnXkFtZTcwMjcyMjI5MQ@@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Transporter 3",
 "type": "movie"
 },
 "travis-scott-look-mom-i-can-fly-nf": {
 "createdAt": 1763750047000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZjFhZGI3YzktOThlMC00OTZlLWE5MWUtOTUxODMxZTQyNmQ3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Travis Scott: Look Mom I Can Fly",
 "type": "movie"
 },
 "tricky-towers-ps": {
 "createdAt": 1764100012000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/740ab1d5518b604dddedfed07955c8c1e5d4858b/catalog/provider/6/12/6-1-589480-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Tricky Towers",
@@ -8127,6 +8655,8 @@
 },
 "triple-frontera-nf": {
 "createdAt": 1763750032000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BODU4MzM2MDAxMl5BMl5BanBnXkFtZTgwNDEzNjM0NzM@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Triple frontera",
 "type": "movie"
@@ -8184,6 +8714,8 @@
 },
 "un-golpe-maestro-nf": {
 "createdAt": 1763750190000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZjFjYzk3N2MtMDg1OC00NmIxLTkzNjEtNDM4ZmQ3YmNhMTE4XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Un golpe maestro",
 "type": "series"
@@ -8208,6 +8740,8 @@
 },
 "uncharted-2-among-thieves-remastered-ps": {
 "createdAt": 1764000046000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/dd4e799fe2177a5528148d866385792c1f5afe23/catalog/provider/6/12/6-1-617906-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Uncharted 2: Among Thieves Remastered",
@@ -8216,6 +8750,8 @@
 },
 "uncharted-3-drake-s-deception-remastered-ps": {
 "createdAt": 1764000041000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/aae67abdf1821f116ef97222d8262d58ff210d21/catalog/provider/6/12/6-1-617905-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Uncharted 3: Drake's Deception Remastered",
@@ -8224,6 +8760,8 @@
 },
 "uncharted-drake-s-fortune-remastered-ps": {
 "createdAt": 1764000050000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/620a6cbbe6c7d5ba2ce0a3ab29cf21fb9fa65104/catalog/provider/6/12/6-1-617904-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Uncharted: Drake's Fortune Remastered",
@@ -8240,6 +8778,8 @@
 },
 "uno-ps": {
 "createdAt": 1764000038000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/bedd460aaae07d89e016550982d7f1d583639274/catalog/provider/6/12/6-1-38485-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Uno",
@@ -8401,6 +8941,8 @@
 },
 "vivo-nf": {
 "createdAt": 1763750074000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BYzMyNzUyNWQtNzU4Ni00ZTkxLWIwMzctODNhOTNlN2QyYTM3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "#Vivo",
 "type": "movie"
@@ -8439,6 +8981,8 @@
 },
 "watch-dogs-ps": {
 "createdAt": 1764000035000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/9650834d2a0362a9b33171e6a39d7a1cd4b1bc07/catalog/provider/6/12/6-1-398459-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Watch Dogs",
@@ -8455,6 +8999,8 @@
 },
 "wolfenstein-the-new-order-ps": {
 "createdAt": 1764000028000,
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/0a193688b884801d5c7184769efb90673aee54c0/catalog/provider/6/12/6-1-396204-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "PS4",
 "source": "PSN",
 "title": "Wolfenstein: The New Order",
@@ -8463,12 +9009,16 @@
 },
 "wounds-nf": {
 "createdAt": 1763750051000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNDcyMmJmZmMtZTkyOS00MDc5LTk4YmItMDY2NzM0NzE1NjdkXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Wounds",
 "type": "movie"
 },
 "x-men-2-px": {
 "createdAt": 1763760039000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNDk0NjYxMzIzOF5BMl5BanBnXkFtZTYwMTc1MjU3._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "X-Men 2",
 "type": "movie",
@@ -8502,6 +9052,8 @@
 },
 "x-men-la-decision-final-px": {
 "createdAt": 1763760038000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BMThmOWE3OWEtODJmNC00ZDEzLTk4MWUtNzEzM2RiNmJiZmU3XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Plex",
 "title": "X-Men: La decisión final",
 "type": "movie",
@@ -8545,6 +9097,8 @@
 },
 "yo-soy-todas-ellas-nf": {
 "createdAt": 1763750111000,
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BZTQ1NjQ5ZjktOTQxMS00YTkwLWEzYjUtNzUyNGQyZjc2YWMxXkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "source": "Netflix",
 "title": "Yo soy todas ellas",
 "type": "movie"
@@ -8594,6 +9148,8 @@
 "Aventura",
 "Mundo abierto"
 ],
+"img": "ext",
+"imgUrl": "https://www.metacritic.com/a/img/resize/311b5ad3bda4d8d1cf46571585c15504fe5e0e85/catalog/provider/6/12/6-1-715974-52.jpg?auto=webp&fit=crop&height=675&width=1200",
 "platforms": "Switch",
 "summary": "Link explora un Hyrule ampliado con islas en el cielo y profundidades subterráneas, construyendo artilugios para resolver cualquier problema.",
 "title": "The Legend of Zelda: Tears of the Kingdom",
@@ -8613,6 +9169,8 @@
 "epTotal": 39,
 "extRating": 7.3,
 "extSrc": "TVmaze",
+"img": "ext",
+"imgUrl": "https://m.media-amazon.com/images/M/MV5BNjgwNDU4ZTAtYjA1OS00MzFkLWJkOTYtMzJiYzg5ZTA2NDg1XkEyXkFqcGc@._V1_QL75_UX380_.jpg",
 "seasonEps": {
 "1": 13,
 "2": 13,
