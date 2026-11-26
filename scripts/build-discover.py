@@ -170,6 +170,12 @@ def build_games():
     return games
 
 
+def slugify(t):
+    import unicodedata
+    t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower().replace("'", '').replace('’', '').replace('&', 'and')
+    return re.sub(r'[^a-z0-9]+', '-', t).strip('-')
+
+
 def find_posters(items, posters, misses):
     t0 = time.time()
     new = 0
@@ -198,8 +204,9 @@ def find_posters(items, posters, misses):
                 img = (json.loads(b).get('image') or {})
                 url = img.get('medium') or img.get('original')
             time.sleep(0.6)
-        if not url and o['type'] == 'game' and o.get('mc'):
-            b = get(f"https://www.metacritic.com/game/{o['mc'].split('/')[-1]}/", timeout=30, tries=1)
+        if not url and o['type'] == 'game':
+            slug = (o.get('mc') or '').split('/')[-1] or slugify(o['title'])
+            b = get(f"https://www.metacritic.com/game/{slug}/", timeout=30, tries=1)
             if b:
                 m = re.search(rb'<meta property="og:image" content="([^"]+)"', b)
                 if m:
@@ -218,6 +225,8 @@ def main():
     old = json.loads(OUT.read_text()) if OUT.exists() else {'items': []}
     pj = json.loads(POSTERS.read_text()) if POSTERS.exists() else {}
     posters, misses = (pj.get('ok', {}), pj.get('miss', {})) if 'ok' in pj else ({k: v for k, v in pj.items() if v}, {})
+    if pj.get('v') != 2:   # nueva forma de buscar las portadas de los juegos: se reintentan
+        misses = {k: t for k, t in misses.items() if not k.startswith('Q')}
     try:
         av = build_imdb()
     except Exception as e:
@@ -238,7 +247,7 @@ def main():
         if posters.get(o['id']):
             o['img'] = posters[o['id']]
         o.pop('links', None)
-    POSTERS.write_text(json.dumps({'ok': posters, 'miss': misses}, separators=(',', ':'), sort_keys=True))
+    POSTERS.write_text(json.dumps({'v': 2, 'ok': posters, 'miss': misses}, separators=(',', ':'), sort_keys=True))
     OUT.write_text(json.dumps({'t': int(time.time()), 'items': items}, ensure_ascii=False, separators=(',', ':')))
     log(f'Descubrir: {len(items)} títulos, {sum(1 for o in items if o.get("img"))} con cartel')
 
