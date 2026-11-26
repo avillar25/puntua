@@ -151,6 +151,11 @@ h3.yr small{font-weight:500;margin-left:4px}
 /* Interruptor de avisos de capítulos */
 .notifbtn{margin-top:8px;background:none;border:1px solid var(--line,#333);color:inherit;border-radius:999px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer}.notifbtn.off{opacity:.6}
 /* Descubrir */
+.poprow{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 14px;margin-bottom:10px;scroll-snap-type:x proximity}
+.popitem{position:relative;flex:0 0 150px;scroll-snap-align:start}.popitem .card{width:100%}
+.poprank{position:absolute;z-index:3;left:-4px;top:-6px;background:var(--accent,#f5b301);color:#1a1400;font-weight:800;border-radius:999px;min-width:24px;height:24px;display:grid;place-items:center;font-size:13px;padding:0 6px;box-shadow:0 2px 6px rgba(0,0,0,.5)}
+.popup{position:absolute;z-index:3;right:6px;top:30px;background:#c0392b;color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:2px 6px}.popup.own{background:#2e7d32}
+@media (max-width:700px){.popitem{flex-basis:120px}}
 .dbar{gap:8px;flex-wrap:wrap}.dbar select{max-width:200px}
 .modal.disc{padding:22px}.modal.disc .dhead{display:flex;gap:16px;align-items:flex-start}.modal.disc .dhead .poster{width:120px;flex:0 0 120px}
 .modal.disc h1{margin:0 0 6px}.modal.disc .sub{opacity:.8;font-size:14px;margin:2px 0}.modal.disc .dnote{margin-top:10px;font-size:18px}
@@ -951,7 +956,8 @@ function discLoad(){
   S.discP=fetch((window.PUNTUA_REMOTE||'')+'discover.json',{cache:'no-cache'}).catch(()=>fetch('discover.json')).then(r=>r.ok?r.json():{items:[]}).catch(()=>({items:[]})).then(j=>{
     S.disc=(j.items||[]).map(o=>({id:'d:'+o.id, src:o.id, type:o.type, title:o.title, origTitle:o.orig||'', year:o.year||null,
       genres:o.genres||[], runtime:o.runtime||null, epRuntime:o.epRuntime||null, platforms:o.platforms||'', creator:o.creator||'',
-      imgUrl:o.img||'', img:o.img?'ext':'', extRating:o.r, extSrc:o.type==='game'?'Metacritic':'IMDb', votes:o.v||0, metascore:o.ms||null, end:o.end||null}));
+      imgUrl:o.img||'', img:o.img?'ext':'', extRating:o.r, extSrc:o.type==='game'?'Metacritic':'IMDb', votes:o.v||0, metascore:o.ms||null, end:o.end||null,
+      hot:o.hot||0, pop:o.pop||0, up:o.up||''}));
     S.discT=j.t||0; render();
   });
   return S.discP;
@@ -969,8 +975,26 @@ function discList(){
   if(q){ const sc=new Map(); for(const d of L){const v=searchScore(d,q); if(v) sc.set(d,v)} L=[...sc.keys()]; L.sort((a,b)=>sc.get(b)-sc.get(a)); return L }
   const by=S.dSort||'pop';
   const pop=d=>d.type==='game'?(d.metascore||0)*800:(d.votes||0);
+  if(by==='hot'){ L.sort((a,b)=>(b.hot||0)-(a.hot||0)); return L }
   L.sort(by==='rating'?(a,b)=>(b.extRating||0)-(a.extRating||0)||pop(b)-pop(a):by==='year'?(a,b)=>(b.year||0)-(a.year||0)||pop(b)-pop(a):(a,b)=>pop(b)-pop(a));
   return L;
+}
+
+/* «Popular ahora»: lo más visitado esta semana (se recalcula cada día). Si ya lo tienes, abre tu ficha. */
+function ownedFor(d){
+  for(const t of allTitles()){ const i=t.imdb||t.imdbId; if(i&&i===d.src) return t }
+  const n=fold(d.title); return allTitles().find(t=>fold(t.title)===n&&t.type===d.type&&(!d.year||!t.year||Math.abs(t.year-d.year)<=1))||null;
+}
+function popRowHTML(){
+  const P=(S.disc||[]).filter(d=>d.pop&&(S.type==='all'||d.type===S.type));
+  if(!P.length) return '';
+  P.sort((a,b)=>S.type==='all'?(a.pop-b.pop)||(b.hot-a.hot):(b.hot-a.hot));
+  const fmtUp=d=>{const x=new Date(d+'T12:00:00');return 'Sale '+x.toLocaleDateString('es-ES',{day:'numeric',month:'short'}).replace('.','')+(x.getFullYear()!==new Date().getFullYear()?' '+x.getFullYear():'')};
+  return `<h2>🔥 Popular ahora <small>lo más visto esta semana</small></h2><div class="poprow">${P.slice(0,S.type==='all'?24:16).map((d,i)=>{
+    const own=ownedFor(d);
+    const html=own?card(own):discCard(d);
+    const tag=d.up&&d.up>today()?`<span class="popup">${esc(fmtUp(d.up))}</span>`:(own?'<span class="popup own">En tu lista</span>':'');
+    return `<div class="popitem"><span class="poprank">${i+1}</span>${tag}${html}</div>`}).join('')}</div>`;
 }
 function discCard(d){
   return `<button class="card" data-dopen="${esc(d.id)}">${poster(d)}
@@ -986,7 +1010,8 @@ function viewDisc(){
   return `<div class="bar">${typeChips()}</div>
     <div class="bar dbar"><select id="dGenre"><option value="">Todos los géneros</option>${gens.map(g=>`<option ${S.dGenre===g?'selected':''}>${esc(g)}</option>`).join('')}</select>
       <select id="dDec"><option value="">Todas las épocas</option>${decs.map(x=>`<option value="${x}" ${String(S.dDec)===String(x)?'selected':''}>Años ${String(x).slice(2)}</option>`).join('')}</select>
-      <select id="dSort"><option value="pop" ${(S.dSort||'pop')==='pop'?'selected':''}>Lo más visto</option><option value="rating" ${S.dSort==='rating'?'selected':''}>Mejor nota</option><option value="year" ${S.dSort==='year'?'selected':''}>Más recientes</option></select></div>
+      <select id="dSort"><option value="pop" ${(S.dSort||'pop')==='pop'?'selected':''}>Lo más visto</option><option value="rating" ${S.dSort==='rating'?'selected':''}>Mejor nota</option><option value="year" ${S.dSort==='year'?'selected':''}>Más recientes</option><option value="hot" ${S.dSort==='hot'?'selected':''}>Popular ahora</option></select></div>
+    ${S.q.trim()?'':popRowHTML()}
     <h2>Descubrir <small>${L.length} títulos que aún no tienes</small></h2>
     ${L.length?`<div class="grid">${L.slice(0,lim).map(discCard).join('')}</div>${L.length>lim?`<button class="btn" id="dMore" style="margin:0 auto 40px;display:block">Ver más (${L.length-lim})</button>`:''}`:'<div class="empty"><b>Nada con esos filtros</b>Prueba con otros.</div>'}`;
 }

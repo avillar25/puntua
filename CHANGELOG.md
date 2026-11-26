@@ -1,5 +1,9 @@
 # Cambios
 
+## v1.3.0
+- Descubrir: nuevo apartado «🔥 Popular ahora» con las pelis, series y juegos de los que más se habla esta semana (visitas en Wikipedia), incluidos estrenos recientes y próximos con su fecha. Si ya lo tienes, abre tu ficha. Se actualiza cada día.
+- Descubrir: los juegos ya salen con su nombre (antes algunos salían con un código).
+
 ## v1.2.0
 - Nueva pestaña Descubrir: las pelis y series más vistas de IMDb y los juegos mejor valorados, con cartel, nota y filtros. Lo que ya tienes no sale; al marcarlo o puntuarlo pasa a tu catálogo y a Mi lista.
 - Al añadir un título, «Buscar datos» rellena año, director o estudio, duración, temporadas, géneros, plataformas y nota de IMDb.

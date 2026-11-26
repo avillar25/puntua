@@ -240,32 +240,134 @@ def find_posters(items, posters, misses):
     log(f'Carteles: {new} nuevos, {len(misses)} sin cartel por ahora')
 
 
+
+WIKI_UA = {'User-Agent': 'PuntuaBot/1.0 (https://github.com/avillar25/puntua)'}
+
+
+def sparql(q):
+    b = get('https://query.wikidata.org/sparql?format=json&query=' + urllib.parse.quote(q), timeout=120, tries=3,
+            headers={'Accept': 'application/sparql-results+json', **WIKI_UA})
+    return json.loads(b)['results']['bindings'] if b else []
+
+
+def pageviews(article, days=7):
+    """Visitas de los últimos días a un artículo de la Wikipedia en inglés (dato público de Wikimedia)."""
+    from datetime import date, timedelta
+    end = date.today() - timedelta(days=1)
+    start = end - timedelta(days=days - 1)
+    url = ('https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/'
+           + urllib.parse.quote(article.replace(' ', '_'), safe='') + f'/daily/{start:%Y%m%d}/{end:%Y%m%d}')
+    b = get(url, timeout=20, tries=2, headers=WIKI_UA)
+    if not b:
+        return 0
+    return sum(x.get('views', 0) for x in json.loads(b).get('items', []))
+
+
+def add_popular(items, posters, misses):
+    """«Popular ahora»: lo que más visitas tiene esta semana en Wikipedia, incluidos estrenos recientes y próximos."""
+    from datetime import date, timedelta
+    today = date.today()
+    by_id = {o['id']: o for o in items}
+    # 1) Artículo de Wikipedia de lo que ya hay en Descubrir
+    art = {}
+    imdb = [o['id'] for o in items if o['id'].startswith('tt')]
+    for i in range(0, len(imdb), 300):
+        vals = ' '.join(f'"{x}"' for x in imdb[i:i + 300])
+        for b in sparql(f'SELECT ?imdb ?a WHERE {{ VALUES ?imdb {{ {vals} }} ?it wdt:P345 ?imdb. ?a schema:about ?it; schema:isPartOf <https://en.wikipedia.org/>. }}'):
+            art[b['imdb']['value']] = b['a']['value'].split('/wiki/')[-1]
+    qids = [o['id'] for o in items if o['id'].startswith('Q')]
+    for i in range(0, len(qids), 300):
+        vals = ' '.join('wd:' + x for x in qids[i:i + 300])
+        for b in sparql(f'SELECT ?it ?a WHERE {{ VALUES ?it {{ {vals} }} ?a schema:about ?it; schema:isPartOf <https://en.wikipedia.org/>. }}'):
+            art[b['it']['value'].split('/')[-1]] = b['a']['value'].split('/wiki/')[-1]
+    # 2) Estrenos recientes y próximos que aún no están (pelis, series y juegos)
+    lo_f, hi_f = (today - timedelta(days=90)).isoformat(), (today + timedelta(days=200)).isoformat()
+    lo_g, hi_g = (today - timedelta(days=150)).isoformat(), (today + timedelta(days=500)).isoformat()
+    cand = []
+    for kind, cls, lo, hi, minlinks in (('movie', 'wd:Q11424', lo_f, hi_f, 15), ('series', 'wd:Q5398426', lo_f, hi_f, 12), ('game', 'wd:Q7889', lo_g, hi_g, 10)):
+        q = f"""SELECT ?it ?d ?imdb ?a ?links (SAMPLE(?es) AS ?les) (SAMPLE(?en) AS ?len) WHERE {{
+          ?it wdt:P31 {cls}; wikibase:sitelinks ?links. FILTER(?links >= {minlinks})
+          ?it {'wdt:P580|wdt:P577' if kind == 'series' else 'wdt:P577'} ?d. FILTER(?d >= "{lo}"^^xsd:dateTime && ?d <= "{hi}"^^xsd:dateTime)
+          ?a schema:about ?it; schema:isPartOf <https://en.wikipedia.org/>.
+          OPTIONAL {{ ?it wdt:P345 ?imdb. }}
+          OPTIONAL {{ ?it rdfs:label ?es. FILTER(LANG(?es)="es") }} OPTIONAL {{ ?it rdfs:label ?en. FILTER(LANG(?en)="en") }}
+        }} GROUP BY ?it ?d ?imdb ?a ?links ORDER BY DESC(?links) LIMIT 150"""
+        for b in sparql(q):
+            qid = b['it']['value'].split('/')[-1]
+            tt = (b.get('imdb') or {}).get('value', '')
+            oid = tt if (kind != 'game' and tt.startswith('tt')) else qid
+            name = (b.get('les') or b.get('len') or {}).get('value')
+            if not name:
+                continue
+            d = b['d']['value'][:10]
+            if oid not in by_id:
+                o = {'id': oid, 'type': kind, 'title': name, 'year': int(d[:4]), 'genres': [], 'new': 1}
+                if d > today.isoformat():
+                    o['up'] = d
+                by_id[oid] = o
+                cand.append(o)
+            elif d > today.isoformat():
+                by_id[oid]['up'] = d
+            art.setdefault(oid, b['a']['value'].split('/wiki/')[-1])
+    log(f'Popular: {len(art)} artículos de Wikipedia; {len(cand)} estrenos nuevos')
+    # 3) Visitas de esta semana (primero de los candidatos con más opciones)
+    hot = {}
+    for oid, a in art.items():
+        hot[oid] = pageviews(urllib.parse.unquote(a))
+        time.sleep(0.03)
+    for o in by_id.values():
+        o.pop('hot', None)
+        o.pop('pop', None)
+        if hot.get(o['id']):
+            o['hot'] = hot[o['id']]
+    for kind in ('movie', 'series', 'game'):
+        top = sorted([o for o in by_id.values() if o['type'] == kind and o.get('hot')], key=lambda o: -o['hot'])[:24]
+        for i, o in enumerate(top):
+            o['pop'] = i + 1
+    # Estrenos nuevos: solo se quedan los que entran en «Popular ahora»
+    keep = [o for o in cand if o.get('pop')]
+    find_posters(keep, posters, misses)
+    for o in keep:
+        if posters.get(o['id']):
+            o['img'] = posters[o['id']]
+    items.extend(keep)
+    log(f'Popular: {sum(1 for o in items if o.get("pop"))} títulos marcados como populares')
+
+
 def main():
     old = json.loads(OUT.read_text()) if OUT.exists() else {'items': []}
     pj = json.loads(POSTERS.read_text()) if POSTERS.exists() else {}
     posters, misses = (pj.get('ok', {}), pj.get('miss', {})) if 'ok' in pj else ({k: v for k, v in pj.items() if v}, {})
     if pj.get('v') != 4:   # nueva forma de buscar las portadas de los juegos: se reintentan
         misses = {k: t for k, t in misses.items() if not k.startswith('Q')}
+    if '--popular' in sys.argv:
+        # Pasada diaria rápida: solo «Popular ahora» sobre el catálogo que ya hay
+        items = [o for o in old['items'] if not o.get('new')]
+    else:
+        try:
+            av = build_imdb()
+        except Exception as e:
+            log('IMDb falló:', e)
+            av = [o for o in old['items'] if o['type'] != 'game' and not o.get('new')]
+        try:
+            games = build_games()
+        except Exception as e:
+            log('Wikidata falló:', e)
+            games = None
+        if games is None:
+            games = [o for o in old['items'] if o['type'] == 'game' and not o.get('new')]
+        items = av + games
+        # Primero los carteles de lo más popular
+        items.sort(key=lambda o: -(o.get('v', 0) / 1000 + o.get('links', 0) * 20))
+        find_posters(items, posters, misses)
+        for o in items:
+            if posters.get(o['id']):
+                o['img'] = posters[o['id']]
+            o.pop('links', None)
     try:
-        av = build_imdb()
+        add_popular(items, posters, misses)
     except Exception as e:
-        log('IMDb falló:', e)
-        av = [o for o in old['items'] if o['type'] != 'game']
-    try:
-        games = build_games()
-    except Exception as e:
-        log('Wikidata falló:', e)
-        games = None
-    if games is None:
-        games = [o for o in old['items'] if o['type'] == 'game']
-    items = av + games
-    # Primero los carteles de lo más popular
-    items.sort(key=lambda o: -(o.get('v', 0) / 1000 + o.get('links', 0) * 20))
-    find_posters(items, posters, misses)
-    for o in items:
-        if posters.get(o['id']):
-            o['img'] = posters[o['id']]
-        o.pop('links', None)
+        log('Popular falló:', e)
     POSTERS.write_text(json.dumps({'v': 4, 'ok': posters, 'miss': misses}, separators=(',', ':'), sort_keys=True))
     OUT.write_text(json.dumps({'t': int(time.time()), 'items': items}, ensure_ascii=False, separators=(',', ':')))
     log(f'Descubrir: {len(items)} títulos, {sum(1 for o in items if o.get("img"))} con cartel')
