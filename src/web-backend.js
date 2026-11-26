@@ -252,6 +252,33 @@
     } catch (e) { console.warn('[Puntúa] avisos', e); }
   }
 
+
+  // Nombres y fechas de los capítulos (TVmaze), para la lista de capítulos de la ficha
+  const epNames = {}, epLoading = new Set();
+  function episodes(t) {
+    if (!t || !t.id) return null;
+    if (epNames[t.id]) return epNames[t.id];
+    try { const c = JSON.parse(localStorage.getItem('puntua-ep-' + t.id) || 'null'); if (c && Date.now() - c.t < 7 * 864e5) return (epNames[t.id] = c.m); } catch (e) {}
+    if (epLoading.has(t.id) || !navigator.onLine) return null;
+    epLoading.add(t.id);
+    (async () => {
+      try {
+        let tvid = (tvCache[t.id] || {}).id;
+        const imdb = t.imdb || t.imdbId || (((window.PUNTUA_META || {}).series || {})[t.id] || {}).imdb;
+        if (!tvid && imdb) { const sh = await tvGet('/lookup/shows?imdb=' + encodeURIComponent(imdb)); tvid = sh && sh.id; }
+        if (!tvid) { const sh = await tvGet('/singlesearch/shows?q=' + encodeURIComponent(t.title)); tvid = sh && sh.id; }
+        if (!tvid) return;
+        const eps = await tvGet('/shows/' + tvid + '/episodes') || [];
+        const m = {};
+        for (const e of eps) if (e.season && e.number) m[`${e.season}x${String(e.number).padStart(2, '0')}`] = { n: e.name || '', d: e.airdate || '' };
+        epNames[t.id] = m;
+        try { localStorage.setItem('puntua-ep-' + t.id, JSON.stringify({ t: Date.now(), m })); } catch (e) {}
+        if (typeof window.renderModal === 'function') window.renderModal();
+      } catch (e) { console.warn('[Puntúa] capítulos', e); }
+    })();
+    return null;
+  }
+
   const userApi = { id: async () => ME, isOwner: () => true, can: async () => true, profiles: async ids => Object.fromEntries(ids.map(i => [i, { name: 'Yo' }])) };
 
   // Portadas subidas desde la app: se reducen y se guardan dentro de la ficha
@@ -516,6 +543,7 @@
     about: showAbout,
     version: VER,
     restore,
+    episodes,
     get syncOn() { return syncOn(); },
     get email() { return SYNC.email; },
   };

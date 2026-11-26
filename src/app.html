@@ -148,6 +148,16 @@ h3.yr small{font-weight:500;margin-left:4px}
   .two{grid-template-columns:1fr}
 }
 
+/* Lista de capítulos */
+.eplbtn{margin:8px 0}
+.epl{margin:10px 0;border:1px solid var(--line,#333);border-radius:12px;padding:10px}
+.eplh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.eplseas{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.eplrows{max-height:420px;overflow:auto}
+.eprow{display:grid;grid-template-columns:56px 1fr 22px auto;align-items:center;gap:8px;padding:6px 2px;border-bottom:1px solid rgba(255,255,255,.06)}
+.eprow .hn{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--accent,#f5b301)}.eprow .epn{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:inherit;color:inherit}.eprow:not(.epseen) .hn,.eprow:not(.epseen) .epn{opacity:.65}.eprow .eps{color:#7fd17f;text-align:center}
+.eprate{background:none;border:1px solid var(--line,#333);color:inherit;border-radius:999px;padding:3px 10px;font:inherit;font-size:13px;cursor:pointer;min-width:52px}.eprate.has{border-color:#ffd23f;color:#ffd23f}
+.epl .lnk{background:none;border:0;color:var(--accent,#f5b301);cursor:pointer;font:inherit;font-size:13px;align-self:flex-start;padding:2px 0}
 /* Cambiar nota de un capítulo */
 .epany{display:flex;flex-direction:column;gap:6px;margin:10px 0}.epany-r{display:flex;gap:10px}.epany-r input{width:70px}
 .epedit{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:2px 4px;border-radius:6px}.epedit:hover{background:rgba(255,255,255,.08)}
@@ -685,6 +695,27 @@ function nextUpHTML(limit){
       <div class="nu-act"><button class="btn sm" data-epseen="${esc(t.id)}|${n.s}|${n.e}">Visto sin nota</button>${(!seasonLen(t,n.s)&&seasonLen(t,n.s+1))?`<button class="btn sm ghost" data-epseason="${esc(t.id)}|${n.s+1}">Saltar a T${n.s+1}</button>`:''}</div></div></div>`;
   }).join('')}</div>${limit&&list.length>limit?`<button class="btn sm ghost" data-view="mine">Ver todas (${list.length})</button>`:''}`;
 }
+
+/* Lista de capítulos por temporada: ver cuáles has visto y puntuar o cambiar la nota de cualquiera */
+function epListHTML(t){
+  const seasons=Object.keys(t.seasonEps||{}).map(Number).filter(n=>n>0&&seasonLen(t,n)).sort((a,b)=>a-b);
+  if(!seasons.length) return '';
+  const open=S.epList===t.id;
+  if(!open) return `<button class="btn eplbtn" data-eplist="${esc(t.id)}">☰ Lista de capítulos</button>`;
+  const p=progOf(t.id), m=epsOf(t.id);
+  const cur=seasons.includes(S.epSeason)?S.epSeason:(p&&seasons.includes(p.s)?p.s:seasons[0]);
+  const names=(window.PuntuaWeb&&window.PuntuaWeb.episodes)?window.PuntuaWeb.episodes(t):null;
+  const rows=Array.from({length:seasonLen(t,cur)},(_,i)=>{
+    const e=i+1, c=epCode(cur,e), v=m[c], seen=p&&(cur<p.s||(cur===p.s&&e<=p.e)), nm=names&&names[c];
+    const picking=S.epPick===t.id+'|'+c;
+    return `<div class="eprow${seen?' epseen':''}"><span class="hn">${esc(c)}</span><span class="epn">${nm?esc(nm.n):''}${nm&&nm.d?` <span class="note">${esc(fmtDate(nm.d))}</span>`:''}</span>
+      <span class="eps">${seen?'✓':''}</span>${S.canWrite?`<button class="eprate${v&&v.r?' has':''}" data-eppick="${esc(t.id)}|${esc(c)}">${v&&v.r?'★ '+fr(v.r):'☆'}</button>`:(v&&v.r?`<span class="star">★ ${fr(v.r)}</span>`:'')}</div>
+      ${picking?`<div class="epfix"><div class="estars sm">${Array.from({length:10},(_,k)=>`<button data-epfix="${esc(t.id)}|${esc(c)}|${k+1}" aria-label="${k+1}">★<i>${k+1}</i></button>`).join('')}</div>${v&&v.r?`<button class="lnk" data-rmep2="${esc(t.id)}|${esc(c)}">Quitar nota</button>`:''}</div>`:''}`;
+  }).join('');
+  return `<div class="epl"><div class="eplh"><b>Lista de capítulos</b><button class="btn sm ghost" data-eplist="${esc(t.id)}">Cerrar lista</button></div>
+    <div class="eplseas">${seasons.map(n=>`<button class="chip${n===cur?' on':''}" data-epseas="${n}">T${n}</button>`).join('')}</div>
+    <div class="eplrows">${rows}</div></div>`;
+}
 function episodesHTML(t){
   if(t.type!=='series') return '';
   const p=progOf(t.id), n=nextEp(t), m=epsOf(t.id), rated=Object.entries(m).filter(([,v])=>v&&v.r).sort((a,b)=>{const pa=a[0].split('x').map(Number),pb=b[0].split('x').map(Number);return pb[0]-pa[0]||pb[1]-pa[1]});
@@ -694,10 +725,9 @@ function episodesHTML(t){
     <div class="histhead">${p?`Vas por el <b>${epCode(p.s,p.e)}</b>${p.d?' · '+esc(fmtDate(p.d)):''}`:'Aún no has marcado ningún capítulo'}${avg?` · tu media <b class="star">★ ${fmt(avg)}</b>`:''}${com.count?` · usuarios <b class="star">★ ${fmt(com.avg)}</b> <span class="note">(${com.count} votos)</span>`:''}</div>
     ${S.canWrite?`<div class="epnext"><div class="epnext-h">Nota del siguiente capítulo, <b>${epCode(n.s,n.e)}</b> <span class="note">(lo marca como visto)</span>${nc.count?` <span class="note">· usuarios ★ ${fmt(nc.avg)} (${nc.count})</span>`:''}</div>${epStars(t.id,n.s,n.e,false)}
       <div class="hadd"><button class="btn" data-epseen="${esc(t.id)}|${n.s}|${n.e}">Visto sin nota</button>${seasonLen(t,n.s)?'':`<button class="btn ghost" data-epseason="${esc(t.id)}|${n.s+1}">Saltar a temporada ${n.s+1}</button>`}</div></div>
-      <div class="epany"><span class="note">Puntuar otro capítulo (no cambia por dónde vas):</span><div class="epany-r"><label>T <input type="number" id="epRS" min="1" max="200" value="${p?p.s:1}"></label><label>Cap <input type="number" id="epRE" min="1" max="2000" value="${p&&p.e>1?p.e-1:1}"></label></div>
-        <div class="estars sm">${Array.from({length:10},(_,i)=>`<button data-epany="${esc(t.id)}|${i+1}" aria-label="${i+1}">★<i>${i+1}</i></button>`).join('')}</div></div>
       <div class="hadd epset"><span class="note">Cambiar por dónde voy:</span><label>T <input type="number" id="epS" min="1" max="200" value="${p?p.s:1}"></label><label>Cap <input type="number" id="epE" min="0" max="2000" value="${p?p.e:0}"></label><button class="btn" id="epSetBtn">Guardar</button></div>`:''}
-    ${rated.length?`<div class="eplist">${rated.slice(0,30).map(([c,v])=>{const c0=()=>c;return `<div class="hrow"><span class="hn">${esc(c)}</span><span>tú ${S.canWrite?`<button class="epedit" data-epedit="${esc(t.id)}|${esc(c)}" title="Cambiar la nota"><span class="star">★ ${fr(v.r)}</span> ✎</button>`:`<span class="star">★ ${fr(v.r)}</span>`}${(()=>{const cm=epCommunity(t.id,c0());return cm.count>1?` · usuarios <span class="star">★ ${fmt(cm.avg)}</span> <span class="note">(${cm.count})</span>`:''})()} <span class="note">${esc(fmtShort(v.d||''))}</span></span>${S.canWrite?`<button class="hx" data-rmep="${esc(t.id)}|${esc(c)}" aria-label="Quitar nota">×</button>`:''}</div>${S.epEdit===t.id+'|'+c?`<div class="epfix"><span class="note">Nueva nota del ${esc(c)}:</span><div class="estars sm">${Array.from({length:10},(_,i)=>`<button data-epfix="${esc(t.id)}|${esc(c)}|${i+1}" class="${v.r>=i+1?'on':''}" aria-label="${i+1}">★<i>${i+1}</i></button>`).join('')}</div></div>`:''}`}).join('')}${rated.length>30?`<div class="note">… y ${rated.length-30} más</div>`:''}</div>`:''}
+    ${epListHTML(t)}
+    ${rated.length&&S.epList!==t.id?`<div class="eplist">${rated.slice(0,30).map(([c,v])=>{const c0=()=>c;return `<div class="hrow"><span class="hn">${esc(c)}</span><span>tú ${S.canWrite?`<button class="epedit" data-epedit="${esc(t.id)}|${esc(c)}" title="Cambiar la nota"><span class="star">★ ${fr(v.r)}</span> ✎</button>`:`<span class="star">★ ${fr(v.r)}</span>`}${(()=>{const cm=epCommunity(t.id,c0());return cm.count>1?` · usuarios <span class="star">★ ${fmt(cm.avg)}</span> <span class="note">(${cm.count})</span>`:''})()} <span class="note">${esc(fmtShort(v.d||''))}</span></span>${S.canWrite?`<button class="hx" data-rmep="${esc(t.id)}|${esc(c)}" aria-label="Quitar nota">×</button>`:''}</div>${S.epEdit===t.id+'|'+c?`<div class="epfix"><span class="note">Nueva nota del ${esc(c)}:</span><div class="estars sm">${Array.from({length:10},(_,i)=>`<button data-epfix="${esc(t.id)}|${esc(c)}|${i+1}" class="${v.r>=i+1?'on':''}" aria-label="${i+1}">★<i>${i+1}</i></button>`).join('')}</div></div>`:''}`}).join('')}${rated.length>30?`<div class="note">… y ${rated.length-30} más</div>`:''}</div>`:''}
   </div></div>`;
 }
 
@@ -1372,7 +1402,10 @@ function renderModal(){
   if(!S.openId || !S.titles[S.openId]){ root.innerHTML=''; modalKey=''; document.body.style.overflow=''; return }
   // Conserva el borrador de la reseña al re-renderizar
   const ta=root.querySelector('#revText'); const draft=ta?ta.value:null; const focused=document.activeElement===ta;
+  // Conserva dónde estabas (scroll de la ficha y de la lista de capítulos) al re-renderizar
+  const sameModal=modalKey==='detail:'+S.openId, sc=[...root.querySelectorAll('.scrim,.modal,.eplrows')].map(x=>x.scrollTop);
   root.innerHTML=detailHTML(S.titles[S.openId]);
+  if(sameModal) [...root.querySelectorAll('.scrim,.modal,.eplrows')].forEach((x,i)=>{ if(sc[i]!=null) x.scrollTop=sc[i] });
   modalKey='detail:'+S.openId;
   document.body.style.overflow='hidden';
   const nta=root.querySelector('#revText');
@@ -1710,8 +1743,12 @@ document.addEventListener('click',e=>{
   if(d.epany){const [id,r0]=d.epany.split('|'); const se=+($('#epRS')||{}).value, ep=+($('#epRE')||{}).value;
     if(!(se>=1&&ep>=1)){toast('Pon la temporada y el capítulo');return}
     const r=halfPick(e,el,+r0), c=epCode(se,ep); editEpRating(id,c,r); toast(`${c} · ${fr(r)}/10`); return}
+  if(d.eplist){S.epList=S.epList===d.eplist?null:d.eplist; S.epSeason=null; S.epPick=null; modalKey=''; renderModal(); return}
+  if(d.epseas){S.epSeason=+d.epseas; S.epPick=null; modalKey=''; renderModal(); return}
+  if(d.eppick){S.epPick=S.epPick===d.eppick?null:d.eppick; modalKey=''; renderModal(); return}
+  if(d.rmep2){const [id,c]=d.rmep2.split('|'); S.epPick=null; removeEpRating(id,c); toast('Nota quitada'); return}
   if(d.epedit){S.epEdit=S.epEdit===d.epedit?null:d.epedit; modalKey=''; renderModal(); return}
-  if(d.epfix){const [id,c,r0]=d.epfix.split('|'); const r=halfPick(e,el,+r0); S.epEdit=null; editEpRating(id,c,r); toast(`${c} · nueva nota ${fr(r)}/10`); return}
+  if(d.epfix){const [id,c,r0]=d.epfix.split('|'); const r=halfPick(e,el,+r0); S.epEdit=null; S.epPick=null; editEpRating(id,c,r); toast(`${c} · nueva nota ${fr(r)}/10`); return}
   if(d.rmep){const [id,c]=d.rmep.split('|'); if(el.dataset.armed){removeEpRating(id,c);toast('Nota quitada')} else {el.dataset.armed='1';el.textContent='¿Quitar?';el.classList.add('armed')} return}
   if(el.id==='undoBtn'){ const u=S.undo; if(!u) return; S.undo=null; showUndo(); saveLists(u.prev).then(syncSharedEps); toast('Deshecho'); return}
   if(el.id==='epSetBtn'){const s1=parseInt(($('#epS')||{}).value,10), e1=parseInt(($('#epE')||{}).value,10);

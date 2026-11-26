@@ -1,5 +1,9 @@
 # Cambios
 
+## v1.5.0
+- Lista de capítulos en la ficha de cada serie: por temporadas, con el nombre y la fecha de cada capítulo, cuáles has visto (✓) y tu nota. Toca la nota (o ☆) de cualquier capítulo para puntuarlo o cambiarla, sin cambiar por dónde vas.
+- Fuera el recuadro «Puntuar otro capítulo», que sustituye la lista.
+
 ## v1.4.2
 - Puntuar capítulos anteriores: en la ficha de la serie, «Puntuar otro capítulo» con temporada, capítulo y estrellas. No cambia por dónde vas.
 
