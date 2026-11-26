@@ -1,5 +1,8 @@
 # Cambios
 
+## v1.1.1
+- Sincronización al momento: cada cambio se sube enseguida, lo pendiente se sube al salir de la app o cambiar de pestaña, y al volver (o cada minuto con la app abierta) se baja lo del otro dispositivo.
+
 ## v1.1.0
 - Fuera Firebase y el inicio de sesión: los datos se guardan en el dispositivo.
 - Sincronización entre el móvil y el PC con un Gist secreto de GitHub (Mi lista → «Sincronizar con GitHub»), como en Clash Alerter. Si cambias cosas en los dos sitios, se juntan entrada a entrada sin perder nada.

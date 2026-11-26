@@ -220,12 +220,18 @@
     SYNC.busy = false;
     if (SYNC.again) { SYNC.again = false; syncNow(); } else renderPanel();
   }
-  function syncSoon() { if (!syncOn()) return; clearTimeout(SYNC.timer); SYNC.timer = setTimeout(() => { SYNC.timer = null; syncNow(); }, 2500); }
+  function syncSoon() { if (!syncOn()) return; clearTimeout(SYNC.timer); SYNC.timer = setTimeout(() => { SYNC.timer = null; syncNow(); }, 1000); }
+  // Como en Clash Alerter: cada cambio se sube al momento (1 s después del último), lo pendiente se sube
+  // ya al salir de la app o cambiar de pestaña, y al volver se baja lo último del otro dispositivo.
+  // Con la app abierta, además, se mira cada minuto si hay cambios del otro lado.
+  const flush = () => { if (SYNC.timer) { clearTimeout(SYNC.timer); SYNC.timer = null; syncNow(); } };
   document.addEventListener('visibilitychange', () => {
     if (!syncOn()) return;
-    if (document.visibilityState === 'hidden') { if (SYNC.timer) { clearTimeout(SYNC.timer); SYNC.timer = null; syncNow(); } }
-    else syncNow();
+    if (document.visibilityState === 'hidden') flush(); else syncNow();
   });
+  window.addEventListener('pagehide', () => { if (syncOn()) flush(); });
+  window.addEventListener('focus', () => { if (syncOn() && Date.now() - SYNC.last > 15000) syncNow(); });
+  setInterval(() => { if (syncOn() && document.visibilityState === 'visible' && !SYNC.timer) syncNow(); }, 60000);
 
   /* ---------- Ventana de sincronización y de copia ---------- */
   const say = t => { if (typeof window.toast === 'function') window.toast(t); else console.log(t); };
