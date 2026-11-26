@@ -1446,7 +1446,7 @@ async function lookupSearch(){
 async function lookupPick(i){
   const c=(S.lk||[])[i]; if(!c) return; const box=$('#lkRes'); box.innerHTML='<div class="lkmsg">Rellenando…</div>';
   try{ const d=await window.PuntuaLookup.detail(c); const F=$('#titleForm'); const set=(n,v)=>{ const x=F.querySelector(`[name=${n}]`); if(x&&v!=null&&v!=='') x.value=v };
-    set('title',d.title); set('year',d.year); set('creator',d.creator); set('runtime',d.runtime); set('seasons',d.seasons); set('platforms',d.platforms);
+    set('title',d.title||c.label); set('year',d.year); set('creator',d.creator); set('runtime',d.runtime); set('seasons',d.seasons); set('platforms',d.platforms);
     if(d.genres&&d.genres.length) set('genres',d.genres.join(', '));
     S.form.extra={imdbId:d.imdbId||undefined, extRating:d.extRating||undefined, extSrc:d.extSrc||undefined};
     box.innerHTML=`<div class="lkmsg">✓ Ficha rellenada${d.extRating?` · nota IMDb ${d.extRating}`:''}. Revisa y pulsa «Añadir».</div>`;

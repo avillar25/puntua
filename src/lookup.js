@@ -61,24 +61,24 @@
   /* ---------- Pelis y juegos (Wikidata) ---------- */
   const SPARQL = 'https://query.wikidata.org/sparql?format=json&query=';
   async function searchWD(q, kind) {
+    // 1) Búsqueda de Wikidata (la misma que su buscador, en español)
+    const u = 'https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&origin=*&type=item&limit=25&language=es&uselang=es&search=' + encodeURIComponent(q);
+    const sr = (await getJSON(u)).search || [];
+    if (!sr.length) return [];
+    // 2) Quedarse con las que son películas o videojuegos, con su año y director o estudio
     const cls = kind === 'game' ? 'wd:Q7889' : 'wd:Q11424';
-    const qq = q.replace(/["\\]/g, ' ');
-    const query = `SELECT ?it ?l ?y ?who WHERE {
-      SERVICE wikibase:mwapi { bd:serviceParam wikibase:endpoint "www.wikidata.org"; wikibase:api "EntitySearch";
-        mwapi:search "${qq}"; mwapi:language "es"; mwapi:limit "25". ?it wikibase:apiOutputItem mwapi:item. }
+    const query = `SELECT ?it (MIN(YEAR(?d)) AS ?y) (SAMPLE(?wl) AS ?who) WHERE {
+      VALUES ?it { ${sr.map(x => 'wd:' + x.id).join(' ')} }
       ?it wdt:P31/wdt:P279? ${cls}.
-      OPTIONAL { ?it wdt:P577 ?d. BIND(YEAR(?d) AS ?y) }
-      OPTIONAL { ?it ${kind === 'game' ? 'wdt:P178' : 'wdt:P57'} ?p. ?p rdfs:label ?who. FILTER(LANG(?who)="es" || LANG(?who)="en") }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "es,en". ?it rdfs:label ?l. }
-    } LIMIT 60`;
+      OPTIONAL { ?it wdt:P577 ?d. }
+      OPTIONAL { ?it ${kind === 'game' ? 'wdt:P178' : 'wdt:P57'} ?w. ?w rdfs:label ?wl. FILTER(LANG(?wl)="es" || LANG(?wl)="en") }
+    } GROUP BY ?it`;
     const j = await getJSON(SPARQL + encodeURIComponent(query), { headers: { Accept: 'application/sparql-results+json' } });
-    const by = new Map();
-    for (const b of j.results.bindings) {
-      const id = b.it.value.split('/').pop(); const o = by.get(id) || { id, l: b.l && b.l.value, y: null, who: '' };
-      if (b.y && (!o.y || +b.y.value < o.y)) o.y = +b.y.value; if (b.who && !o.who) o.who = b.who.value;
-      by.set(id, o);
-    }
-    return [...by.values()].slice(0, 8).map(o => ({ key: 'wd:' + o.id, label: o.l || o.id, sub: [o.y, o.who].filter(Boolean).join(' · '), src: { kind, id: o.id } }));
+    const info = new Map(j.results.bindings.map(b => [b.it.value.split('/').pop(), { y: b.y && +b.y.value, who: b.who && b.who.value }]));
+    return sr.filter(x => info.has(x.id)).slice(0, 8).map(x => {
+      const i = info.get(x.id);
+      return { key: 'wd:' + x.id, label: x.label || x.id, sub: [i.y, i.who].filter(Boolean).join(' · ') || x.description || '', src: { kind, id: x.id } };
+    });
   }
   async function detailWD(id, kind) {
     const v = kind === 'game';
@@ -97,13 +97,13 @@
     const val = k => b[k] && b[k].value;
     const ws = (val('ws') || '').split('|').filter(Boolean);
     const out = {
-      title: val('l') || '', year: val('d') ? +val('d').slice(0, 4) : null,
+      title: (val('l') && !/^Q\d+$/.test(val('l')) ? val('l') : ''), year: val('d') ? +val('d').slice(0, 4) : null,
       creator: [...new Set(ws)].slice(0, 2).join(', '), genres: wdGenres((val('gs') || '').split('|').filter(Boolean)),
     };
     if (!v) { if (val('dur')) out.runtime = Math.round(+val('dur')); out.imdbId = val('imdb') || null; const r = await imdbRating(out.imdbId); if (r) { out.extRating = r; out.extSrc = 'IMDb'; } }
     else {
-      const plat = (val('ps') || '').split('|').filter(Boolean).map(p => p.replace(/^PlayStation /, 'PS').replace(/^Microsoft Windows$/, 'PC').replace(/^Nintendo Switch.*/, 'Switch').replace(/^Xbox Series X y Series S$|^Xbox Series X\/S$/, 'Xbox Series'));
-      out.platforms = [...new Set(plat)].slice(0, 6).join(', ');
+      const plat = (val('ps') || '').split('|').filter(Boolean).map(p => p.replace(/^PlayStation /, 'PS').replace(/^(Microsoft )?Windows$/, 'PC').replace(/^Nintendo Switch.*/, 'Switch').replace(/^Xbox Series X y Series S$|^Xbox Series X\/S$/, 'Xbox Series'));
+      out.platforms = [...new Set(plat.map(p => p.replace(/^Xbox Series X.*$/, 'Xbox Series').replace(/^Nintendo Switch.*/, 'Switch')))].slice(0, 6).join(', ');
     }
     return out;
   }
