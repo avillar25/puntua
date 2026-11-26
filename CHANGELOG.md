@@ -1,5 +1,8 @@
 # Cambios
 
+## v1.3.2
+- Tarjetas: tu nota sale una sola vez (antes se veían dos círculos con la misma nota).
+
 ## v1.3.1
 - Puntuar un capítulo ya no cambia a «Viendo» una serie que tenías como vista o abandonada.
 - En la ficha de una serie queda más claro qué estrellas son la nota de la serie entera y cuáles la del siguiente capítulo.

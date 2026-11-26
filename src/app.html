@@ -435,7 +435,7 @@ function poster(t, opts={}){
     ${posterArt(t)}
     ${u?`<img class="cover" src="${esc(u)}" alt="" loading="lazy">`:''}
     ${opts.noBadge?'':`<span class="vtag">VHS</span><span class="ttag" style="color:${ty.color}">${ty.label}</span>`}
-    ${!opts.noBadge && mine ? `<span class="sticker">${fr(mine.r)}</span>`:''}
+    ${!opts.noBadge && !opts.noSticker && mine ? `<span class="sticker">${fr(mine.r)}</span>`:''}
     ${!opts.noBadge && n>1 ? `<span class="times">×${n}</span>`:''}
     ${!opts.noBadge && st && st!=='visto' ? `<span class="mine">${esc(statusName(t,st))}</span>`:''}
     ${u?'':`<div class="label"><span class="ptitle">${esc(t.title)}</span></div>`}</div>`;
@@ -911,7 +911,7 @@ function seenLine(t){
 function fmtShort(s){return fmtDate(s)}
 function card(t){
   const s=stats(t.id), mine=myReview(t.id);
-  return `<button class="card" data-open="${esc(t.id)}">${poster(t)}
+  return `<button class="card" data-open="${esc(t.id)}">${poster(t,{noSticker:S.canWrite})}
     <div class="meta"><div class="t" title="${esc(t.title)}">${esc(t.title)}</div>${seenLine(t)}
     <div class="s"><span>${[t.year?esc(t.year):'',t.type==='series'&&epTotalOf(t)?epTotalOf(t)+' caps':'',t.type==='movie'&&t.runtime?t.runtime+' min':'',t.type==='game'&&t.hltb?fr(t.hltb)+' h':''].filter(Boolean).join(' · ')}</span><span>${extR(t)!=null?`<span class="star">★</span> <span class="score">${fmt(extR(t))}</span>`:(mine?`<span class="mynote">tu ${fr(mine.r)}</span>`:'<span class="note">—</span>')}</span></div>${S.canWrite?`<span class="qr ${mine?'has':''}" data-qrate="${esc(t.id)}" role="button" aria-label="Puntuar">${mine?fr(mine.r):'★'}</span>`:''}</div></button>`;
 }
