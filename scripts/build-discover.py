@@ -166,6 +166,23 @@ def build_games():
                    'platforms': ', '.join(dict.fromkeys(plat))[:120], 'creator': (x.get('devl') or {}).get('value', ''),
                    'links': int(x['links']['value']), 'mc': (x.get('mcid') or {}).get('value', '')}
     games = sorted(by.values(), key=lambda g: -(g['links'] * 0.6 + (g['ms'] - 70) * 3))[:N_GAMES]
+    # Nombres: el servicio de etiquetas de la consulta a veces no los da; se piden aparte (español y, si no, inglés)
+    ids = [g['id'] for g in games]
+    names = {}
+    for i in range(0, len(ids), 50):
+        b2 = get('https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels&languages=es|en&ids=' + '|'.join(ids[i:i + 50]),
+                 timeout=60, tries=3, headers={'User-Agent': 'PuntuaBot/1.0 (https://github.com/avillar25/puntua)'})
+        if b2:
+            for qid, ent in json.loads(b2).get('entities', {}).items():
+                lb = ent.get('labels', {})
+                n = (lb.get('es') or lb.get('en') or {}).get('value')
+                if n:
+                    names[qid] = n
+        time.sleep(0.5)
+    for g in games:
+        if names.get(g['id']):
+            g['title'] = names[g['id']]
+    games = [g for g in games if not re.match(r'^Q\d+$', g['title'])]
     log(f'Wikidata: {len(games)} juegos')
     return games
 
@@ -227,7 +244,7 @@ def main():
     old = json.loads(OUT.read_text()) if OUT.exists() else {'items': []}
     pj = json.loads(POSTERS.read_text()) if POSTERS.exists() else {}
     posters, misses = (pj.get('ok', {}), pj.get('miss', {})) if 'ok' in pj else ({k: v for k, v in pj.items() if v}, {})
-    if pj.get('v') != 3:   # nueva forma de buscar las portadas de los juegos: se reintentan
+    if pj.get('v') != 4:   # nueva forma de buscar las portadas de los juegos: se reintentan
         misses = {k: t for k, t in misses.items() if not k.startswith('Q')}
     try:
         av = build_imdb()
@@ -249,7 +266,7 @@ def main():
         if posters.get(o['id']):
             o['img'] = posters[o['id']]
         o.pop('links', None)
-    POSTERS.write_text(json.dumps({'v': 3, 'ok': posters, 'miss': misses}, separators=(',', ':'), sort_keys=True))
+    POSTERS.write_text(json.dumps({'v': 4, 'ok': posters, 'miss': misses}, separators=(',', ':'), sort_keys=True))
     OUT.write_text(json.dumps({'t': int(time.time()), 'items': items}, ensure_ascii=False, separators=(',', ':')))
     log(f'Descubrir: {len(items)} títulos, {sum(1 for o in items if o.get("img"))} con cartel')
 
