@@ -1,5 +1,12 @@
 # Cambios
 
+## v1.4.0
+- Vuelve la cuenta con correo y contraseña (Firebase): entras una vez en cada PC o móvil y ves lo mismo en todos, sin importar nada.
+- La app sigue guardando todo en el navegador: abre al momento, funciona sin conexión y sincroniza con tu cuenta en cuanto puede.
+- Lo que ya tenías en este navegador se sube a tu cuenta al entrar, sin perder nada.
+- Copias semanales automáticas en tu cuenta (las 8 últimas), descargables desde «Tu cuenta y copias».
+- Fuera la sincronización con GitHub (Gist).
+
 ## v1.3.2
 - Tarjetas: tu nota sale una sola vez (antes se veían dos círculos con la misma nota).
 

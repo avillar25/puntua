@@ -5,8 +5,8 @@
 (function () {
   'use strict';
   const ME = 'me';
-  const STORE = 'puntua-data', CFG = 'puntua-sync';
-  const SYNC_FILE = 'puntua.json', SYNC_DESC = 'Puntúa · sincronización (no borrar)';
+  const LEGACY = 'puntua-data';                 // datos guardados antes de tener cuenta (se suben al entrar)
+  let STORE = LEGACY;
   const IN_APP = location.hostname === 'localhost' || location.protocol === 'capacitor:';
   const IMG_BASE = IN_APP ? 'https://avillar25.github.io/puntua/' : '';
   window.PUNTUA_REMOTE = IMG_BASE;   // en la APK, los datos que cambian cada semana se leen de la web
@@ -15,8 +15,7 @@
      docs.lists / docs.review: tus listas y tus notas. Cada entrada de segundo nivel lleva su hora de
      cambio en _mt["sección/id"], para juntar sin perder nada si cambias cosas en el móvil y en el PC.
      docs["titles/<id>"]: fichas que has creado o editado (con _mt); {deleted:true} oculta una del catálogo. */
-  let docs = {};
-  try { docs = JSON.parse(localStorage.getItem(STORE) || '{}') || {}; } catch (e) { docs = {}; }
+  let docs = {};   // se cargan al entrar en la cuenta (cada cuenta tiene los suyos en este navegador)
   let saveTimer = null;
   function persist() {
     clearTimeout(saveTimer);
@@ -100,12 +99,12 @@
         async set(body) {
           if (key === 'lists' || key === 'review') putNested(key, body);
           else docs[key] = { ...body, _mt: Date.now() };
-          persist(); notify(); syncSoon();
+          persist(); notify(); syncSoon(key);
         },
         async delete() {
           if (key.startsWith('titles/')) docs[key] = { deleted: true, _mt: Date.now() };
           else delete docs[key];
-          persist(); notify(); syncSoon();
+          persist(); notify(); syncSoon(key);
         },
         onSnapshot(cb) {
           const f = () => { const v = docs[key]; cb({ exists: !!v, data: () => strip(v), metadata: { fromCache: false } }); };
@@ -282,160 +281,141 @@
     },
   };
 
-  /* ---------- Sincronización con un Gist secreto de GitHub ---------- */
-  const SYNC = { cfg: null, busy: false, again: false, last: 0, err: null, timer: null, checked: false };
-  try { SYNC.cfg = JSON.parse(localStorage.getItem(CFG) || 'null'); } catch (e) { SYNC.cfg = null; }
-  const cfgSave = () => { try { SYNC.cfg ? localStorage.setItem(CFG, JSON.stringify(SYNC.cfg)) : localStorage.removeItem(CFG); } catch (e) {} };
-  const syncOn = () => !!(SYNC.cfg && SYNC.cfg.token);
-
-  async function gh(path, opt = {}) {
-    const r = await fetch('https://api.github.com' + path, { ...opt, cache: 'no-store', headers: {
-      Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + SYNC.cfg.token, 'X-GitHub-Api-Version': '2022-11-28',
-      ...(opt.body ? { 'Content-Type': 'application/json' } : {}) } });
-    if (r.status === 401) throw new Error('El token no es válido o ha caducado');
-    if (r.status === 403 || r.status === 404) throw new Error('El token no tiene permiso de Gists');
-    if (!r.ok) throw new Error('GitHub respondió ' + r.status);
-    return r.status === 204 ? null : r.json();
-  }
-  async function findGist(recheck) {
-    if (SYNC.cfg.gist && !recheck) return SYNC.cfg.gist;
-    let found = [];
-    for (let page = 1; page <= 5; page++) {
-      const list = await gh(`/gists?per_page=100&page=${page}`);
-      found = found.concat((list || []).filter(x => x.files && x.files[SYNC_FILE]));
-      if (!list || list.length < 100) break;
-    }
-    if (found.length) {   // si hubiera varias copias, todos los dispositivos usan la más antigua
-      found.sort((a, b) => String(a.created_at).localeCompare(String(b.created_at)));
-      if (SYNC.cfg.gist !== found[0].id) { SYNC.cfg.gist = found[0].id; cfgSave(); }
-      return found[0].id;
-    }
-    const g = await gh('/gists', { method: 'POST', body: JSON.stringify({ description: SYNC_DESC, public: false,
-      files: { [SYNC_FILE]: { content: JSON.stringify({ v: 1, docs: {} }) } } }) });
-    SYNC.cfg.gist = g.id; cfgSave(); return g.id;
-  }
-  function mergeAll(local, remote) {
-    const out = {};
-    for (const k of new Set([...Object.keys(local), ...Object.keys(remote)])) {
-      const a = local[k], b = remote[k];
-      if (k === 'lists' || k === 'review') out[k] = (a && b) ? mergeNested(a, b) : (a || b);
-      else out[k] = a === undefined ? b : b === undefined ? a : (((b && b._mt) || 0) > ((a && a._mt) || 0) ? b : a);
-    }
-    return out;
-  }
-  async function syncNow(manual) {
-    if (!syncOn()) return;
-    if (SYNC.busy) { SYNC.again = true; return; }
-    SYNC.busy = true; renderPanel();
-    try {
-      const id = await findGist(manual || !SYNC.checked); SYNC.checked = true;
-      // Si el Gist no ha cambiado desde la última vez, GitHub responde 304 sin mandar nada (ahorra datos)
-      let remote;
-      const r = await fetch('https://api.github.com/gists/' + id, { cache: 'no-store', headers: {
-        Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + SYNC.cfg.token, 'X-GitHub-Api-Version': '2022-11-28',
-        ...(SYNC.etag && SYNC.lastRemote && SYNC.etagId === id ? { 'If-None-Match': SYNC.etag } : {}) } });
-      if (r.status === 304) remote = SYNC.lastRemote;
-      else {
-        if (r.status === 401) throw new Error('El token no es válido o ha caducado');
-        if (r.status === 403 || r.status === 404) throw new Error('El token no tiene permiso de Gists');
-        if (!r.ok) throw new Error('GitHub respondió ' + r.status);
-        const g = await r.json();
-        const f = g.files && g.files[SYNC_FILE];
-        let content = f && f.content;
-        if (f && f.truncated && f.raw_url) content = await (await fetch(f.raw_url + (f.raw_url.includes('?') ? '&' : '?') + 't=' + Date.now(), { cache: 'no-store' })).text();
-        remote = content ? (JSON.parse(content).docs || {}) : {};
-        SYNC.etag = r.headers.get('ETag'); SYNC.etagId = id;
-      }
-      const merged = mergeAll(docs, remote);
-      if (!same(merged, docs)) { docs = merged; persist(); notify(); }
-      if (!same(merged, remote)) { await gh('/gists/' + id, { method: 'PATCH', body: JSON.stringify({ files: { [SYNC_FILE]: { content: JSON.stringify({ v: 1, t: Date.now(), docs: merged }) } } }) }); SYNC.etag = null; }
-      SYNC.lastRemote = merged;
-      weeklyBackup(merged).catch(e => console.warn('[Puntúa] copia semanal', e.message || e));
-      SYNC.last = Date.now(); SYNC.err = null;
-      if (manual) say('Sincronizado');
-    } catch (e) { SYNC.err = String(e.message || e); if (manual) say('No se pudo sincronizar: ' + SYNC.err); }
-    SYNC.busy = false;
-    if (SYNC.again) { SYNC.again = false; syncNow(); } else renderPanel();
-  }
-
-  // Copia semanal fechada en un Gist aparte («Puntúa · copias»), para no cargar la sincronización diaria.
-  // Se guardan las 8 últimas.
-  const BACK_MARK = 'puntua-copias.md';
-  async function weeklyBackup(merged) {
-    const today = new Date().toISOString().slice(0, 10);
-    if (SYNC.cfg.lastBack && Date.parse(today) - Date.parse(SYNC.cfg.lastBack) < 7 * 864e5) return;
-    let bid = SYNC.cfg.backGist;
-    if (!bid) {
-      const list = await gh('/gists?per_page=100');
-      const f = (list || []).filter(x => x.files && x.files[BACK_MARK]).sort((x, y) => String(x.created_at).localeCompare(String(y.created_at)))[0];
-      bid = f && f.id;
-    }
-    let names = [];
-    if (bid) { const g = await gh('/gists/' + bid); names = Object.keys(g.files || {}); }
-    const backs = names.filter(n => /^puntua-copia-\d{4}-\d{2}-\d{2}\.json$/.test(n)).sort();
-    const last = backs.length ? backs[backs.length - 1].slice(13, 23) : '';
-    if (last && Date.parse(today) - Date.parse(last) < 7 * 864e5) { SYNC.cfg.backGist = bid; SYNC.cfg.lastBack = last; cfgSave(); return; }
-    const name = 'puntua-copia-' + today + '.json', content = JSON.stringify({ v: 1, t: Date.now(), docs: merged });
-    if (!bid) {
-      const g = await gh('/gists', { method: 'POST', body: JSON.stringify({ description: 'Puntúa · copias semanales (no borrar)', public: false,
-        files: { [BACK_MARK]: { content: 'Copias semanales de Puntúa. Para recuperar una, descárgala y cárgala en Mi lista → «Cargar copia de Puntúa».' }, [name]: { content } } }) });
-      bid = g.id;
-    } else {
-      const files = { [name]: { content } };
-      backs.push(name);
-      for (const old of backs.slice(0, Math.max(0, backs.length - 8))) files[old] = null;
-      await gh('/gists/' + bid, { method: 'PATCH', body: JSON.stringify({ files }) });
-    }
-    SYNC.cfg.backGist = bid; SYNC.cfg.lastBack = today; cfgSave();
-  }
-  function syncSoon() { if (!syncOn()) return; clearTimeout(SYNC.timer); SYNC.timer = setTimeout(() => { SYNC.timer = null; syncNow(); }, 1000); badge(); }
-  // Como en Clash Alerter: cada cambio se sube al momento (1 s después del último), lo pendiente se sube
-  // ya al salir de la app o cambiar de pestaña, y al volver se baja lo último del otro dispositivo.
-  // Con la app abierta, además, se mira cada minuto si hay cambios del otro lado.
-  const flush = () => { if (SYNC.timer) { clearTimeout(SYNC.timer); SYNC.timer = null; syncNow(); } };
-  document.addEventListener('visibilitychange', () => {
-    if (!syncOn()) return;
-    if (document.visibilityState === 'hidden') flush(); else syncNow();
-  });
-  window.addEventListener('pagehide', () => { if (syncOn()) flush(); });
-  window.addEventListener('focus', () => { if (syncOn() && Date.now() - SYNC.last > 15000) syncNow(); });
-  setInterval(() => { if (syncOn() && document.visibilityState === 'visible' && !SYNC.timer) syncNow(); }, 60000);
-
-  /* ---------- Ventana de sincronización y de copia ---------- */
+  /* ---------- Cuenta y sincronización con Firebase ----------
+     La app trabaja siempre con los datos de este navegador (abre al momento y funciona sin conexión).
+     Firebase solo sincroniza: cada documento (listas, notas, cada ficha editada) se guarda en
+     users/<tu cuenta>/docs y, si cambia en otro dispositivo, se junta entrada a entrada. */
+  const FBV = '11.10.0';
+  const SYNC = { on: false, busy: false, err: null, last: 0, email: '', uid: '' };
+  let fb = null, auth = null, fs = null;
+  const remote = {};                 // última versión conocida en Firebase de cada documento
+  const dirty = new Set();
+  let pushTimer = null, firstSnap = false;
   const say = t => { if (typeof window.toast === 'function') window.toast(t); else console.log(t); };
   const escH = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   const ago = t => { if (!t) return ''; const m = Math.round((Date.now() - t) / 60000); return m < 1 ? 'ahora mismo' : m < 60 ? `hace ${m} min` : new Date(t).toLocaleString('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }); };
+  const docId = k => k.replace(/\//g, '__');
+  const keyFromId = id => id.replace(/__/g, '/');
+  const syncOn = () => SYNC.on;
+
+  function mergeOne(k, a, b) {
+    if (a === undefined) return b; if (b === undefined) return a;
+    if (k === 'lists' || k === 'review') return mergeNested(a, b);
+    return ((b && b._mt) || 0) > ((a && a._mt) || 0) ? b : a;
+  }
+
+  function syncSoon(key) {
+    if (key) dirty.add(key);
+    if (!SYNC.on) return;
+    clearTimeout(pushTimer); pushTimer = setTimeout(push, 800); badge();
+  }
+  async function push() {
+    pushTimer = null;
+    if (!SYNC.on || !dirty.size) { badge(); return; }
+    const keys = [...dirty]; dirty.clear();
+    SYNC.busy = true; badge();
+    try {
+      for (const k of keys) {
+        const v = docs[k];
+        const ref = fb.doc(fs, 'users', SYNC.uid, 'docs', docId(k));
+        if (v === undefined) { await fb.deleteDoc(ref); delete remote[k]; continue; }
+        const j = JSON.stringify(v);
+        if (j.length > 900000) { console.warn('[Puntúa] documento demasiado grande para sincronizar:', k); continue; }
+        await fb.setDoc(ref, { j, t: Date.now() });
+        remote[k] = JSON.parse(j);
+      }
+      SYNC.err = null; SYNC.last = Date.now();
+    } catch (e) {
+      keys.forEach(k => dirty.add(k));
+      SYNC.err = (e && e.code === 'permission-denied') ? 'Sin permiso en Firebase (revisa las reglas de Firestore)' : String((e && e.message) || e);
+      setTimeout(() => syncSoon(), 20000);
+    }
+    SYNC.busy = false; badge(); renderPanel();
+  }
+  function onRemote(snap) {
+    let changed = false;
+    for (const ch of snap.docChanges()) {
+      const k = keyFromId(ch.doc.id);
+      if (ch.type === 'removed') continue;
+      let v; try { v = JSON.parse(ch.doc.data().j); } catch (e) { continue; }
+      remote[k] = v;
+      const m = mergeOne(k, docs[k], v);
+      if (!same(m, docs[k])) { docs[k] = m; changed = true; }
+      if (!same(m, v)) dirty.add(k);
+    }
+    if (!firstSnap && !snap.metadata.fromCache) {
+      firstSnap = true;
+      for (const k of Object.keys(docs)) if (!(k in remote)) dirty.add(k);   // lo que solo estaba en este navegador, se sube
+      weeklyBackup().catch(e => console.warn('[Puntúa] copia semanal', e));
+      firstRunOffer();
+    }
+    if (!snap.metadata.hasPendingWrites) { SYNC.last = Date.now(); SYNC.err = null; }
+    if (changed) { persist(); notify(); }
+    if (dirty.size) syncSoon(); else { badge(); renderPanel(); }
+  }
+
+  // Copia semanal fechada en tu cuenta (se guardan las 8 últimas). Se puede descargar desde el panel.
+  async function weeklyBackup() {
+    const col = fb.collection(fs, 'users', SYNC.uid, 'backups');
+    const list = (await fb.getDocs(col)).docs.map(d => d.id).sort();
+    const today = new Date().toISOString().slice(0, 10);
+    const last = list[list.length - 1];
+    if (last && Date.parse(today) - Date.parse(last) < 7 * 864e5) return;
+    let j = JSON.stringify({ v: 1, t: Date.now(), docs });
+    if (j.length > 900000) j = JSON.stringify({ v: 1, t: Date.now(), docs: { lists: docs.lists, review: docs.review } });
+    if (j.length > 900000) return;
+    await fb.setDoc(fb.doc(col, today), { j, t: Date.now() });
+    list.push(today);
+    for (const old of list.slice(0, Math.max(0, list.length - 8))) await fb.deleteDoc(fb.doc(col, old));
+  }
+  async function listBackups() {
+    const snap = await fb.getDocs(fb.collection(fs, 'users', SYNC.uid, 'backups'));
+    return snap.docs.map(d => ({ id: d.id, j: d.data().j })).sort((a, b) => b.id.localeCompare(a.id));
+  }
+
+  /* ---------- Panel de la cuenta ---------- */
   const CSS = `
 #pwSync{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:16px}
 #pwSync .box{background:#1a1816;color:#f3efe8;border:1px solid #3a3631;border-radius:16px;max-width:440px;width:100%;padding:20px;display:flex;flex-direction:column;gap:12px;font:15px/1.45 system-ui,sans-serif;max-height:90vh;overflow:auto}
 #pwSync *{text-transform:none;letter-spacing:normal;font-family:system-ui,sans-serif}
 #pwSync h2{margin:0;font-size:20px}
 #pwSync p,#pwSync li{margin:0;color:#c9c2b7;font-size:14px}
-#pwSync ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
 #pwSync a{color:#f5b301}
-#pwSync input{font:inherit;font-size:16px;padding:11px 13px;border-radius:10px;border:1px solid #3a3631;background:#0d0c0b;color:#f3efe8;width:100%;box-sizing:border-box}
 #pwSync .btns{display:flex;gap:8px;flex-wrap:wrap}
-#pwSync button{font:inherit;font-weight:600;padding:10px 14px;border-radius:10px;border:1px solid #3a3631;background:transparent;color:#f3efe8;cursor:pointer}
+#pwSync button,#pwSync .pri{font:inherit;font-weight:600;padding:10px 14px;border-radius:10px;border:1px solid #3a3631;background:transparent;color:#f3efe8;cursor:pointer;text-decoration:none}
 #pwSync .pri{background:#f5b301;color:#1a1400;border:0}
+#pwSync .bk{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px}
+#pwSync .bk button{padding:6px 10px;font-size:13px}
 #pwSync .ok{color:#9be29b}#pwSync .bad{color:#ff8a7a}#pwSync .mut{color:#8d867c;font-size:13px}`;
+  let backups = null;
   function panelHTML() {
-    const on = syncOn();
-    return `<div class="box"><h2>Sincronizar con GitHub</h2>
-      ${on ? `<p class="ok">${SYNC.busy ? 'Sincronizando…' : 'Conectado' + (SYNC.last ? ' · última vez ' + escH(ago(SYNC.last)) : '')}</p>
-        ${SYNC.err ? `<p class="bad">${escH(SYNC.err)}</p>` : ''}
-        ${SYNC.cfg.gist ? `<p class="mut">Copia en GitHub: ${escH(String(SYNC.cfg.gist).slice(0, 7))}. Tiene que salir lo mismo en el móvil y en el PC. Cada semana se guarda además una copia fechada (las 8 últimas)${SYNC.cfg.backGist ? `: las ves en <a href="https://gist.github.com/${escH(SYNC.cfg.backGist)}" target="_blank" rel="noopener">tu Gist de copias</a>` : ''}.</p>` : ''}
-        <div class="btns"><button class="pri" data-pw="now">Sincronizar ahora</button><button data-pw="off">Desconectar</button><button data-pw="close">Cerrar</button></div>`
-      : `<p>Tus datos se guardan en este dispositivo. Para tener lo mismo en el móvil y en el PC, conecta un token de GitHub: se guardan en un Gist secreto de tu cuenta que solo ves tú.</p>
-        <p>Crea un token solo para Puntúa:</p>
-        <ol><li>Entra en <a href="https://github.com/settings/tokens/new?scopes=gist&description=Punt%C3%BAa" target="_blank" rel="noopener">github.com/settings/tokens/new</a> (token <i>classic</i>).</li>
-        <li>Marca solo el permiso <b>gist</b> y en caducidad elige <b>No expiration</b>.</li>
-        <li>Pulsa <b>Generate token</b>, cópialo y pégalo aquí.</li></ol>
-        <input type="password" id="pwTok" placeholder="ghp_…" autocomplete="off">
-        <div class="btns"><button class="pri" data-pw="on">Conectar</button><button data-pw="close">Cerrar</button></div>
-        <p class="mut">El token se guarda solo en este dispositivo. Si ya tienes datos en el otro, se juntan sin perder nada.</p>`}
+    return `<div class="box"><h2>Tu cuenta</h2>
+      <p>Has entrado como <b style="color:#f3efe8">${escH(SYNC.email)}</b>. Lo que hagas aquí se guarda en tu cuenta y lo ves igual en cualquier PC o móvil donde entres.</p>
+      <p class="${SYNC.err ? 'bad' : 'ok'}">${SYNC.err ? 'Error al sincronizar: ' + escH(SYNC.err) : SYNC.busy || pushTimer ? 'Sincronizando…' : 'Sincronizado' + (SYNC.last ? ' · ' + escH(ago(SYNC.last)) : '')}</p>
+      <p class="mut">Copias semanales automáticas (las 8 últimas). Para recuperar una, descárgala y cárgala con «Cargar copia de Puntúa».</p>
+      ${backups == null ? '<p class="mut">Cargando copias…</p>' : backups.length ? backups.map((b, i) => `<div class="bk"><span>${escH(new Date(b.id + 'T12:00:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }))}</span><button data-pw="dl" data-i="${i}">Descargar</button></div>`).join('') : '<p class="mut">Aún no hay copias: la primera se hace hoy.</p>'}
+      <div class="btns"><button class="pri" data-pw="close">Cerrar</button><button data-pw="now">Sincronizar ahora</button><button data-pw="out">Cerrar sesión</button></div>
     </div>`;
   }
-  function renderPanel() { const d = document.getElementById('pwSync'); if (d) d.innerHTML = panelHTML(); badge(); }
+  function renderPanel() { const d = document.getElementById('pwSync'); if (d && d.dataset.kind === 'acct') d.innerHTML = panelHTML(); }
+  function openPanel() {
+    if (!document.getElementById('pwCss')) { const st = document.createElement('style'); st.id = 'pwCss'; st.textContent = CSS; document.head.appendChild(st); }
+    let d = document.getElementById('pwSync');
+    if (!d) {
+      d = document.createElement('div'); d.id = 'pwSync'; d.dataset.kind = 'acct'; document.body.appendChild(d);
+      d.addEventListener('click', async ev => {
+        if (ev.target === d) { d.remove(); return; }
+        const b = ev.target.closest('[data-pw]'); if (!b) return;
+        const a = b.dataset.pw;
+        if (a === 'close') d.remove();
+        if (a === 'now') { Object.keys(docs).forEach(k => dirty.add(k)); syncSoon(); say('Sincronizando…'); }
+        if (a === 'out') { if (confirm('¿Cerrar sesión en este navegador? Tus datos siguen en tu cuenta.')) { await fb.signOut(auth); location.reload(); } }
+        if (a === 'dl') { const bk = backups[+b.dataset.i]; await downloadsApi.save({ filename: `puntua-copia-${bk.id}.json`, data: bk.j }); }
+      });
+    }
+    renderPanel();
+    listBackups().then(l => { backups = l; renderPanel(); }).catch(() => { backups = []; renderPanel(); });
+  }
   /* ---------- Indicador pequeño en la cabecera ---------- */
   function badge() {
     let b = document.getElementById('pwBadge');
@@ -452,7 +432,7 @@
       b.addEventListener('click', openPanel);
       add.parentNode.insertBefore(b, add);
     }
-    const on = syncOn(), st = !on ? 'off' : SYNC.busy || SYNC.timer ? 'busy' : SYNC.err ? 'err' : 'ok';
+    const on = syncOn(), st = !on ? 'off' : SYNC.busy || pushTimer ? 'busy' : SYNC.err ? 'err' : 'ok';
     const ic = {
       ok: '<path d="M20 6 9 17l-5-5"/>',
       busy: '<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/>',
@@ -460,57 +440,38 @@
       off: '<path d="M17.5 19H8a5 5 0 1 1 1.6-9.7A6 6 0 0 1 21 12.5"/><path d="m3 3 18 18"/>',
     }[st];
     b.className = st;
-    b.title = { ok: 'Sincronizado' + (SYNC.last ? ' · ' + ago(SYNC.last) : ''), busy: 'Sincronizando…', err: 'Error al sincronizar: ' + (SYNC.err || ''), off: 'Sin sincronizar (solo en este dispositivo)' }[st];
+    b.title = { ok: 'Sincronizado' + (SYNC.last ? ' · ' + ago(SYNC.last) : ''), busy: 'Sincronizando…', err: 'Error al sincronizar: ' + (SYNC.err || ''), off: 'Sin conexión con tu cuenta todavía' }[st];
     b.setAttribute('aria-label', b.title);
     b.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${ic}</svg>`;
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', badge); else setTimeout(badge, 0);
   setInterval(badge, 30000);
 
-  function openPanel() {
-    if (!document.getElementById('pwCss')) { const st = document.createElement('style'); st.id = 'pwCss'; st.textContent = CSS; document.head.appendChild(st); }
-    let d = document.getElementById('pwSync');
-    if (!d) {
-      d = document.createElement('div'); d.id = 'pwSync'; document.body.appendChild(d);
-      d.addEventListener('click', async ev => {
-        if (ev.target === d) { d.remove(); return; }
-        const b = ev.target.closest('[data-pw]'); if (!b) return;
-        const a = b.dataset.pw;
-        if (a === 'close') d.remove();
-        if (a === 'now') syncNow(true);
-        if (a === 'off') { if (confirm('¿Desconectar? Tus datos se quedan en este dispositivo y en GitHub.')) { SYNC.cfg = null; SYNC.err = null; cfgSave(); renderPanel(); } }
-        if (a === 'on') {
-          const t = (d.querySelector('#pwTok').value || '').trim();
-          if (!t) return;
-          SYNC.cfg = { token: t }; SYNC.checked = false; cfgSave(); renderPanel();
-          await syncNow(true);
-          if (SYNC.err) { SYNC.cfg = null; cfgSave(); renderPanel(); const p = d.querySelector('.box'); if (p) p.insertAdjacentHTML('beforeend', `<p class="bad">${escH(SYNC.err)}</p>`); }
-        }
-      });
-    }
-    renderPanel();
-  }
-
-  // Cargar una copia de Puntúa (la de «Copia de seguridad (JSON)» o el data.json de la copia completa)
+  // Cargar una copia de Puntúa («Copia de seguridad (JSON)», data.json de la copia completa o una copia semanal)
   function restore() {
     const inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.json,application/json';
     inp.onchange = async () => {
       const f = inp.files[0]; if (!f) return;
       try {
         const j = JSON.parse(await f.text());
-        if (!j.lists) throw new Error('Este archivo no es una copia de Puntúa');
         const hasData = docs.lists && Object.keys((strip(docs.lists).status) || {}).length;
-        if (hasData && !confirm('Esto sustituirá tus listas, notas y progreso de este dispositivo por los de la copia. ¿Seguir?')) return;
-        const mine = j.reviews && j.me && j.reviews[j.me] ? j.reviews[j.me] : (j.reviews && !j.me ? j.reviews : {});
-        putNested('lists', j.lists);
-        putNested('review', { items: (mine && mine.items) || mine || {}, eps: (mine && mine.eps) || {} });
+        if (j.docs) {   // copia semanal
+          if (hasData && !confirm('Esto sustituirá tus datos por los de la copia. ¿Seguir?')) return;
+          for (const [k, v] of Object.entries(j.docs)) { if (k === 'lists' || k === 'review') putNested(k, strip(v)); else docs[k] = { ...v, _mt: Date.now() }; dirty.add(k); }
+        } else {
+          if (!j.lists) throw new Error('Este archivo no es una copia de Puntúa');
+          if (hasData && !confirm('Esto sustituirá tus listas, notas y progreso por los de la copia. ¿Seguir?')) return;
+          const mine = j.reviews && j.me && j.reviews[j.me] ? j.reviews[j.me] : (j.reviews && !j.me ? j.reviews : {});
+          putNested('lists', j.lists);
+          putNested('review', { items: (mine && mine.items) || mine || {}, eps: (mine && mine.eps) || {} });
+          dirty.add('lists'); dirty.add('review');
+        }
         persist(); notify(); syncSoon();
         say('Copia cargada');
       } catch (e) { alert('No se pudo cargar: ' + (e.message || e)); }
     };
     inp.click();
   }
-
 
   /* ---------- Versión: novedades tras actualizar y aviso de versión nueva en la APK ---------- */
   const VER = window.PUNTUA_VERSION || '', LOG = window.PUNTUA_CHANGELOG || [];
@@ -548,6 +509,7 @@
       }).catch(() => {});
   }, 2500);
 
+
   const platform = {
     use: async name => ({ db: dbApi, user: userApi, assets: assetsApi, downloads: downloadsApi })[name] || null,
     sync: openPanel,
@@ -555,6 +517,7 @@
     version: VER,
     restore,
     get syncOn() { return syncOn(); },
+    get email() { return SYNC.email; },
   };
   // En la APK, también los datos externos (notas, duraciones, capítulos) se toman de la web si son más nuevos
   if (IN_APP) fetch(IMG_BASE + 'meta.js', { cache: 'no-cache' }).then(r => r.ok ? r.text() : null).then(txt => {
@@ -565,19 +528,183 @@
     tvApplied = false; tvApplyCached(); notify();
   }).catch(() => {});
   window.PuntuaWeb = platform;
-  window.PuntuaWebReady = Promise.resolve(platform);
+  let resolveReady; window.PuntuaWebReady = new Promise(r => { resolveReady = r; });
 
-  // Primera vez sin datos: ofrecer cargar la copia
-  setTimeout(() => {
-    if (docs.lists || syncOn()) { if (syncOn()) syncNow(); return; }
+  // Primera vez sin datos (ni aquí ni en tu cuenta): ofrecer cargar una copia
+  function firstRunOffer() {
+    if (docs.lists) return;
     const bar = document.createElement('div');
     bar.style.cssText = 'position:fixed;left:12px;right:12px;bottom:80px;z-index:9000;max-width:520px;margin:0 auto;background:#1f1c19;color:#f3efe8;border:1px solid #f5b301;border-radius:14px;padding:14px;font:15px system-ui;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.5)';
-    bar.innerHTML = `<b>¿Primera vez aquí?</b><span>Carga tu copia de Puntúa (el archivo <i>.json</i>) o, si ya la usas en otro dispositivo, conecta la sincronización con GitHub.</span>
+    bar.innerHTML = `<b>Tu cuenta está vacía</b><span>Si tienes una copia de Puntúa (el archivo <i>.json</i>), cárgala para recuperar tus listas, notas y progreso.</span>
       <div style="display:flex;gap:8px;flex-wrap:wrap"><button data-b="r" style="flex:1;background:#f5b301;color:#1a1400;font-weight:600;border:0;border-radius:10px;padding:10px;font:inherit">Cargar copia</button>
-      <button data-b="s" style="flex:1;background:none;border:1px solid #3a3631;color:inherit;border-radius:10px;padding:10px;font:inherit">Sincronizar</button>
-      <button data-b="x" style="background:none;border:0;color:#8d867c;padding:10px;font:inherit">Ahora no</button></div>`;
+      <button data-b="x" style="background:none;border:1px solid #3a3631;color:inherit;border-radius:10px;padding:10px 14px;font:inherit">Ahora no</button></div>`;
     document.body.appendChild(bar);
-    bar.addEventListener('click', e => { const b = e.target.closest('[data-b]'); if (!b) return; bar.remove();
-      if (b.dataset.b === 'r') restore(); if (b.dataset.b === 's') openPanel(); });
-  }, 1200);
+    bar.addEventListener('click', e => { const b = e.target.closest('[data-b]'); if (!b) return; bar.remove(); if (b.dataset.b === 'r') restore(); });
+  }
+
+  /* ---------- Pantallas de acceso: entrar, crear cuenta y verificar el correo ---------- */
+  const LCSS = `
+#fbLogin{position:fixed;inset:0;z-index:9999;background:#0d0c0b;color:#f3efe8;display:flex;align-items:center;justify-content:center;padding:20px;font-family:system-ui,sans-serif;overflow:auto}
+#fbLogin .box{width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px}
+#fbLogin *{text-transform:none;letter-spacing:normal;font-family:system-ui,sans-serif}
+#fbLogin h1{font-size:34px;margin:0;letter-spacing:-.02em}
+#fbLogin h2{font-size:24px;margin:0;font-weight:700}
+#fbLogin p{margin:0;color:#b9b2a7;font-size:14px;line-height:1.45}
+#fbLogin label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:#b9b2a7}
+#fbLogin input{font:inherit;font-size:16px;padding:12px 14px;border-radius:10px;border:1px solid #3a3631;background:#1a1816;color:#f3efe8;width:100%;box-sizing:border-box}
+#fbLogin input:focus{outline:2px solid #f5b301;border-color:transparent}
+#fbLogin .pw{position:relative}
+#fbLogin .pw input{padding-right:64px}
+#fbLogin .eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:#b9b2a7;font:13px system-ui;padding:8px;cursor:pointer}
+#fbLogin .hint{font-size:12px;color:#8d867c}
+#fbLogin .btn{font:inherit;font-size:16px;font-weight:600;padding:12px 14px;border-radius:10px;border:0;cursor:pointer}
+#fbLogin .pri{background:#f5b301;color:#1a1400}
+#fbLogin .pri:disabled{opacity:.6}
+#fbLogin .sec{background:transparent;color:#f3efe8;border:1px solid #3a3631}
+#fbLogin .lnk{background:none;border:0;color:#f5b301;font:14px system-ui;padding:4px;cursor:pointer}
+#fbLogin .fbrow{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+#fbLogin .msg{min-height:20px;font-size:14px;color:#ff8a7a}
+#fbLogin .msg.ok{color:#9be29b}`;
+  const ERR = {
+    'auth/invalid-credential': 'Correo o contraseña incorrectos', 'auth/wrong-password': 'Correo o contraseña incorrectos',
+    'auth/user-not-found': 'Correo o contraseña incorrectos', 'auth/email-already-in-use': 'Ya existe una cuenta con ese correo',
+    'auth/weak-password': 'La contraseña es demasiado débil', 'auth/invalid-email': 'El correo no es válido',
+    'auth/missing-password': 'Escribe la contraseña', 'auth/network-request-failed': 'Sin conexión a internet',
+    'auth/too-many-requests': 'Demasiados intentos. Espera unos minutos.', 'auth/admin-restricted-operation': 'No se pueden crear cuentas nuevas',
+  };
+  const nice = e => ERR[e && e.code] || (e && e.message) || String(e);
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const pwField = (id, ac) => `<div class="pw"><input type="password" id="${id}" autocomplete="${ac}"><button type="button" class="eye" data-eye="${id}">Mostrar</button></div>`;
+  function overlay() {
+    let d = document.getElementById('fbLogin');
+    if (!d) {
+      if (!document.getElementById('fbCss')) { const st = document.createElement('style'); st.id = 'fbCss'; st.textContent = LCSS; document.head.appendChild(st); }
+      d = document.createElement('div'); d.id = 'fbLogin'; document.body.appendChild(d);
+      d.addEventListener('click', ev => {
+        const b = ev.target.closest('[data-eye]'); if (!b) return;
+        const i = d.querySelector('#' + b.dataset.eye); const show = i.type === 'password';
+        i.type = show ? 'text' : 'password'; b.textContent = show ? 'Ocultar' : 'Mostrar';
+      });
+    }
+    return d;
+  }
+  function screen(html, bind) {
+    const d = overlay(); d.innerHTML = `<form class="box" novalidate>${html}<div class="msg" id="fbMsg"></div></form>`;
+    const $ = id => d.querySelector('#' + id);
+    const msg = (t, ok) => { const m = $('fbMsg'); m.textContent = t || ''; m.className = 'msg' + (ok ? ' ok' : ''); };
+    const busy = async (btn, fn) => { btn.disabled = true; try { await fn(); } finally { btn.disabled = false; } };
+    bind($, msg, busy, d.querySelector('form'));
+    const first = d.querySelector('input'); if (first) setTimeout(() => first.focus(), 50);
+  }
+  function showLoading(t) { screen(`<h1>Puntúa</h1><p>${escH(t)}</p>`, () => {}); }
+  function showLogin(prefill = '') {
+    screen(`<h1>Puntúa</h1><p>Entra con tu cuenta para ver tus pelis, series y juegos en cualquier PC o móvil.</p>
+      <label>Correo<input type="email" id="fbEmail" autocomplete="email" inputmode="email"></label>
+      <label>Contraseña${pwField('fbPass', 'current-password')}</label>
+      <button class="btn pri" type="submit" id="fbGo">Entrar</button>
+      <div class="fbrow"><button class="lnk" type="button" id="fbReset">He olvidado la contraseña</button>
+      <button class="lnk" type="button" id="fbToNew">Crear cuenta</button></div>`,
+    ($, msg, busy, form) => {
+      $('fbEmail').value = prefill;
+      form.onsubmit = ev => { ev.preventDefault(); msg('');
+        const em = $('fbEmail').value.trim(), pw = $('fbPass').value;
+        if (!EMAIL_RE.test(em)) return msg('Escribe un correo válido');
+        if (!pw) return msg('Escribe la contraseña');
+        busy($('fbGo'), async () => { try { await fb.signInWithEmailAndPassword(auth, em, pw); } catch (e) { msg(nice(e)); } });
+      };
+      $('fbToNew').onclick = () => showSignup($('fbEmail').value.trim());
+      $('fbReset').onclick = () => { const em = $('fbEmail').value.trim();
+        if (!EMAIL_RE.test(em)) return msg('Escribe arriba tu correo y vuelve a pulsar');
+        busy($('fbReset'), async () => { try { await fb.sendPasswordResetEmail(auth, em); msg('Si hay una cuenta con ese correo, te llegará un enlace para cambiar la contraseña.', true); } catch (e) { msg(nice(e)); } });
+      };
+    });
+  }
+  function showSignup(prefill = '') {
+    screen(`<h2>Crear cuenta</h2><p>Tus listas y notas quedarán guardadas en tu cuenta y podrás verlas en cualquier PC o móvil.</p>
+      <label>Correo<input type="email" id="fbEmail" autocomplete="email" inputmode="email"></label>
+      <label>Contraseña${pwField('fbPass', 'new-password')}<span class="hint">Mínimo 8 caracteres, con letras y números.</span></label>
+      <label>Repite la contraseña${pwField('fbPass2', 'new-password')}</label>
+      <button class="btn pri" type="submit" id="fbGo">Crear cuenta</button>
+      <button class="lnk" type="button" id="fbToLogin">Ya tengo cuenta, quiero entrar</button>`,
+    ($, msg, busy, form) => {
+      $('fbEmail').value = prefill;
+      form.onsubmit = ev => { ev.preventDefault(); msg('');
+        const em = $('fbEmail').value.trim(), pw = $('fbPass').value, pw2 = $('fbPass2').value;
+        if (!EMAIL_RE.test(em)) return msg('Escribe un correo válido');
+        if (pw.length < 8 || !/[a-zA-Z]/.test(pw) || !/\d/.test(pw)) return msg('La contraseña necesita al menos 8 caracteres, con letras y números');
+        if (pw !== pw2) return msg('Las contraseñas no coinciden');
+        busy($('fbGo'), async () => {
+          try { const c = await fb.createUserWithEmailAndPassword(auth, em, pw); await fb.sendEmailVerification(c.user); }
+          catch (e) { msg(nice(e)); }
+        });
+      };
+      $('fbToLogin').onclick = () => showLogin($('fbEmail').value.trim());
+    });
+  }
+  function showVerify(u) {
+    screen(`<h2>Verifica tu correo</h2>
+      <p>Te he enviado un correo a <b style="color:#f3efe8">${escH(u.email || '')}</b> con un enlace para confirmar la cuenta. Ábrelo y vuelve aquí. Si no lo ves, mira en el correo no deseado.</p>
+      <button class="btn pri" type="submit" id="fbGo">Ya lo he verificado</button>
+      <button class="btn sec" type="button" id="fbAgain">Reenviar el correo</button>
+      <button class="lnk" type="button" id="fbOut">Usar otra cuenta</button>`,
+    ($, msg, busy, form) => {
+      form.onsubmit = ev => { ev.preventDefault(); msg('');
+        busy($('fbGo'), async () => { try { await u.reload(); if (auth.currentUser.emailVerified) enter(auth.currentUser); else msg('Todavía no consta como verificado. Abre el enlace del correo y vuelve a probar.'); } catch (e) { msg(nice(e)); } });
+      };
+      $('fbAgain').onclick = () => busy($('fbAgain'), async () => { try { await fb.sendEmailVerification(u); msg('Correo reenviado', true); } catch (e) { msg(nice(e)); } });
+      $('fbOut').onclick = () => fb.signOut(auth);
+    });
+  }
+
+  /* ---------- Arranque ---------- */
+  let started = false;
+  function enter(u) {
+    if (started) return;
+    started = true;
+    SYNC.uid = u.uid; SYNC.email = u.email || ''; SYNC.on = !u.offline;
+    try { localStorage.setItem('puntua-last', JSON.stringify({ uid: u.uid, email: u.email || '' })); } catch (e) {}
+    // Datos de esta cuenta en este navegador (+ lo que hubiera de antes de tener cuenta, que se sube)
+    STORE = 'puntua-data-' + u.uid;
+    try { docs = JSON.parse(localStorage.getItem(STORE) || '{}') || {}; } catch (e) { docs = {}; }
+    try {
+      const old = JSON.parse(localStorage.getItem(LEGACY) || 'null');
+      if (old) { for (const [k, v] of Object.entries(old)) docs[k] = mergeOne(k, docs[k], v); localStorage.removeItem(LEGACY); localStorage.removeItem('puntua-sync'); persist(); }
+    } catch (e) {}
+    const l = document.getElementById('fbLogin'); if (l) l.remove();
+    resolveReady(platform);
+    badge();
+    if (u.offline) { SYNC.err = 'Sin conexión: los cambios se guardan en este navegador y se subirán cuando vuelvas a abrir la app con internet'; badge(); return; }
+    fb.onSnapshot(fb.collection(fs, 'users', u.uid, 'docs'), { includeMetadataChanges: true }, onRemote, e => {
+      SYNC.err = (e && e.code === 'permission-denied') ? 'Sin permiso en Firebase (revisa las reglas de Firestore)' : String((e && e.message) || e); badge();
+    });
+    const flush = () => { if (pushTimer) { clearTimeout(pushTimer); push(); } };
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flush(); });
+    window.addEventListener('pagehide', flush);
+  }
+  (async () => {
+    showLoading('Cargando…');
+    try {
+      const [app, au, st] = await Promise.all([
+        import(`https://www.gstatic.com/firebasejs/${FBV}/firebase-app.js`),
+        import(`https://www.gstatic.com/firebasejs/${FBV}/firebase-auth.js`),
+        import(`https://www.gstatic.com/firebasejs/${FBV}/firebase-firestore.js`),
+      ]);
+      fb = { ...au, ...st };
+      const fapp = app.initializeApp(window.FIREBASE_CONFIG);
+      auth = au.getAuth(fapp); auth.languageCode = 'es';
+      fs = st.initializeFirestore(fapp, {});   // sin caché propia: los datos ya se guardan en el navegador
+      await au.setPersistence(auth, au.browserLocalPersistence).catch(() => {});
+      au.onAuthStateChanged(auth, u => {
+        if (!u) { if (started) location.reload(); else showLogin(); return; }
+        if (!u.emailVerified) { showVerify(u); return; }
+        enter(u);
+      });
+    } catch (e) {
+      // Sin internet: si ya habías entrado en este navegador, se abre con tus datos guardados aquí
+      let last = null; try { last = JSON.parse(localStorage.getItem('puntua-last') || 'null'); } catch (e2) {}
+      if (last && last.uid) { enter({ uid: last.uid, email: last.email, offline: true }); return; }
+      screen(`<h1>Puntúa</h1><p>No se puede conectar ahora mismo. Comprueba la conexión a internet y vuelve a intentarlo.</p><button class="btn pri" type="button" id="fbRetry">Reintentar</button>`,
+        $ => { $('fbRetry').onclick = () => location.reload(); });
+    }
+  })();
 })();

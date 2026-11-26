@@ -4,13 +4,14 @@ Tu IMDb personal para pelis, series y videojuegos: lo que has visto y jugado, tu
 
 - **Web:** https://avillar25.github.io/puntua (se puede instalar como app desde Chrome o Edge).
 - **Android:** descarga el APK de la última versión en **Releases**.
-- Tus datos se guardan en el dispositivo. Para tenerlos iguales en el móvil y en el PC, conecta en Mi lista → «Sincronizar con GitHub» un token con permiso de Gists (el mismo de Clash Alerter sirve).
+- Entras con tu cuenta (correo y contraseña) y ves lo mismo en cualquier PC o móvil.
 
 ## Estructura
 
 - `src/app.html`: la app (HTML, CSS y JavaScript en un solo archivo).
 - `src/meta.js`: datos externos (notas de IMDb y Metacritic, duraciones, sagas, emisión de series).
-- `src/web-backend.js`: guarda tus datos en el dispositivo y los sincroniza con un Gist secreto de GitHub.
+- `src/web-backend.js`: guarda tus datos en el navegador y los sincroniza con tu cuenta de Firebase.
+- `src/firebase-config.js` y `firestore.rules`: configuración de Firebase y reglas de seguridad.
 - `catalog/`: fichas del catálogo e historiales preparados para importar.
 - `images/`: portadas.
 - `scripts/build-web.py`: genera `www/` a partir de `src/` y `catalog/`.

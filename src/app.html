@@ -753,7 +753,7 @@ function failed(e){
   render();
 }
 
-/* Plataforma: dentro de Claude usa window.claude; en la web/APK, web-backend.js (datos en el dispositivo + Gist de GitHub) */
+/* Plataforma: dentro de Claude usa window.claude; en la web/APK, web-backend.js (datos en el navegador + cuenta de Firebase) */
 async function platform(){ if(window.claude) return window.claude; if(window.PuntuaWebReady) return await window.PuntuaWebReady; return null }
 async function boot(){
   render();
@@ -1043,7 +1043,7 @@ async function discAdopt(d, act){
 }
 function viewMine(){
   const nd=dupGroups().length;
-  const tools=`<div class="mytools">${nd?`<button class="btn sm" id="dupOpen">⚠ ${nd} posibles duplicados</button>`:''}<button class="btn sm ghost" id="expCsv">Exportar CSV</button><button class="btn sm ghost" id="expJson">Copia de seguridad (JSON)</button>${window.claude?'<button class="btn sm ghost" id="expAll">Copia completa para mudar la app (ZIP)</button>':''}${window.PuntuaWeb?'<button class="btn sm ghost" id="pwSyncBtn">'+(window.PuntuaWeb.syncOn?'Sincronización: conectada':'Sincronizar con GitHub')+'</button><button class="btn sm ghost" id="pwRestore">Cargar copia de Puntúa</button><button class="btn sm ghost" id="pwAbout">Versión '+esc(window.PuntuaWeb.version||'')+' · novedades</button>':''}</div>`;
+  const tools=`<div class="mytools">${nd?`<button class="btn sm" id="dupOpen">⚠ ${nd} posibles duplicados</button>`:''}<button class="btn sm ghost" id="expCsv">Exportar CSV</button><button class="btn sm ghost" id="expJson">Copia de seguridad (JSON)</button>${window.claude?'<button class="btn sm ghost" id="expAll">Copia completa para mudar la app (ZIP)</button>':''}${window.PuntuaWeb?'<button class="btn sm ghost" id="pwSyncBtn">'+'Tu cuenta y copias'+'</button><button class="btn sm ghost" id="pwRestore">Cargar copia de Puntúa</button><button class="btn sm ghost" id="pwAbout">Versión '+esc(window.PuntuaWeb.version||'')+' · novedades</button>':''}</div>`;
   const groups={};
   for(const [id,st] of Object.entries(S.lists.status)){
     const t=S.titles[id]; if(!t) continue;
