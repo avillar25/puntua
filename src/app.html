@@ -149,6 +149,7 @@ h3.yr small{font-weight:500;margin-left:4px}
 }
 
 /* Cambiar nota de un capítulo */
+.epany{display:flex;flex-direction:column;gap:6px;margin:10px 0}.epany-r{display:flex;gap:10px}.epany-r input{width:70px}
 .epedit{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:2px 4px;border-radius:6px}.epedit:hover{background:rgba(255,255,255,.08)}
 .epfix{display:flex;flex-direction:column;gap:4px;padding:6px 0 10px}
 /* Interruptor de avisos de capítulos */
@@ -662,7 +663,7 @@ function watchEp(id,s,e,r){
 }
 function setProg(id,s,e){const L=normLists(S.lists); L.prog[id]={s,e,d:today()}; if(!L.status[id]||L.status[id]==='pendiente') L.status[id]='viendo'; return saveLists(L)}
 // Cambiar la nota de un capítulo ya puntuado (no toca por dónde vas ni el estado de la serie)
-function editEpRating(id,code,r){const L=normLists(S.lists); const m={...(L.eps[id]||{})}; m[code]={...(m[code]||{}),r,t:Date.now()}; L.eps[id]=m; return saveLists(L).then(syncSharedEps)}
+function editEpRating(id,code,r){const L=normLists(S.lists); const m={...(L.eps[id]||{})}; m[code]={d:today(),...(m[code]||{}),r,t:Date.now()}; L.eps[id]=m; return saveLists(L).then(syncSharedEps)}
 function removeEpRating(id,code){const L=normLists(S.lists); const m={...(L.eps[id]||{})}; delete m[code]; L.eps[id]=m; return saveLists(L).then(syncSharedEps)}
 function nextUpList(){
   return allTitles().filter(t=>t.type==='series' && S.lists.status[t.id]==='viendo')
@@ -693,6 +694,8 @@ function episodesHTML(t){
     <div class="histhead">${p?`Vas por el <b>${epCode(p.s,p.e)}</b>${p.d?' · '+esc(fmtDate(p.d)):''}`:'Aún no has marcado ningún capítulo'}${avg?` · tu media <b class="star">★ ${fmt(avg)}</b>`:''}${com.count?` · usuarios <b class="star">★ ${fmt(com.avg)}</b> <span class="note">(${com.count} votos)</span>`:''}</div>
     ${S.canWrite?`<div class="epnext"><div class="epnext-h">Nota del siguiente capítulo, <b>${epCode(n.s,n.e)}</b> <span class="note">(lo marca como visto)</span>${nc.count?` <span class="note">· usuarios ★ ${fmt(nc.avg)} (${nc.count})</span>`:''}</div>${epStars(t.id,n.s,n.e,false)}
       <div class="hadd"><button class="btn" data-epseen="${esc(t.id)}|${n.s}|${n.e}">Visto sin nota</button>${seasonLen(t,n.s)?'':`<button class="btn ghost" data-epseason="${esc(t.id)}|${n.s+1}">Saltar a temporada ${n.s+1}</button>`}</div></div>
+      <div class="epany"><span class="note">Puntuar otro capítulo (no cambia por dónde vas):</span><div class="epany-r"><label>T <input type="number" id="epRS" min="1" max="200" value="${p?p.s:1}"></label><label>Cap <input type="number" id="epRE" min="1" max="2000" value="${p&&p.e>1?p.e-1:1}"></label></div>
+        <div class="estars sm">${Array.from({length:10},(_,i)=>`<button data-epany="${esc(t.id)}|${i+1}" aria-label="${i+1}">★<i>${i+1}</i></button>`).join('')}</div></div>
       <div class="hadd epset"><span class="note">Cambiar por dónde voy:</span><label>T <input type="number" id="epS" min="1" max="200" value="${p?p.s:1}"></label><label>Cap <input type="number" id="epE" min="0" max="2000" value="${p?p.e:0}"></label><button class="btn" id="epSetBtn">Guardar</button></div>`:''}
     ${rated.length?`<div class="eplist">${rated.slice(0,30).map(([c,v])=>{const c0=()=>c;return `<div class="hrow"><span class="hn">${esc(c)}</span><span>tú ${S.canWrite?`<button class="epedit" data-epedit="${esc(t.id)}|${esc(c)}" title="Cambiar la nota"><span class="star">★ ${fr(v.r)}</span> ✎</button>`:`<span class="star">★ ${fr(v.r)}</span>`}${(()=>{const cm=epCommunity(t.id,c0());return cm.count>1?` · usuarios <span class="star">★ ${fmt(cm.avg)}</span> <span class="note">(${cm.count})</span>`:''})()} <span class="note">${esc(fmtShort(v.d||''))}</span></span>${S.canWrite?`<button class="hx" data-rmep="${esc(t.id)}|${esc(c)}" aria-label="Quitar nota">×</button>`:''}</div>${S.epEdit===t.id+'|'+c?`<div class="epfix"><span class="note">Nueva nota del ${esc(c)}:</span><div class="estars sm">${Array.from({length:10},(_,i)=>`<button data-epfix="${esc(t.id)}|${esc(c)}|${i+1}" class="${v.r>=i+1?'on':''}" aria-label="${i+1}">★<i>${i+1}</i></button>`).join('')}</div></div>`:''}`}).join('')}${rated.length>30?`<div class="note">… y ${rated.length-30} más</div>`:''}</div>`:''}
   </div></div>`;
@@ -1704,6 +1707,9 @@ document.addEventListener('click',e=>{
   if(d.epseen){const [id,s1,e1]=d.epseen.split('|'); const t=S.titles[id]; if(!t) return;
     setUndo(`${t.title} ${epCode(+s1,+e1)} visto`); watchEp(id,+s1,+e1,0); const n=nextEp(t); toast(`${epCode(+s1,+e1)} visto — siguiente: ${epCode(n.s,n.e)}`); return}
   if(d.epseason){const [id,s1]=d.epseason.split('|'); setUndo(`Saltado a T${s1}`); setProg(id,+s1,0); toast(`Siguiente: ${epCode(+s1,1)}`); return}
+  if(d.epany){const [id,r0]=d.epany.split('|'); const se=+($('#epRS')||{}).value, ep=+($('#epRE')||{}).value;
+    if(!(se>=1&&ep>=1)){toast('Pon la temporada y el capítulo');return}
+    const r=halfPick(e,el,+r0), c=epCode(se,ep); editEpRating(id,c,r); toast(`${c} · ${fr(r)}/10`); return}
   if(d.epedit){S.epEdit=S.epEdit===d.epedit?null:d.epedit; modalKey=''; renderModal(); return}
   if(d.epfix){const [id,c,r0]=d.epfix.split('|'); const r=halfPick(e,el,+r0); S.epEdit=null; editEpRating(id,c,r); toast(`${c} · nueva nota ${fr(r)}/10`); return}
   if(d.rmep){const [id,c]=d.rmep.split('|'); if(el.dataset.armed){removeEpRating(id,c);toast('Nota quitada')} else {el.dataset.armed='1';el.textContent='¿Quitar?';el.classList.add('armed')} return}

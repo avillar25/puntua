@@ -1,5 +1,8 @@
 # Cambios
 
+## v1.4.2
+- Puntuar capítulos anteriores: en la ficha de la serie, «Puntuar otro capítulo» con temporada, capítulo y estrellas. No cambia por dónde vas.
+
 ## v1.4.1
 - Cambiar la nota de un capítulo: en la ficha de la serie, toca la nota del capítulo (✎) y elige la nueva. No cambia por dónde vas ni el estado de la serie.
 
