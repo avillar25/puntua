@@ -208,9 +208,11 @@ def find_posters(items, posters, misses):
             slug = (o.get('mc') or '').split('/')[-1] or slugify(o['title'])
             b = get(f"https://www.metacritic.com/game/{slug}/", timeout=30, tries=1)
             if b:
-                m = re.search(rb'<meta property="og:image" content="([^"]+)"', b)
+                m = (re.search(rb'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', b)
+                     or re.search(rb'<meta[^>]+content="([^"]+)"[^>]+property="og:image"', b)
+                     or re.search(rb'"image"\s*:\s*"(https:[^"]+)"', b))
                 if m:
-                    url = m.group(1).decode()
+                    url = m.group(1).decode().replace('\\u002F', '/')
             time.sleep(1)
         if url:
             posters[o['id']] = url
@@ -225,7 +227,7 @@ def main():
     old = json.loads(OUT.read_text()) if OUT.exists() else {'items': []}
     pj = json.loads(POSTERS.read_text()) if POSTERS.exists() else {}
     posters, misses = (pj.get('ok', {}), pj.get('miss', {})) if 'ok' in pj else ({k: v for k, v in pj.items() if v}, {})
-    if pj.get('v') != 2:   # nueva forma de buscar las portadas de los juegos: se reintentan
+    if pj.get('v') != 3:   # nueva forma de buscar las portadas de los juegos: se reintentan
         misses = {k: t for k, t in misses.items() if not k.startswith('Q')}
     try:
         av = build_imdb()
@@ -247,7 +249,7 @@ def main():
         if posters.get(o['id']):
             o['img'] = posters[o['id']]
         o.pop('links', None)
-    POSTERS.write_text(json.dumps({'v': 2, 'ok': posters, 'miss': misses}, separators=(',', ':'), sort_keys=True))
+    POSTERS.write_text(json.dumps({'v': 3, 'ok': posters, 'miss': misses}, separators=(',', ':'), sort_keys=True))
     OUT.write_text(json.dumps({'t': int(time.time()), 'items': items}, ensure_ascii=False, separators=(',', ':')))
     log(f'Descubrir: {len(items)} títulos, {sum(1 for o in items if o.get("img"))} con cartel')
 
