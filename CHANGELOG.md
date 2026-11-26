@@ -1,5 +1,16 @@
 # Cambios
 
+## v1.2.0
+- Nueva pestaña Descubrir: las pelis y series más vistas de IMDb y los juegos mejor valorados, con cartel, nota y filtros. Lo que ya tienes no sale; al marcarlo o puntuarlo pasa a tu catálogo y a Mi lista.
+- Al añadir un título, «Buscar datos» rellena año, director o estudio, duración, temporadas, géneros, plataformas y nota de IMDb.
+- Las series que sigues se actualizan solas con TVmaze al abrir la app: capítulos nuevos, temporadas y si siguen en emisión.
+- Cada lunes se actualizan solos el catálogo y Descubrir: notas de IMDb y Metacritic, duraciones y capítulos.
+- Buscador más permisivo: sin acentos ni signos, palabras en cualquier orden, siglas como «gta» y una errata perdonada.
+- Indicador pequeño de sincronización en la cabecera (✓ sincronizado, ⟳ subiendo, ⚠ error).
+- Copia semanal fechada en un Gist aparte (se guardan las 8 últimas).
+- App del móvil: avisos el día que sale un capítulo de las series que sigues (se pueden desactivar en la ficha de cada serie) y aviso cuando hay una versión nueva.
+- En Mi lista se ve la versión y el historial de cambios; tras actualizar, se muestran las novedades.
+
 ## v1.1.1
 - Sincronización al momento: cada cambio se sube enseguida, lo pendiente se sube al salir de la app o cambiar de pestaña, y al volver (o cada minuto con la app abierta) se baja lo del otro dispositivo.
 

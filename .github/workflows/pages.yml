@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths-ignore: ["README.md", "LICENSE", "android/**"]
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
@@ -24,6 +25,8 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url || steps.deploy1.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
       - name: Generar la web
         run: python3 scripts/build-web.py
       - name: Preparar

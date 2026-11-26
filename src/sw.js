@@ -1,6 +1,6 @@
 // Puntúa · caché para abrir la web sin conexión (la app y el catálogo; las imágenes se guardan al verlas)
 const C = 'puntua-__VERSION__';
-const CORE = ['./', 'index.html', 'meta.js', 'catalog.json', 'web-backend.js', 'manifest.webmanifest', 'icon-192.png'];
+const CORE = ['./', 'index.html', 'meta.js', 'catalog.json', 'version.js', 'web-backend.js', 'lookup.js', 'manifest.webmanifest', 'icon-192.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('puntua-') && k !== C && k !== 'puntua-img').map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {
