@@ -1,5 +1,9 @@
 # Cambios
 
+## v1.1.0
+- Fuera Firebase y el inicio de sesión: los datos se guardan en el dispositivo.
+- Sincronización entre el móvil y el PC con un Gist secreto de GitHub (Mi lista → «Sincronizar con GitHub»), como en Clash Alerter. Si cambias cosas en los dos sitios, se juntan entrada a entrada sin perder nada.
+
 ## v1.0.2
 - Arreglado: el catálogo salía vacío si llegaba antes que tus listas.
 - Arreglado: portadas rotas y aviso falso de «sin conexión» en la web.

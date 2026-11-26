@@ -735,8 +735,8 @@ function failed(e){
   render();
 }
 
-/* Plataforma: dentro de Claude usa window.claude; en la web/APK, el módulo de Firebase (firebase-backend.js) */
-async function platform(){ if(window.claude) return window.claude; if(window.PuntuaFBReady) return await window.PuntuaFBReady; return null }
+/* Plataforma: dentro de Claude usa window.claude; en la web/APK, web-backend.js (datos en el dispositivo + Gist de GitHub) */
+async function platform(){ if(window.claude) return window.claude; if(window.PuntuaWebReady) return await window.PuntuaWebReady; return null }
 async function boot(){
   render();
   const C = await platform();
@@ -900,7 +900,7 @@ function viewTop(){
 }
 function viewMine(){
   const nd=dupGroups().length;
-  const tools=`<div class="mytools">${nd?`<button class="btn sm" id="dupOpen">⚠ ${nd} posibles duplicados</button>`:''}<button class="btn sm ghost" id="expCsv">Exportar CSV</button><button class="btn sm ghost" id="expJson">Copia de seguridad (JSON)</button>${window.claude?'<button class="btn sm ghost" id="expAll">Copia completa para mudar la app (ZIP)</button>':''}${window.PuntuaFB?'<button class="btn sm ghost" id="fbRestore">Cargar copia de Puntúa</button><button class="btn sm ghost" id="fbOut">Cerrar sesión</button>':''}</div>`;
+  const tools=`<div class="mytools">${nd?`<button class="btn sm" id="dupOpen">⚠ ${nd} posibles duplicados</button>`:''}<button class="btn sm ghost" id="expCsv">Exportar CSV</button><button class="btn sm ghost" id="expJson">Copia de seguridad (JSON)</button>${window.claude?'<button class="btn sm ghost" id="expAll">Copia completa para mudar la app (ZIP)</button>':''}${window.PuntuaWeb?'<button class="btn sm ghost" id="pwSyncBtn">'+(window.PuntuaWeb.syncOn?'Sincronización: conectada':'Sincronizar con GitHub')+'</button><button class="btn sm ghost" id="pwRestore">Cargar copia de Puntúa</button>':''}</div>`;
   const groups={};
   for(const [id,st] of Object.entries(S.lists.status)){
     const t=S.titles[id]; if(!t) continue;
@@ -1343,8 +1343,8 @@ document.addEventListener('click',e=>{
   if(d.dupskip){S.dupSkip=[...(S.dupSkip||[]),d.dupskip];LS.set('dupSkip',S.dupSkip);render();return}
   if(el.id==='expJson'){exportData('json');return}
   if(el.id==='expAll'){exportAll();return}
-  if(el.id==='fbRestore'){window.PuntuaFB.restore();return}
-  if(el.id==='fbOut'){if(confirm('¿Cerrar sesión?')) window.PuntuaFB.signOut();return}
+  if(el.id==='pwRestore'){window.PuntuaWeb.restore();return}
+  if(el.id==='pwSyncBtn'){window.PuntuaWeb.sync();return}
   if(el.id==='expCsv'){exportData('csv');return}
   if(el.id==='clrF'){S.genre='';S.minR=0;S.seenF='';S.dec='';S.sagaF=false;render();return}
   if(d.pend){setStatus(d.pend,'pendiente');toast('Añadido a pendientes');return}
