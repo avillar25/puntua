@@ -170,22 +170,28 @@ def build_games():
     return games
 
 
-def find_posters(items, posters):
+def find_posters(items, posters, misses):
     t0 = time.time()
-    new = blocked = 0
+    new = 0
+    retry_after = 14 * 86400
     for o in items:
         if o['id'] in posters or time.time() - t0 > POSTER_BUDGET_S:
             continue
+        if time.time() - misses.get(o['id'], 0) < retry_after:
+            continue
         url = None
-        if o['type'] in ('movie', 'series') and blocked < 15:
-            b = get(f"https://www.imdb.com/title/{o['id']}/", timeout=30, tries=1)
+        if o['type'] in ('movie', 'series'):
+            # Buscador de IMDb (el mismo que usa su web al escribir): devuelve el cartel de cada título
+            b = get(f"https://v3.sg.media-imdb.com/suggestion/x/{o['id']}.json", timeout=20, tries=1)
             if b:
-                m = re.search(rb'<meta property="og:image" content="([^"]+)"', b)
-                if m and b'media-amazon' in m.group(1):
-                    url = re.sub(r'\._V1_.*?(\.\w+)$', r'._V1_QL75_UX380_\1', m.group(1).decode())
-            else:
-                blocked += 1
-            time.sleep(0.8)
+                try:
+                    for d in json.loads(b).get('d', []):
+                        if d.get('id') == o['id'] and d.get('i', {}).get('imageUrl'):
+                            url = re.sub(r'\._V1_.*?(\.\w+)$', r'._V1_QL75_UX380_\1', d['i']['imageUrl'])
+                            break
+                except Exception:
+                    pass
+            time.sleep(0.3)
         if not url and o['type'] == 'series':
             b = get('https://api.tvmaze.com/lookup/shows?imdb=' + o['id'], timeout=20, tries=1)
             if b:
@@ -199,15 +205,19 @@ def find_posters(items, posters):
                 if m:
                     url = m.group(1).decode()
             time.sleep(1)
-        posters[o['id']] = url or ''
         if url:
+            posters[o['id']] = url
+            misses.pop(o['id'], None)
             new += 1
-    log(f'Carteles: {new} nuevos (IMDb sin respuesta {blocked} veces)')
+        else:
+            misses[o['id']] = int(time.time())
+    log(f'Carteles: {new} nuevos, {len(misses)} sin cartel por ahora')
 
 
 def main():
     old = json.loads(OUT.read_text()) if OUT.exists() else {'items': []}
-    posters = json.loads(POSTERS.read_text()) if POSTERS.exists() else {}
+    pj = json.loads(POSTERS.read_text()) if POSTERS.exists() else {}
+    posters, misses = (pj.get('ok', {}), pj.get('miss', {})) if 'ok' in pj else ({k: v for k, v in pj.items() if v}, {})
     try:
         av = build_imdb()
     except Exception as e:
@@ -223,16 +233,12 @@ def main():
     items = av + games
     # Primero los carteles de lo más popular
     items.sort(key=lambda o: -(o.get('v', 0) / 1000 + o.get('links', 0) * 20))
-    # Si un cartel no se encontró, se vuelve a intentar pasado un tiempo (se vacía uno de cada 8 cada semana)
-    for i, k in enumerate([k for k, v in posters.items() if not v]):
-        if i % 8 == int(time.time() / 604800) % 8:
-            posters.pop(k)
-    find_posters(items, posters)
+    find_posters(items, posters, misses)
     for o in items:
         if posters.get(o['id']):
             o['img'] = posters[o['id']]
         o.pop('links', None)
-    POSTERS.write_text(json.dumps(posters, separators=(',', ':'), sort_keys=True))
+    POSTERS.write_text(json.dumps({'ok': posters, 'miss': misses}, separators=(',', ':'), sort_keys=True))
     OUT.write_text(json.dumps({'t': int(time.time()), 'items': items}, ensure_ascii=False, separators=(',', ':')))
     log(f'Descubrir: {len(items)} títulos, {sum(1 for o in items if o.get("img"))} con cartel')
 
