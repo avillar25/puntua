@@ -1,5 +1,9 @@
 # Cambios
 
+## v1.3.1
+- Puntuar un capítulo ya no cambia a «Viendo» una serie que tenías como vista o abandonada.
+- En la ficha de una serie queda más claro qué estrellas son la nota de la serie entera y cuáles la del siguiente capítulo.
+
 ## v1.3.0
 - Carátulas automáticas para las fichas del catálogo que no tenían (carteles de IMDb y TVmaze, portadas de Metacritic). Las que tú pusiste no se tocan.
 - Descubrir: recuperados los juegos que faltaban (Elden Ring, Skyrim, Counter-Strike…), ya con su nombre.

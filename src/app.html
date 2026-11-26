@@ -654,7 +654,7 @@ function watchEp(id,s,e,r){
   if(r){ L.eps[id]={...(L.eps[id]||{}),[code]:{r,d:today(),t:Date.now()}} }
   const cur=L.prog[id];
   if(!cur || s>cur.s || (s===cur.s && e>=cur.e)) L.prog[id]={s,e,d:today()};
-  if(L.status[id]!=='viendo') L.status[id]='viendo';
+  if(!L.status[id]||L.status[id]==='pendiente') L.status[id]='viendo';   // si ya estaba vista o abandonada, se respeta
   return saveLists(L).then(syncSharedEps);
 }
 function setProg(id,s,e){const L=normLists(S.lists); L.prog[id]={s,e,d:today()}; if(!L.status[id]||L.status[id]==='pendiente') L.status[id]='viendo'; return saveLists(L)}
@@ -686,7 +686,7 @@ function episodesHTML(t){
   return `<div class="section"><h3>Capítulos</h3><div class="hist">
     ${(()=>{const tot=epTotalOf(t), w=Math.min(epWatched(t),tot||Infinity); return tot?`<div class="epprog"><div class="epbar"><i style="width:${Math.round(w/tot*100)}%"></i></div><span>${w} de ${tot} capítulos · ${Math.round(w/tot*100)}%</span></div>`:''})()}
     <div class="histhead">${p?`Vas por el <b>${epCode(p.s,p.e)}</b>${p.d?' · '+esc(fmtDate(p.d)):''}`:'Aún no has marcado ningún capítulo'}${avg?` · tu media <b class="star">★ ${fmt(avg)}</b>`:''}${com.count?` · usuarios <b class="star">★ ${fmt(com.avg)}</b> <span class="note">(${com.count} votos)</span>`:''}</div>
-    ${S.canWrite?`<div class="epnext"><div class="epnext-h">Siguiente: <b>${epCode(n.s,n.e)}</b>${nc.count?` <span class="note">· usuarios ★ ${fmt(nc.avg)} (${nc.count})</span>`:''}</div>${epStars(t.id,n.s,n.e,false)}
+    ${S.canWrite?`<div class="epnext"><div class="epnext-h">Nota del siguiente capítulo, <b>${epCode(n.s,n.e)}</b> <span class="note">(lo marca como visto)</span>${nc.count?` <span class="note">· usuarios ★ ${fmt(nc.avg)} (${nc.count})</span>`:''}</div>${epStars(t.id,n.s,n.e,false)}
       <div class="hadd"><button class="btn" data-epseen="${esc(t.id)}|${n.s}|${n.e}">Visto sin nota</button>${seasonLen(t,n.s)?'':`<button class="btn ghost" data-epseason="${esc(t.id)}|${n.s+1}">Saltar a temporada ${n.s+1}</button>`}</div></div>
       <div class="hadd epset"><span class="note">Cambiar por dónde voy:</span><label>T <input type="number" id="epS" min="1" max="200" value="${p?p.s:1}"></label><label>Cap <input type="number" id="epE" min="0" max="2000" value="${p?p.e:0}"></label><button class="btn" id="epSetBtn">Guardar</button></div>`:''}
     ${rated.length?`<div class="eplist">${rated.slice(0,30).map(([c,v])=>{const c0=()=>c;return `<div class="hrow"><span class="hn">${esc(c)}</span><span>tú <span class="star">★ ${fr(v.r)}</span>${(()=>{const cm=epCommunity(t.id,c0());return cm.count>1?` · usuarios <span class="star">★ ${fmt(cm.avg)}</span> <span class="note">(${cm.count})</span>`:''})()} <span class="note">${esc(fmtShort(v.d||''))}</span></span>${S.canWrite?`<button class="hx" data-rmep="${esc(t.id)}|${esc(c)}" aria-label="Quitar nota">×</button>`:''}</div>`}).join('')}${rated.length>30?`<div class="note">… y ${rated.length-30} más</div>`:''}</div>`:''}
@@ -1398,7 +1398,7 @@ function detailHTML(t){
       ${t.summary?`<p class="sum">${esc(t.summary)}</p>`:''}
       <div class="stats">
         <div><div class="avg"><span class="star">★</span> ${fmt(extR(t))}<small>/10</small></div><div class="note">${extR(t)!=null?(t.extSrc==='Metacritic'?'Nota de la crítica en Metacritic ('+esc(t.metascore)+'/100)':'Nota de usuarios en '+esc(t.extSrc||'TVmaze')):'Sin nota externa todavía'}</div></div>
-        <div><div class="avg" style="font-size:26px">${mine?fr(mine.r):'—'}<small>/10</small></div><div class="note">Tu nota</div></div>
+        <div><div class="avg" style="font-size:26px">${mine?fr(mine.r):'—'}<small>/10</small></div><div class="note">${t.type==='series'?'Tu nota de la serie':'Tu nota'}</div></div>
       </div>
       <div class="actions">
         <select id="statusSel" ${S.canWrite?'':'disabled'}><option value="">＋ Añadir a mi lista</option>${(STATUS[t.type]||[]).map(([k,l])=>`<option value="${k}" ${st===k?'selected':''}>${l}</option>`).join('')}${st?'<option value="__del">Quitar de mi lista</option>':''}</select>
@@ -1410,7 +1410,7 @@ function detailHTML(t){
       </div>
       ${episodesHTML(t)}
       ${historyHTML(t)}
-      <div class="section"><h3>Tu nota</h3>
+      <div class="section"><h3>${t.type==='series'?'Tu nota de la serie entera':'Tu nota'}</h3>
         <div class="stars" id="stars">${Array.from({length:10},(_,i)=>`<button data-star="${i+1}" class="${pick>=i+1?'on':pick>=i+0.5?'half':''}" ${S.canWrite?'':'disabled'} aria-label="${i+1}">★</button>`).join('')}<span class="val">${pick?fr(pick)+'/10':''}</span></div><div class="halfhint">Toca la mitad izquierda de una estrella para medio punto</div>
         <textarea id="revText" placeholder="Escribe una reseña (opcional)…" ${S.canWrite?'':'disabled'}>${esc(mine?.t||'')}</textarea>
         <div class="actions"><button class="btn primary" id="saveRev" ${S.canWrite?'':'disabled'}>${mine?'Actualizar reseña':'Publicar nota'}</button>${mine?'<button class="btn" id="delRev">Quitar mi nota</button>':''}</div>
