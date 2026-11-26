@@ -1,5 +1,8 @@
 # Cambios
 
+## v1.4.1
+- Cambiar la nota de un capítulo: en la ficha de la serie, toca la nota del capítulo (✎) y elige la nueva. No cambia por dónde vas ni el estado de la serie.
+
 ## v1.4.0
 - Vuelve la cuenta con correo y contraseña (Firebase): entras una vez en cada PC o móvil y ves lo mismo en todos, sin importar nada.
 - La app sigue guardando todo en el navegador: abre al momento, funciona sin conexión y sincroniza con tu cuenta en cuanto puede.
